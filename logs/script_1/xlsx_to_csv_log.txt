@@ -1,0 +1,17 @@
+=== LOG DE CONVERSION EXCEL → CSV ===
+Date : 2025-11-08 11:39:13
+Fichier source : data_raw/cooperatives_data.xlsx
+
+Feuille : (1) Registre Producteurs
+ - CSV : coop_producteurs.csv
+ - Lignes (Excel → CSV) : 3518 → 3518
+ - Colonnes (Excel → CSV) : 21 → 21
+ - Statut : ✅ OK
+
+Feuille : (2) Registre Plantations
+ - CSV : coop_plantations.csv
+ - Lignes (Excel → CSV) : 3540 → 3540
+ - Colonnes (Excel → CSV) : 14 → 14
+ - Statut : ✅ OK
+
+=== FIN DU TRAITEMENT ===
