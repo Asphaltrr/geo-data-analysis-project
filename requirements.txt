@@ -13,6 +13,12 @@ rtree>=1.0
 # Pour la lecture d'Excel via pandas
 openpyxl>=3.0
 
+# API FastAPI
+fastapi>=0.121.1
+uvicorn>=0.38.0
+aiofiles>=25.1.0
+python-multipart>=0.0.20
+
 # Notes:
 # - GeoPandas dépend de packages natifs (GDAL/Fiona/PROJ). Sur macOS, installez
 #   les dépendances système via brew: `brew install gdal proj sqlite3` si nécessaire.

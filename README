@@ -1,0 +1,63 @@
+KOUAME_CHRISTIAN_GeoDataAnalyst – API FastAPI
+============================================
+
+Ce dépôt contient les scripts de préparation de données et, désormais, une API FastAPI (`api.py`) qui expose les fichiers nettoyés et les sorties finales pour le dashboard Next.js.
+
+Prérequis
+---------
+- Python 3.12
+- Environnement virtuel déjà présent dans `venv/`
+- Dépendances listées dans `requirements.txt` (FastAPI, Pandas, GeoPandas, etc.)
+
+Installation
+------------
+```bash
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+Démarrage du serveur
+--------------------
+Toujours depuis la racine du projet (ce dossier) :
+```bash
+source venv/bin/activate
+uvicorn api:app --reload --port 8000
+```
+Le serveur est alors accessible sur `http://localhost:8000` et autorise les requêtes CORS provenant de `http://localhost:3000`.
+
+Endpoints principaux
+--------------------
+- `GET /data_clean/{fichier}` : renvoie un fichier explicitement autorisé dans `data_clean/`.
+- `GET /outputs/{chemin}` : renvoie un fichier autorisé provenant de `outputs/` (voir la liste ci-dessous).
+- `GET /status` : retourne les métadonnées (dernière mise à jour, taille totale, nombre de fichiers) pour `outputs/` et `data_clean/`.
+
+Fichiers exposés
+----------------
+- `data_clean/coop_plantations_clean.csv`
+- `data_clean/coop_producteurs_clean.csv`
+- `data_clean/parcelles_clean.geojson`
+- `outputs/script_4/anomalies_plantations.csv`
+- `outputs/script_4/anomalies_producteurs.csv`
+- `outputs/script_5/anomalies_coherence_tabulaire.csv`
+- `outputs/script_6/geojson_verif_anomalies.csv`
+- `outputs/script_8/anomalies_surfaces_parcelle.csv`
+- `outputs/script_8/surfaces_compare_parcelle.csv`
+- Tous les fichiers contenus dans `outputs/script_8b`, `outputs/script_9` et `outputs/script_10`.
+
+Exemples d'appels
+-----------------
+```text
+GET http://localhost:8000/outputs/script_8b/csv_only_correspondances_base_id.csv
+GET http://localhost:8000/data_clean/coop_producteurs_clean.csv
+GET http://localhost:8000/status
+```
+
+Journalisation
+--------------
+Chaque requête est tracée dans `logs/api_requests.log` (méthode, endpoint, code HTTP, durée), ce qui facilite l’audit des échanges avec le dashboard.
+
+Notes
+-----
+- Les CSV sont convertis en JSON (`application/json`) pour simplifier la consommation côté Next.js.
+- Les fichiers GeoJSON/JSON sont renvoyés tels quels avec un objet de métadonnées (taille, timestamp, colonnes).
+- L’API s’appuie sur Pandas et GeoPandas pour la lecture des fichiers ; assurez-vous que les dépendances système de GeoPandas sont disponibles (GDAL/PROJ). Sur macOS : `brew install gdal proj sqlite3`.
