@@ -38,9 +38,10 @@ endpoints:
     method: GET
     path: /data/{folder}/{filename}
     params:
-      folder: "clean" | "outputs" | "display"
+      folder: "clean" | "outputs" | "display" | "raw"
       filename: Nom du fichier CSV ou GeoJSON a exposer.
     description: Retourne un CSV sous forme de liste JSON ou un GeoJSON brut depuis les dossiers sources.
     sample_requests:
       - /data/clean/coop_producteurs_clean.csv
       - /data/outputs/script_8b/csv_only_correspondances_base_id.csv
+      - /data/raw/parcelles.geojson

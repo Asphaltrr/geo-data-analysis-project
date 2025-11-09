@@ -1,0 +1,5 @@
+2025-11-09 19:52:31,605 | INFO | Compare: coop_producteurs (3518 -> 3518 lignes)
+2025-11-09 19:52:31,615 | INFO | Compare: coop_plantations (3540 -> 3540 lignes)
+2025-11-09 19:52:32,492 | INFO | Compare: parcelles (3046 -> 2852 polygones)
+2025-11-09 19:52:32,495 | INFO | Rapport d'audit exporte -> display-data/data_cleaning_audit.json
+2025-11-09 19:52:32,495 | INFO | Script termine avec succes.

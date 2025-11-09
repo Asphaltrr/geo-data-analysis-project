@@ -18,7 +18,7 @@ pip install -r requirements.txt
 
 Démarrage du pipeline
 ---------------------
-Relance tout le flux (scripts 1 → 10, exports `display-data/`) avec:
+Relance tout le flux (scripts 1 → 13, exports `display-data/`) avec:
 ```bash
 source venv/bin/activate
 python main_pipeline.py
@@ -39,13 +39,17 @@ Endpoints principaux
 - `GET /` : message de bienvenue + version.
 - `GET /status` : liste des dossiers surveilles + fichiers disponibles dans `display-data/`.
 - `GET /display/{fichier}` : renvoie un JSON pre-rendu (ex. `global_stats.json`).
-- `GET /data/{dossier}/{fichier}` : expose un CSV sous forme JSON ou un GeoJSON venant de `data_clean/` ou `outputs/`.
+- `GET /data/{dossier}/{fichier}` : expose un CSV sous forme JSON ou un GeoJSON venant de `display-data/`, `data_clean/`, `outputs/` ou `data_raw/`.
 
 Fichiers exposés
 ----------------
 - `display-data/` : `global_stats.json`, `anomalies_tabulaire.json`, `surfaces_distribution.json`, `top_producteurs_anomalies.json`, `anomalies_par_coop.json`, `chevauchements_summary.json`, `report_metadata.json`.
+  Ajouts analytiques (`script_11_export_display_data.py`) : `anomalies_surface.json`, `doublons_producteurs.json`, `doublons_parcelles.json`, `chevauchements_parcelles.json`, `resume_anomalies.json`.
+  Audit nettoyage (`script_13_data_cleaning_audit.py`) : `data_cleaning_audit.json`.
+  Autres fichiers produits par les scripts metiers : `meta_script_9.json`, `synthese_coherence_coop.json`, `synthese_coherence_producteurs.json`, etc.
 - `data_clean/` : jeux nettoyes (CSV/GeoJSON) accessibles via `/data/clean/{fichier}`.
 - `outputs/` : artefacts produits par les scripts (CSV/GeoJSON) accessibles via `/data/outputs/{chemin}`.
+- `data_raw/` : fichiers sources bruts accessibles via `/data/raw/{fichier}` (ex. `parcelles.geojson`).
 
 Exemples d'appels
 -----------------

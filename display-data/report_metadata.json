@@ -1,6 +1,8 @@
 {
-  "date_execution": "2025-11-09T19:24:32.197687",
+  "date_execution": "2025-11-09T19:52:32.536730",
   "scripts_executed": [
+    "script_1",
+    "script_2",
     "script_3",
     "script_4",
     "script_5",

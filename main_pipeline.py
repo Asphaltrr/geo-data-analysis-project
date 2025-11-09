@@ -42,6 +42,8 @@ def main():
         "scripts/script_8b_join_coverage.py",
         "scripts/script_9_coherence_producteurs.py",
         "scripts/script_10_detect_chevauchements.py",
+        "scripts/script_11_export_display_data.py",
+        "scripts/script_13_data_cleaning_audit.py",
     ]
 
     for script_path in scripts:
