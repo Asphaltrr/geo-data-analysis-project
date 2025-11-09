@@ -1,10 +1,40 @@
-2025-11-08 12:21:53,263 | INFO | Lecture CSV plantations : data_clean/coop_plantations_clean.csv
-2025-11-08 12:21:53,274 | INFO |   → 3540 lignes, 14 colonnes
-2025-11-08 12:21:53,275 | INFO | Lecture GeoJSON propre : data_clean/parcelles_clean.geojson
-2025-11-08 12:21:53,685 | INFO |   → 2852 entités, CRS=EPSG:4326
-2025-11-08 12:21:53,691 | INFO | Jointure parcelle : CSV.code_plantation ↔ GEOJSON.Farms_ID (inner)
-2025-11-08 12:21:53,694 | INFO | Jointure OK → 2378 lignes correspondantes
-2025-11-08 12:21:53,701 | INFO | ✅ Export comparatif (toutes lignes) → outputs/script_8/surfaces_compare_parcelle.csv
-2025-11-08 12:21:53,704 | INFO | ⚠️ Export anomalies (écart > ±10 %) → outputs/script_8/anomalies_surfaces_parcelle.csv (n=885)
-2025-11-08 12:21:53,704 | INFO | Résumé : 885/2378 parcelles en anomalie (37.2 %)
-2025-11-08 12:21:53,704 | INFO | ✔️ Comparaison surfaces par parcelle terminée.
+2025-11-09 19:17:20,582 | INFO | Lecture CSV plantations : data_clean/coop_plantations_clean.csv
+2025-11-09 19:17:20,589 | INFO |   → 3540 lignes, 14 colonnes
+2025-11-09 19:17:20,589 | INFO | Lecture GeoJSON propre : data_clean/parcelles_clean.geojson
+2025-11-09 19:17:20,988 | INFO |   → 2852 entités, CRS=EPSG:4326
+2025-11-09 19:17:20,993 | INFO | Jointure parcelle : CSV.code_plantation ↔ GEOJSON.Farms_ID (inner)
+2025-11-09 19:17:20,996 | INFO | Jointure OK → 2378 lignes correspondantes
+2025-11-09 19:17:21,003 | INFO | ✅ Export comparatif (toutes lignes) → outputs/script_8/surfaces_compare_parcelle.csv
+2025-11-09 19:17:21,006 | INFO | ⚠️ Export anomalies (écart > ±10 %) → outputs/script_8/anomalies_surfaces_parcelle.csv (n=885)
+2025-11-09 19:17:21,006 | INFO | Résumé : 885/2378 parcelles en anomalie (37.2 %)
+2025-11-09 19:17:21,006 | INFO | ✔️ Comparaison surfaces par parcelle terminée.
+2025-11-09 19:19:50,926 | INFO | Lecture CSV plantations : data_clean/coop_plantations_clean.csv
+2025-11-09 19:19:50,932 | INFO |   → 3540 lignes, 14 colonnes
+2025-11-09 19:19:50,933 | INFO | Lecture GeoJSON propre : data_clean/parcelles_clean.geojson
+2025-11-09 19:19:51,328 | INFO |   → 2852 entités, CRS=EPSG:4326
+2025-11-09 19:19:51,333 | INFO | Jointure parcelle : CSV.code_plantation ↔ GEOJSON.Farms_ID (inner)
+2025-11-09 19:19:51,335 | INFO | Jointure OK → 2378 lignes correspondantes
+2025-11-09 19:19:51,343 | INFO | ✅ Export comparatif (toutes lignes) → outputs/script_8/surfaces_compare_parcelle.csv
+2025-11-09 19:19:51,346 | INFO | ⚠️ Export anomalies (écart > ±10 %) → outputs/script_8/anomalies_surfaces_parcelle.csv (n=885)
+2025-11-09 19:19:51,346 | INFO | Résumé : 885/2378 parcelles en anomalie (37.2 %)
+2025-11-09 19:19:51,346 | INFO | ✔️ Comparaison surfaces par parcelle terminée.
+2025-11-09 19:20:48,185 | INFO | Lecture CSV plantations : data_clean/coop_plantations_clean.csv
+2025-11-09 19:20:48,193 | INFO |   → 3540 lignes, 14 colonnes
+2025-11-09 19:20:48,193 | INFO | Lecture GeoJSON propre : data_clean/parcelles_clean.geojson
+2025-11-09 19:20:48,592 | INFO |   → 2852 entités, CRS=EPSG:4326
+2025-11-09 19:20:48,597 | INFO | Jointure parcelle : CSV.code_plantation ↔ GEOJSON.Farms_ID (inner)
+2025-11-09 19:20:48,599 | INFO | Jointure OK → 2378 lignes correspondantes
+2025-11-09 19:20:48,605 | INFO | ✅ Export comparatif (toutes lignes) → outputs/script_8/surfaces_compare_parcelle.csv
+2025-11-09 19:20:48,608 | INFO | ⚠️ Export anomalies (écart > ±10 %) → outputs/script_8/anomalies_surfaces_parcelle.csv (n=885)
+2025-11-09 19:20:48,608 | INFO | Résumé : 885/2378 parcelles en anomalie (37.2 %)
+2025-11-09 19:20:48,608 | INFO | ✔️ Comparaison surfaces par parcelle terminée.
+2025-11-09 19:24:19,887 | INFO | Lecture CSV plantations : data_clean/coop_plantations_clean.csv
+2025-11-09 19:24:19,895 | INFO |   → 3540 lignes, 14 colonnes
+2025-11-09 19:24:19,895 | INFO | Lecture GeoJSON propre : data_clean/parcelles_clean.geojson
+2025-11-09 19:24:20,334 | INFO |   → 2852 entités, CRS=EPSG:4326
+2025-11-09 19:24:20,340 | INFO | Jointure parcelle : CSV.code_plantation ↔ GEOJSON.Farms_ID (inner)
+2025-11-09 19:24:20,342 | INFO | Jointure OK → 2378 lignes correspondantes
+2025-11-09 19:24:20,349 | INFO | ✅ Export comparatif (toutes lignes) → outputs/script_8/surfaces_compare_parcelle.csv
+2025-11-09 19:24:20,352 | INFO | ⚠️ Export anomalies (écart > ±10 %) → outputs/script_8/anomalies_surfaces_parcelle.csv (n=885)
+2025-11-09 19:24:20,352 | INFO | Résumé : 885/2378 parcelles en anomalie (37.2 %)
+2025-11-09 19:24:20,352 | INFO | ✔️ Comparaison surfaces par parcelle terminée.

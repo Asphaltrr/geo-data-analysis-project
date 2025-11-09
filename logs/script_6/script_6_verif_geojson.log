@@ -1,14 +1,56 @@
-2025-11-08 12:21:43,827 | INFO | Lecture du GeoJSON : data_raw/parcelles.geojson
-2025-11-08 12:21:44,378 | INFO | Nombre d'entités : 3046
-2025-11-08 12:21:44,378 | INFO | Colonnes : ['Farms_ID', 'description', 'timestamp', 'begin', 'end', 'altitudeMode', 'tessellate', 'extrude', 'visibility', 'drawOrder', 'icon', 'Farmer_ID', 'Superficie', 'Latitude', 'Longitude', 'geometry']
-2025-11-08 12:21:44,378 | INFO | ✅ Colonnes requises présentes.
-2025-11-08 12:21:44,379 | INFO | ✅ CRS détecté : EPSG:4326
-2025-11-08 12:21:44,380 | INFO | ✅ Types géométriques conformes (Polygon/MultiPolygon).
-2025-11-08 12:21:44,406 | INFO | ✅ Aucune géométrie invalide.
-2025-11-08 12:21:44,407 | WARNING | ⚠️ Géométries vides : 10
-2025-11-08 12:21:44,434 | WARNING | ⚠️ Entités hors emprise attendue (centroïde) : 10
-2025-11-08 12:21:44,435 | WARNING | ⚠️ Doublons d'attribut Farms_ID : 356
-2025-11-08 12:21:44,613 | WARNING | ⚠️ Doublons géométriques exacts : 24
-2025-11-08 12:21:44,650 | INFO | 🧾 Anomalies exportées → outputs/script_6/geojson_verif_anomalies.csv (lignes : 196)
-2025-11-08 12:21:44,651 | INFO | 📊 Résumé exporté → outputs/script_6/geojson_verif_resume.csv
-2025-11-08 12:21:44,651 | INFO | ✔️ Vérification GeoJSON terminée (aucune correction appliquée).
+2025-11-09 19:17:17,667 | INFO | Lecture du GeoJSON : data_raw/parcelles.geojson
+2025-11-09 19:17:18,169 | INFO | Nombre d'entités : 3046
+2025-11-09 19:17:18,169 | INFO | Colonnes : ['Farms_ID', 'description', 'timestamp', 'begin', 'end', 'altitudeMode', 'tessellate', 'extrude', 'visibility', 'drawOrder', 'icon', 'Farmer_ID', 'Superficie', 'Latitude', 'Longitude', 'geometry']
+2025-11-09 19:17:18,169 | INFO | ✅ Colonnes requises présentes.
+2025-11-09 19:17:18,169 | INFO | ✅ CRS détecté : EPSG:4326
+2025-11-09 19:17:18,171 | INFO | ✅ Types géométriques conformes (Polygon/MultiPolygon).
+2025-11-09 19:17:18,198 | INFO | ✅ Aucune géométrie invalide.
+2025-11-09 19:17:18,198 | WARNING | ⚠️ Géométries vides : 10
+2025-11-09 19:17:18,226 | WARNING | ⚠️ Entités hors emprise attendue (centroïde) : 10
+2025-11-09 19:17:18,227 | WARNING | ⚠️ Doublons d'attribut Farms_ID : 356
+2025-11-09 19:17:18,402 | WARNING | ⚠️ Doublons géométriques exacts : 24
+2025-11-09 19:17:18,435 | INFO | 🧾 Anomalies exportées → outputs/script_6/geojson_verif_anomalies.csv (lignes : 196)
+2025-11-09 19:17:18,436 | INFO | 📊 Résumé exporté → outputs/script_6/geojson_verif_resume.csv
+2025-11-09 19:17:18,436 | INFO | ✔️ Vérification GeoJSON terminée (aucune correction appliquée).
+2025-11-09 19:19:48,007 | INFO | Lecture du GeoJSON : data_raw/parcelles.geojson
+2025-11-09 19:19:48,488 | INFO | Nombre d'entités : 3046
+2025-11-09 19:19:48,488 | INFO | Colonnes : ['Farms_ID', 'description', 'timestamp', 'begin', 'end', 'altitudeMode', 'tessellate', 'extrude', 'visibility', 'drawOrder', 'icon', 'Farmer_ID', 'Superficie', 'Latitude', 'Longitude', 'geometry']
+2025-11-09 19:19:48,488 | INFO | ✅ Colonnes requises présentes.
+2025-11-09 19:19:48,488 | INFO | ✅ CRS détecté : EPSG:4326
+2025-11-09 19:19:48,489 | INFO | ✅ Types géométriques conformes (Polygon/MultiPolygon).
+2025-11-09 19:19:48,516 | INFO | ✅ Aucune géométrie invalide.
+2025-11-09 19:19:48,516 | WARNING | ⚠️ Géométries vides : 10
+2025-11-09 19:19:48,541 | WARNING | ⚠️ Entités hors emprise attendue (centroïde) : 10
+2025-11-09 19:19:48,541 | WARNING | ⚠️ Doublons d'attribut Farms_ID : 356
+2025-11-09 19:19:48,716 | WARNING | ⚠️ Doublons géométriques exacts : 24
+2025-11-09 19:19:48,749 | INFO | 🧾 Anomalies exportées → outputs/script_6/geojson_verif_anomalies.csv (lignes : 196)
+2025-11-09 19:19:48,750 | INFO | 📊 Résumé exporté → outputs/script_6/geojson_verif_resume.csv
+2025-11-09 19:19:48,750 | INFO | ✔️ Vérification GeoJSON terminée (aucune correction appliquée).
+2025-11-09 19:20:45,365 | INFO | Lecture du GeoJSON : data_raw/parcelles.geojson
+2025-11-09 19:20:45,840 | INFO | Nombre d'entités : 3046
+2025-11-09 19:20:45,840 | INFO | Colonnes : ['Farms_ID', 'description', 'timestamp', 'begin', 'end', 'altitudeMode', 'tessellate', 'extrude', 'visibility', 'drawOrder', 'icon', 'Farmer_ID', 'Superficie', 'Latitude', 'Longitude', 'geometry']
+2025-11-09 19:20:45,840 | INFO | ✅ Colonnes requises présentes.
+2025-11-09 19:20:45,840 | INFO | ✅ CRS détecté : EPSG:4326
+2025-11-09 19:20:45,841 | INFO | ✅ Types géométriques conformes (Polygon/MultiPolygon).
+2025-11-09 19:20:45,867 | INFO | ✅ Aucune géométrie invalide.
+2025-11-09 19:20:45,867 | WARNING | ⚠️ Géométries vides : 10
+2025-11-09 19:20:45,892 | WARNING | ⚠️ Entités hors emprise attendue (centroïde) : 10
+2025-11-09 19:20:45,892 | WARNING | ⚠️ Doublons d'attribut Farms_ID : 356
+2025-11-09 19:20:46,063 | WARNING | ⚠️ Doublons géométriques exacts : 24
+2025-11-09 19:20:46,094 | INFO | 🧾 Anomalies exportées → outputs/script_6/geojson_verif_anomalies.csv (lignes : 196)
+2025-11-09 19:20:46,095 | INFO | 📊 Résumé exporté → outputs/script_6/geojson_verif_resume.csv
+2025-11-09 19:20:46,095 | INFO | ✔️ Vérification GeoJSON terminée (aucune correction appliquée).
+2025-11-09 19:24:16,911 | INFO | Lecture du GeoJSON : data_raw/parcelles.geojson
+2025-11-09 19:24:17,410 | INFO | Nombre d'entités : 3046
+2025-11-09 19:24:17,410 | INFO | Colonnes : ['Farms_ID', 'description', 'timestamp', 'begin', 'end', 'altitudeMode', 'tessellate', 'extrude', 'visibility', 'drawOrder', 'icon', 'Farmer_ID', 'Superficie', 'Latitude', 'Longitude', 'geometry']
+2025-11-09 19:24:17,410 | INFO | ✅ Colonnes requises présentes.
+2025-11-09 19:24:17,410 | INFO | ✅ CRS détecté : EPSG:4326
+2025-11-09 19:24:17,412 | INFO | ✅ Types géométriques conformes (Polygon/MultiPolygon).
+2025-11-09 19:24:17,438 | INFO | ✅ Aucune géométrie invalide.
+2025-11-09 19:24:17,438 | WARNING | ⚠️ Géométries vides : 10
+2025-11-09 19:24:17,465 | WARNING | ⚠️ Entités hors emprise attendue (centroïde) : 10
+2025-11-09 19:24:17,465 | WARNING | ⚠️ Doublons d'attribut Farms_ID : 356
+2025-11-09 19:24:17,642 | WARNING | ⚠️ Doublons géométriques exacts : 24
+2025-11-09 19:24:17,675 | INFO | 🧾 Anomalies exportées → outputs/script_6/geojson_verif_anomalies.csv (lignes : 196)
+2025-11-09 19:24:17,676 | INFO | 📊 Résumé exporté → outputs/script_6/geojson_verif_resume.csv
+2025-11-09 19:24:17,676 | INFO | ✔️ Vérification GeoJSON terminée (aucune correction appliquée).

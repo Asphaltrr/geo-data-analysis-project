@@ -1,10 +1,40 @@
-2025-11-08 12:21:38,355 | INFO | 📄 Producteurs : 3518 lignes, 21 colonnes
-2025-11-08 12:21:38,356 | INFO | 📄 Plantations : 3540 lignes, 14 colonnes
-2025-11-08 12:21:38,358 | INFO | ⚠️ 22 plantations sans producteur associé
-2025-11-08 12:21:38,359 | INFO | ⚠️ 0 producteurs sans plantation associée
-2025-11-08 12:21:38,367 | INFO | ⚠️ 0 anomalies d’écart de surface > 10 %
-2025-11-08 12:21:38,368 | INFO | ⚠️ 933 anomalies d’écart d’estimation > 10 %
-2025-11-08 12:21:38,369 | INFO | ⚠️ 0 incohérences de coopérative
-2025-11-08 12:21:38,374 | INFO | 🧾 Rapport exporté → outputs/script_5/anomalies_coherence_tabulaire.csv
-2025-11-08 12:21:38,374 | INFO | 🔢 Total anomalies détectées : 955
-2025-11-08 12:21:38,374 | INFO | ✔️ Contrôle de cohérence tabulaire terminé.
+2025-11-09 19:17:17,250 | INFO | 📄 Producteurs : 3518 lignes, 21 colonnes
+2025-11-09 19:17:17,250 | INFO | 📄 Plantations : 3540 lignes, 14 colonnes
+2025-11-09 19:17:17,252 | INFO | ⚠️ 22 plantations sans producteur associé
+2025-11-09 19:17:17,253 | INFO | ⚠️ 0 producteurs sans plantation associée
+2025-11-09 19:17:17,259 | INFO | ⚠️ 0 anomalies d’écart de surface > 10 %
+2025-11-09 19:17:17,260 | INFO | ⚠️ 933 anomalies d’écart d’estimation > 10 %
+2025-11-09 19:17:17,261 | INFO | ⚠️ 0 incohérences de coopérative
+2025-11-09 19:17:17,266 | INFO | 🧾 Rapport exporté → outputs/script_5/anomalies_coherence_tabulaire.csv
+2025-11-09 19:17:17,266 | INFO | 🔢 Total anomalies détectées : 955
+2025-11-09 19:17:17,266 | INFO | ✔️ Contrôle de cohérence tabulaire terminé.
+2025-11-09 19:19:47,626 | INFO | 📄 Producteurs : 3518 lignes, 21 colonnes
+2025-11-09 19:19:47,627 | INFO | 📄 Plantations : 3540 lignes, 14 colonnes
+2025-11-09 19:19:47,629 | INFO | ⚠️ 22 plantations sans producteur associé
+2025-11-09 19:19:47,630 | INFO | ⚠️ 0 producteurs sans plantation associée
+2025-11-09 19:19:47,636 | INFO | ⚠️ 0 anomalies d’écart de surface > 10 %
+2025-11-09 19:19:47,636 | INFO | ⚠️ 933 anomalies d’écart d’estimation > 10 %
+2025-11-09 19:19:47,637 | INFO | ⚠️ 0 incohérences de coopérative
+2025-11-09 19:19:47,641 | INFO | 🧾 Rapport exporté → outputs/script_5/anomalies_coherence_tabulaire.csv
+2025-11-09 19:19:47,641 | INFO | 🔢 Total anomalies détectées : 955
+2025-11-09 19:19:47,641 | INFO | ✔️ Contrôle de cohérence tabulaire terminé.
+2025-11-09 19:20:44,978 | INFO | 📄 Producteurs : 3518 lignes, 21 colonnes
+2025-11-09 19:20:44,979 | INFO | 📄 Plantations : 3540 lignes, 14 colonnes
+2025-11-09 19:20:44,980 | INFO | ⚠️ 22 plantations sans producteur associé
+2025-11-09 19:20:44,981 | INFO | ⚠️ 0 producteurs sans plantation associée
+2025-11-09 19:20:44,985 | INFO | ⚠️ 0 anomalies d’écart de surface > 10 %
+2025-11-09 19:20:44,986 | INFO | ⚠️ 933 anomalies d’écart d’estimation > 10 %
+2025-11-09 19:20:44,987 | INFO | ⚠️ 0 incohérences de coopérative
+2025-11-09 19:20:44,991 | INFO | 🧾 Rapport exporté → outputs/script_5/anomalies_coherence_tabulaire.csv
+2025-11-09 19:20:44,991 | INFO | 🔢 Total anomalies détectées : 955
+2025-11-09 19:20:44,991 | INFO | ✔️ Contrôle de cohérence tabulaire terminé.
+2025-11-09 19:24:16,501 | INFO | 📄 Producteurs : 3518 lignes, 21 colonnes
+2025-11-09 19:24:16,501 | INFO | 📄 Plantations : 3540 lignes, 14 colonnes
+2025-11-09 19:24:16,503 | INFO | ⚠️ 22 plantations sans producteur associé
+2025-11-09 19:24:16,504 | INFO | ⚠️ 0 producteurs sans plantation associée
+2025-11-09 19:24:16,511 | INFO | ⚠️ 0 anomalies d’écart de surface > 10 %
+2025-11-09 19:24:16,511 | INFO | ⚠️ 933 anomalies d’écart d’estimation > 10 %
+2025-11-09 19:24:16,512 | INFO | ⚠️ 0 incohérences de coopérative
+2025-11-09 19:24:16,517 | INFO | 🧾 Rapport exporté → outputs/script_5/anomalies_coherence_tabulaire.csv
+2025-11-09 19:24:16,517 | INFO | 🔢 Total anomalies détectées : 955
+2025-11-09 19:24:16,517 | INFO | ✔️ Contrôle de cohérence tabulaire terminé.

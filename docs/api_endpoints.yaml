@@ -1,0 +1,46 @@
+api:
+  name: GeoDataAnalyst API
+  version: "1.0.0"
+  base_url: http://localhost:8000
+
+endpoints:
+  - name: Home
+    method: GET
+    path: /
+    description: Retourne un message de bienvenue et la version de l'API.
+    sample_response:
+      message: "Bienvenue sur l'API GeoDataAnalyst"
+      version: "1.0.0"
+
+  - name: Status
+    method: GET
+    path: /status
+    description: Indique les dossiers surveilles et la liste des JSON disponibles dans display-data/.
+    sample_response:
+      project: KOUAME_CHRISTIAN_GeoDataAnalyst
+      data_folders:
+        display: display-data
+        clean: data_clean
+        outputs: outputs
+      display_files:
+        - global_stats.json
+        - anomalies_tabulaire.json
+
+  - name: Display JSON
+    method: GET
+    path: /display/{filename}
+    params:
+      filename: Nom du fichier JSON pre-rendu (par ex. global_stats.json).
+    description: Lit un fichier de display-data/ et renvoie son contenu JSON.
+    sample_request: /display/global_stats.json
+
+  - name: Data Files
+    method: GET
+    path: /data/{folder}/{filename}
+    params:
+      folder: "clean" | "outputs" | "display"
+      filename: Nom du fichier CSV ou GeoJSON a exposer.
+    description: Retourne un CSV sous forme de liste JSON ou un GeoJSON brut depuis les dossiers sources.
+    sample_requests:
+      - /data/clean/coop_producteurs_clean.csv
+      - /data/outputs/script_8b/csv_only_correspondances_base_id.csv

@@ -3,30 +3,38 @@
 
 """
 SCRIPT 9 — Analyse de cohérence au niveau producteur
+----------------------------------------------------
 Utilise :
  - data_clean/coop_plantations_clean.csv
  - data_clean/parcelles_clean.geojson
- - outputs/surfaces_compare_parcelle.csv (jointure réussie CSV↔GeoJSON)
- - outputs/anomalies_surfaces_parcelle.csv (écarts > ±10%)
+ - outputs/script_8/surfaces_compare_parcelle.csv
+ - outputs/script_8/anomalies_surfaces_parcelle.csv
 
 Produit :
- - outputs/synthese_coherence_producteurs.csv
- - outputs/synthese_coherence_coop.csv
+ - outputs/script_9/synthese_coherence_producteurs.csv
+ - outputs/script_9/synthese_coherence_coop.csv
+ - display-data/synthese_coherence_producteurs.json
+ - display-data/synthese_coherence_coop.json
 """
 
 import os
 import pandas as pd
 import geopandas as gpd
 import logging
+import json
+from datetime import datetime
 
-# ---------------- CONFIGURATION ----------------
+# ---------------- CONFIGURATION ---------------- #
 
 SCRIPT_ID = "script_9"
 LOG_DIR = f"logs/{SCRIPT_ID}"
 OUT_DIR = f"outputs/{SCRIPT_ID}"
+DISPLAY_DIR = "display-data"
 
 os.makedirs(LOG_DIR, exist_ok=True)
 os.makedirs(OUT_DIR, exist_ok=True)
+os.makedirs(DISPLAY_DIR, exist_ok=True)
+
 log_path = f"{LOG_DIR}/script_9_coherence_producteurs.log"
 
 logging.basicConfig(
@@ -36,13 +44,14 @@ logging.basicConfig(
 )
 logger = logging.getLogger("coherence_producteurs")
 
+# ---------------- PATHS ---------------- #
+
 CSV_PLANT = "data_clean/coop_plantations_clean.csv"
 GEOJSON = "data_clean/parcelles_clean.geojson"
-# Ces fichiers sont produits par le script 8 (comparaison surfaces) → les lire depuis outputs/script_8
 COMPARE = "outputs/script_8/surfaces_compare_parcelle.csv"
 ANOM = "outputs/script_8/anomalies_surfaces_parcelle.csv"
 
-# ---------------- LECTURES ----------------
+# ---------------- LECTURES ---------------- #
 
 logger.info("Lecture des fichiers sources...")
 dfp = pd.read_csv(CSV_PLANT, dtype=str)
@@ -55,68 +64,118 @@ logger.info(f"→ Parcelles GeoJSON : {len(gdf)}")
 logger.info(f"→ Lignes jointes : {len(df_compare)}")
 logger.info(f"→ Anomalies de surface : {len(df_anom)}")
 
-# ---------------- TRAITEMENT ----------------
+# ---------------- TRAITEMENT ---------------- #
 
-# Harmonisation des types pour éviter erreur object/int64
+# Harmonisation
 for df in [dfp, df_compare, df_anom]:
     if "code_producteur" in df.columns:
         df["code_producteur"] = df["code_producteur"].astype(str).str.strip()
 
-# Total plantations par producteur
+# Agrégations
 plant_par_prod = dfp.groupby("code_producteur").agg(
     nb_plantations_total=("code_plantation", "count"),
     superficie_decl_totale=("superficie_cacao_ha", lambda x: pd.to_numeric(x, errors="coerce").sum())
 ).reset_index()
 
-# Total plantations par producteur
-plant_par_prod = dfp.groupby("code_producteur").agg(
-    nb_plantations_total=("code_plantation", "count"),
-    superficie_decl_totale=("superficie_cacao_ha", lambda x: pd.to_numeric(x, errors="coerce").sum())
-).reset_index()
-
-# Plantations jointes (présentes dans la comparaison)
 jointes_par_prod = df_compare.groupby("code_producteur").agg(
     nb_jointes=("code_plantation", "count"),
     superficie_calc_totale=("surface_calculee_ha", lambda x: pd.to_numeric(x, errors="coerce").sum())
 ).reset_index()
 
-# Anomalies par producteur
 anom_par_prod = df_anom.groupby("code_producteur").agg(
     nb_anomalies=("code_plantation", "count")
 ).reset_index()
 
-# Jointure des trois
-df_agg = plant_par_prod.merge(jointes_par_prod, on="code_producteur", how="left") \
-                       .merge(anom_par_prod, on="code_producteur", how="left")
+# Fusion
+df_agg = (
+    plant_par_prod
+    .merge(jointes_par_prod, on="code_producteur", how="left")
+    .merge(anom_par_prod, on="code_producteur", how="left")
+)
 
-# Calculs dérivés
-df_agg["nb_jointes"] = df_agg["nb_jointes"].fillna(0).astype(int)
-df_agg["nb_anomalies"] = df_agg["nb_anomalies"].fillna(0).astype(int)
-df_agg["taux_couverture_geo"] = (df_agg["nb_jointes"] / df_agg["nb_plantations_total"] * 100).round(2)
-df_agg["taux_anomalies"] = (df_agg["nb_anomalies"] / df_agg["nb_jointes"].replace(0, pd.NA) * 100).round(2)
+# Conversion numérique
+for col in [
+    "nb_plantations_total", "nb_jointes", "nb_anomalies",
+    "superficie_decl_totale", "superficie_calc_totale"
+]:
+    df_agg[col] = pd.to_numeric(df_agg[col], errors="coerce").fillna(0)
+
+# Fonctions robustes
+def safe_divide(a, b):
+    a = pd.to_numeric(a, errors="coerce")
+    b = pd.to_numeric(b, errors="coerce")
+    result = (a / b.replace(0, pd.NA)) * 100
+    result = result.replace([float("inf"), -float("inf")], pd.NA)
+    return result.fillna(0).astype(float).round(2)
+
+# Calculs
+df_agg["taux_couverture_geo"] = safe_divide(df_agg["nb_jointes"], df_agg["nb_plantations_total"])
+df_agg["taux_anomalies"] = safe_divide(df_agg["nb_anomalies"], df_agg["nb_jointes"])
 df_agg["ecart_surface_total_ha"] = (
     df_agg["superficie_decl_totale"] - df_agg["superficie_calc_totale"]
-).round(2)
+).fillna(0).astype(float).round(2)
 
-# Ajout des infos coop si dispo
+# Coopératives
 if "cooperative" in dfp.columns:
-    df_agg = df_agg.merge(dfp[["code_producteur", "cooperative"]].drop_duplicates(),
-                          on="code_producteur", how="left")
+    df_agg = df_agg.merge(
+        dfp[["code_producteur", "cooperative"]].drop_duplicates(),
+        on="code_producteur",
+        how="left"
+    )
 
-# ---------------- EXPORT ----------------
+# ---------------- EXPORT CSV ---------------- #
 
-df_agg.to_csv(f"{OUT_DIR}/synthese_coherence_producteurs.csv", index=False, encoding="utf-8")
-logger.info(f"✅ Export producteur → {OUT_DIR}/synthese_coherence_producteurs.csv")
+csv_prod = f"{OUT_DIR}/synthese_coherence_producteurs.csv"
+csv_coop = f"{OUT_DIR}/synthese_coherence_coop.csv"
+
+df_agg.to_csv(csv_prod, index=False, encoding="utf-8")
+logger.info(f"✅ Export producteurs → {csv_prod}")
+
+# --- Vérification existence colonne avant agrégation ---
+if "ecart_surface_total_ha" not in df_agg.columns:
+    logger.warning("⚠️ Colonne 'ecart_surface_total_ha' manquante, ajoutée à 0.")
+    df_agg["ecart_surface_total_ha"] = 0.0
 
 # Synthèse par coopérative
-df_coop = df_agg.groupby("cooperative").agg(
-    nb_producteurs=("code_producteur", "count"),
-    couverture_moyenne=("taux_couverture_geo", "mean"),
-    taux_anomalies_moyen=("taux_anomalies", "mean"),
-    ecart_surface_moyen_ha=("ecart_surface_total_ha", "mean")
-).reset_index().sort_values("couverture_moyenne", ascending=False)
+df_coop = (
+    df_agg.groupby("cooperative", dropna=False)
+    .agg(
+        nb_producteurs=("code_producteur", "count"),
+        couverture_moyenne=("taux_couverture_geo", "mean"),
+        taux_anomalies_moyen=("taux_anomalies", "mean"),
+        ecart_surface_moyen_ha=("ecart_surface_total_ha", "mean"),
+    )
+    .reset_index()
+    .sort_values("couverture_moyenne", ascending=False)
+)
 
-df_coop.to_csv(f"{OUT_DIR}/synthese_coherence_coop.csv", index=False, encoding="utf-8")
-logger.info(f"✅ Export coopérative → {OUT_DIR}/synthese_coherence_coop.csv")
+df_coop.to_csv(csv_coop, index=False, encoding="utf-8")
+logger.info(f"✅ Export coopératives → {csv_coop}")
 
-logger.info("✔️ Analyse de cohérence au niveau producteur terminée.")
+# ---------------- EXPORT JSON ---------------- #
+
+display_prod = os.path.join(DISPLAY_DIR, "synthese_coherence_producteurs.json")
+display_coop = os.path.join(DISPLAY_DIR, "synthese_coherence_coop.json")
+
+df_agg.to_json(display_prod, orient="records", indent=2, force_ascii=False)
+df_coop.to_json(display_coop, orient="records", indent=2, force_ascii=False)
+
+logger.info(f"📊 Export JSON producteurs → {display_prod}")
+logger.info(f"📊 Export JSON coopératives → {display_coop}")
+
+# ---------------- META ---------------- #
+
+summary = {
+    "script": SCRIPT_ID,
+    "timestamp": datetime.now().isoformat(),
+    "nb_producteurs": len(df_agg),
+    "nb_cooperatives": df_coop.shape[0],
+    "taux_anomalies_moyen_global": round(df_coop["taux_anomalies_moyen"].mean(), 2)
+}
+
+meta_path = os.path.join(DISPLAY_DIR, "meta_script_9.json")
+with open(meta_path, "w", encoding="utf-8") as f:
+    json.dump(summary, f, ensure_ascii=False, indent=2)
+
+logger.info(f"🧾 Métadonnées exportées → {meta_path}")
+logger.info("✔️ Analyse de cohérence au niveau producteur terminée avec succès.")

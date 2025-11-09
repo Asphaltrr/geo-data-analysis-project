@@ -1,0 +1,19 @@
+{
+  "date_execution": "2025-11-09T19:24:32.197687",
+  "scripts_executed": [
+    "script_3",
+    "script_4",
+    "script_5",
+    "script_6",
+    "script_7",
+    "script_8",
+    "script_9",
+    "script_10"
+  ],
+  "folders": {
+    "raw": "data_raw/",
+    "clean": "data_clean/",
+    "outputs": "outputs/",
+    "display": "display-data/"
+  }
+}

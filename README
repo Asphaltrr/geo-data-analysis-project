@@ -1,7 +1,7 @@
-KOUAME_CHRISTIAN_GeoDataAnalyst – API FastAPI
-============================================
+KOUAME_CHRISTIAN_GeoDataAnalyst – Pipeline & API
+================================================
 
-Ce dépôt contient les scripts de préparation de données et, désormais, une API FastAPI (`api.py`) qui expose les fichiers nettoyés et les sorties finales pour le dashboard Next.js.
+Ce depot contient les scripts de preparation de donnees, un pipeline d'orchestration (`main_pipeline.py`) et une API FastAPI (`api.py`) qui expose les fichiers pre-rendus pour le dashboard Next.js.
 
 Prérequis
 ---------
@@ -16,6 +16,15 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+Démarrage du pipeline
+---------------------
+Relance tout le flux (scripts 1 → 10, exports `display-data/`) avec:
+```bash
+source venv/bin/activate
+python main_pipeline.py
+```
+Les JSON generes se trouvent dans `display-data/` une fois le pipeline termine.
+
 Démarrage du serveur
 --------------------
 Toujours depuis la racine du projet (ce dossier) :
@@ -27,28 +36,23 @@ Le serveur est alors accessible sur `http://localhost:8000` et autorise les requ
 
 Endpoints principaux
 --------------------
-- `GET /data_clean/{fichier}` : renvoie un fichier explicitement autorisé dans `data_clean/`.
-- `GET /outputs/{chemin}` : renvoie un fichier autorisé provenant de `outputs/` (voir la liste ci-dessous).
-- `GET /status` : retourne les métadonnées (dernière mise à jour, taille totale, nombre de fichiers) pour `outputs/` et `data_clean/`.
+- `GET /` : message de bienvenue + version.
+- `GET /status` : liste des dossiers surveilles + fichiers disponibles dans `display-data/`.
+- `GET /display/{fichier}` : renvoie un JSON pre-rendu (ex. `global_stats.json`).
+- `GET /data/{dossier}/{fichier}` : expose un CSV sous forme JSON ou un GeoJSON venant de `data_clean/` ou `outputs/`.
 
 Fichiers exposés
 ----------------
-- `data_clean/coop_plantations_clean.csv`
-- `data_clean/coop_producteurs_clean.csv`
-- `data_clean/parcelles_clean.geojson`
-- `outputs/script_4/anomalies_plantations.csv`
-- `outputs/script_4/anomalies_producteurs.csv`
-- `outputs/script_5/anomalies_coherence_tabulaire.csv`
-- `outputs/script_6/geojson_verif_anomalies.csv`
-- `outputs/script_8/anomalies_surfaces_parcelle.csv`
-- `outputs/script_8/surfaces_compare_parcelle.csv`
-- Tous les fichiers contenus dans `outputs/script_8b`, `outputs/script_9` et `outputs/script_10`.
+- `display-data/` : `global_stats.json`, `anomalies_tabulaire.json`, `surfaces_distribution.json`, `top_producteurs_anomalies.json`, `anomalies_par_coop.json`, `chevauchements_summary.json`, `report_metadata.json`.
+- `data_clean/` : jeux nettoyes (CSV/GeoJSON) accessibles via `/data/clean/{fichier}`.
+- `outputs/` : artefacts produits par les scripts (CSV/GeoJSON) accessibles via `/data/outputs/{chemin}`.
 
 Exemples d'appels
 -----------------
 ```text
-GET http://localhost:8000/outputs/script_8b/csv_only_correspondances_base_id.csv
-GET http://localhost:8000/data_clean/coop_producteurs_clean.csv
+GET http://localhost:8000/display/global_stats.json
+GET http://localhost:8000/data/clean/coop_producteurs_clean.csv
+GET http://localhost:8000/data/outputs/script_8b/csv_only_correspondances_base_id.csv
 GET http://localhost:8000/status
 ```
 
