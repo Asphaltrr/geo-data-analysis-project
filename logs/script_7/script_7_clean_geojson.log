@@ -1,0 +1,14 @@
+2025-11-08 12:21:48,022 | INFO | Lecture du GeoJSON brut : data_raw/parcelles.geojson
+2025-11-08 12:21:48,463 | INFO | 3046 entités chargées.
+2025-11-08 12:21:48,465 | WARNING | 🗑️ 10 géométries vides supprimées.
+2025-11-08 12:21:48,493 | INFO | ✅ Aucune géométrie invalide.
+2025-11-08 12:21:48,494 | WARNING | 🗑️ 356 doublons d'attribut supprimés (1 seul exemplaire conservé).
+2025-11-08 12:21:48,495 | INFO | 🔍 Détection des doublons géométriques exacts...
+2025-11-08 12:21:48,662 | WARNING | 🗑️ 2 doublons géométriques détectés.
+2025-11-08 12:21:48,663 | INFO | ✅ 2 doublons géométriques supprimés (premier conservé).
+2025-11-08 12:21:48,836 | INFO | 📐 Recalcul des superficies réelles (ha)...
+2025-11-08 12:21:48,874 | INFO | ✅ Superficies calculées et ajoutées sous 'surface_calculee_ha'.
+2025-11-08 12:21:48,874 | INFO | 💾 Export du GeoJSON nettoyé → data_clean/parcelles_clean.geojson
+2025-11-08 12:21:49,481 | INFO | Created 2,852 records
+2025-11-08 12:21:49,490 | INFO | 🧾 Journal des corrections → outputs/script_7/geojson_clean_log.csv
+2025-11-08 12:21:49,490 | INFO | ✔️ Nettoyage géométrique terminé avec succès.

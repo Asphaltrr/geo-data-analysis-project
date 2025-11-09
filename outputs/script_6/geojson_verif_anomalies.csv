@@ -1,0 +1,197 @@
+identifiant,type_anomalie,colonne_concernee,valeur
+1030100758-P001,Geometrie vide,geometry,empty
+1030081143-P001,Geometrie vide,geometry,empty
+1030081148-P001,Geometrie vide,geometry,empty
+1030081177-P001,Geometrie vide,geometry,empty
+1030081209-P001,Geometrie vide,geometry,empty
+1030081231-P001,Geometrie vide,geometry,empty
+1030081235-P001,Geometrie vide,geometry,empty
+1030082056-P001,Geometrie vide,geometry,empty
+1030082060-P001,Geometrie vide,geometry,empty
+1030332233-P001,Geometrie vide,geometry,empty
+1030100758-P001,Centroide non calculable (geometry vide),centroid,
+1030081143-P001,Centroide non calculable (geometry vide),centroid,
+1030081148-P001,Centroide non calculable (geometry vide),centroid,
+1030081177-P001,Centroide non calculable (geometry vide),centroid,
+1030081209-P001,Centroide non calculable (geometry vide),centroid,
+1030081231-P001,Centroide non calculable (geometry vide),centroid,
+1030081235-P001,Centroide non calculable (geometry vide),centroid,
+1030082056-P001,Centroide non calculable (geometry vide),centroid,
+1030082060-P001,Centroide non calculable (geometry vide),centroid,
+1030332233-P001,Centroide non calculable (geometry vide),centroid,
+1030311890-P001,Doublon attributaire Farms_ID,Farms_ID,3
+1030311868-P001,Doublon attributaire Farms_ID,Farms_ID,3
+1030311856-P001,Doublon attributaire Farms_ID,Farms_ID,3
+1030311872-P001,Doublon attributaire Farms_ID,Farms_ID,3
+1030311876-P001,Doublon attributaire Farms_ID,Farms_ID,3
+1030311875-P001,Doublon attributaire Farms_ID,Farms_ID,3
+1030311880-P001,Doublon attributaire Farms_ID,Farms_ID,3
+1030311878-P001,Doublon attributaire Farms_ID,Farms_ID,3
+1030311879-P001,Doublon attributaire Farms_ID,Farms_ID,3
+1030311905-P001,Doublon attributaire Farms_ID,Farms_ID,3
+1030121732-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311886-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030122731-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030121726-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030022006-P002,Doublon attributaire Farms_ID,Farms_ID,2
+1030311859-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030121734-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030121697-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311877-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311870-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311861-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311864-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311897-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311855-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030121703-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311862-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311888-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030121715-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030121720-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030122126-P002,Doublon attributaire Farms_ID,Farms_ID,2
+1030121705-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311867-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311865-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311905-P002,Doublon attributaire Farms_ID,Farms_ID,2
+1030311884-P002,Doublon attributaire Farms_ID,Farms_ID,2
+1030311906-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030122725-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030121708-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030122111-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030122724-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030121711-P002,Doublon attributaire Farms_ID,Farms_ID,2
+1030122736-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311854-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030122116-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030121730-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311902-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030022000-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311901-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030051019-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030022006-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030051017-P002,Doublon attributaire Farms_ID,Farms_ID,2
+1030051027-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030051030-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030051004-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030051021-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030051048-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030051034-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030051047-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030051017-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030020262-P003,Doublon attributaire Farms_ID,Farms_ID,2
+1030051031-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030051012-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311883-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030321972-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030321962-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030321954-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030301934-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030292094-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030301932-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030020249-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030020265-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030020278-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030022001-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030020275-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030020239-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030020242-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030020258-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030020256-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030020257-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030023323-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030020264-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311912-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311911-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311855-P002,Doublon attributaire Farms_ID,Farms_ID,2
+1030311908-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311915-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311919-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311907-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311910-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311917-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311858-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030020243-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311857-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030121717-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311881-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040580-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040534-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040570-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040552-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040535-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040551-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040539-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040539-P002,Doublon attributaire Farms_ID,Farms_ID,2
+1030040476-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040586-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040572-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040572-P002,Doublon attributaire Farms_ID,Farms_ID,2
+1030040531-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040475-P002,Doublon attributaire Farms_ID,Farms_ID,2
+1030040564-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040573-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040518-P002,Doublon attributaire Farms_ID,Farms_ID,2
+1030040584-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040577-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040538-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040555-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040581-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040474-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040515-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040515-P002,Doublon attributaire Farms_ID,Farms_ID,2
+1030040493-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040496-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311904-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040495-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040510-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040502-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040488-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040530-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040530-P002,Doublon attributaire Farms_ID,Farms_ID,2
+1030040521-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040485-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040491-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040480-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040536-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040533-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040542-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040475-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040553-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040575-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040544-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040562-P002,Doublon attributaire Farms_ID,Farms_ID,2
+1030040501-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040518-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040562-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040532-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040524-P002,Doublon attributaire Farms_ID,Farms_ID,2
+1030040524-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040521-P002,Doublon attributaire Farms_ID,Farms_ID,2
+1030040483-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040488-P002,Doublon attributaire Farms_ID,Farms_ID,2
+1030040477-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040498-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030043449-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311887-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030311884-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040509-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040480-P002,Doublon attributaire Farms_ID,Farms_ID,2
+1030040540-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040487-P002,Doublon attributaire Farms_ID,Farms_ID,2
+1030040537-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040589-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040486-P002,Doublon attributaire Farms_ID,Farms_ID,2
+1030040574-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040529-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040481-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040487-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040561-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040554-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040554-P002,Doublon attributaire Farms_ID,Farms_ID,2
+1030040556-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040583-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040588-P001,Doublon attributaire Farms_ID,Farms_ID,2
+1030040548-P001,Doublon attributaire Farms_ID,Farms_ID,2
+hash:0106000000000000,Doublon geometrique exact,geometry,10
+hash:0106000000010000,Doublon geometrique exact,geometry,2
+hash:0106000000030000,Doublon geometrique exact,geometry,2

@@ -1,0 +1,14 @@
+2025-11-08 12:21:34,625 | INFO | === DÉBUT DU SCRIPT 4 — Détection des anomalies internes ===
+
+2025-11-08 12:21:34,625 | INFO | Analyse du fichier Producteurs → data_clean/coop_producteurs_clean.csv
+2025-11-08 12:21:34,636 | INFO | ✅ Aucun doublon détecté dans Producteurs.
+2025-11-08 12:21:34,638 | INFO | ✅ Rapport exporté : outputs/script_4/anomalies_producteurs.csv
+2025-11-08 12:21:34,639 | INFO | 🔢 Total anomalies Producteurs : 0
+
+2025-11-08 12:21:34,639 | INFO | Analyse du fichier Plantations → data_clean/coop_plantations_clean.csv
+2025-11-08 12:21:34,643 | INFO | ✅ Aucun doublon détecté dans Plantations.
+2025-11-08 12:21:34,644 | INFO | ✅ Rapport exporté : outputs/script_4/anomalies_plantations.csv
+2025-11-08 12:21:34,644 | INFO | 🔢 Total anomalies Plantations : 0
+
+2025-11-08 12:21:34,644 | INFO | ✔️ Détection des anomalies et doublons terminée.
+2025-11-08 12:21:34,644 | INFO | 🕒 Fin d’exécution : 2025-11-08 12:21:34

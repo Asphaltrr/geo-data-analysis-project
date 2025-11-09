@@ -1,0 +1,20 @@
+# Requirements pour le projet GeoDataAnalyst
+# Les versions sont des minima raisonnables (à ajuster si besoin).
+# Installer avec: python -m pip install -r requirements.txt
+
+pandas>=1.5
+numpy>=1.23
+geopandas>=0.13
+shapely>=2.0
+fiona>=1.9
+pyproj>=3.5
+# rtree accélère l'indexation spatiale (optionnel mais recommandé)
+rtree>=1.0
+# Pour la lecture d'Excel via pandas
+openpyxl>=3.0
+
+# Notes:
+# - GeoPandas dépend de packages natifs (GDAL/Fiona/PROJ). Sur macOS, installez
+#   les dépendances système via brew: `brew install gdal proj sqlite3` si nécessaire.
+# - Si vous utilisez un environnement conda, préférez `conda install geopandas` pour
+#   simplifier la résolution des dépendances binaires.

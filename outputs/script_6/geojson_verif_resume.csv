@@ -1,0 +1,9 @@
+controle,valeur
+nb_entites,3046
+crs,EPSG:4326
+geom_types,{'MultiPolygon': 3046}
+nb_invalid,0
+nb_empty,10
+nb_centroid_hors_bornes,10
+nb_doublons_attribut_Farms_ID,356
+nb_doublons_geom_exacts,24

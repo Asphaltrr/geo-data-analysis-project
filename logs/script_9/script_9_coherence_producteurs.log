@@ -1,0 +1,8 @@
+2025-11-08 12:22:02,219 | INFO | Lecture des fichiers sources...
+2025-11-08 12:22:02,642 | INFO | → Plantations CSV : 3540
+2025-11-08 12:22:02,642 | INFO | → Parcelles GeoJSON : 2852
+2025-11-08 12:22:02,642 | INFO | → Lignes jointes : 2378
+2025-11-08 12:22:02,642 | INFO | → Anomalies de surface : 885
+2025-11-08 12:22:02,884 | INFO | ✅ Export producteur → outputs/script_9/synthese_coherence_producteurs.csv
+2025-11-08 12:22:02,887 | INFO | ✅ Export coopérative → outputs/script_9/synthese_coherence_coop.csv
+2025-11-08 12:22:02,887 | INFO | ✔️ Analyse de cohérence au niveau producteur terminée.

@@ -1,6 +1,4 @@
-numero_ordre,cooperative,codes_certification,code_producteur,autres_codes,annee_naissance,"Date d'adhésion 4
-(mois-année)",genre,superficie_totale_exploitation_ha,superficie_totale_cacao_ha,nb_plantations_cacao,estimation_totale_kg,ville,nom_coach,numero_matricule,type_matricule,"Taille du Menage 
-(Nombre de personnes dans le menage du producteur) *",recolte_24_25_kg,volume_livre_coop_24_25_kg,recolte_23_24_kg,volume_livre_coop_23_24_kg
+numero_ordre,cooperative,codes_certification,code_producteur,autres_codes,annee_naissance,date_adhesion,genre,superficie_totale_exploitation_ha,superficie_totale_cacao_ha,nb_plantations_cacao,estimation_totale_kg,ville,nom_coach,numero_matricule,type_matricule,taille_menage,recolte_24_25_kg,volume_livre_coop_24_25_kg,recolte_23_24_kg,volume_livre_coop_23_24_kg
 1,A,084-A2195,FT/084-A2195,Non Disponible,1969,Non Disponible,M,3.4,1.9,1.0,1282,DJEKANOU,Non Disponible,Non Disponible,Non Disponible,Non Disponible,977,652,Non Disponible,Non Disponible
 2,A,084-A2198,FT/084-A2198,Non Disponible,1957,Non Disponible,M,3.8,2.3,1.0,1552,DJEKANOU,Non Disponible,Non Disponible,Non Disponible,Non Disponible,1119,794,Non Disponible,Non Disponible
 3,A,084-A2202,FT/084-A2202,Non Disponible,1985,Non Disponible,M,3.9,2.4,1.0,1620,DJEKANOU,Non Disponible,Non Disponible,Non Disponible,Non Disponible,1152,827,Non Disponible,Non Disponible

@@ -1,6 +1,7 @@
 import os
 import os
 import pandas as pd
+import re
 from datetime import datetime
 
 """
@@ -44,6 +45,24 @@ with open(log_file, "w", encoding="utf-8") as log:
     for sheet_name, df in sheets.items():
         csv_name = map_sheet_name(sheet_name)
         out_path = os.path.join("data_raw", csv_name)
+
+        # --- Automatic header sanitization ---
+        # Replace any CR/LF in column names with a single space, collapse
+        # multiple whitespace and strip edges to ensure the CSV header is
+        # written on a single physical line (no embedded newlines).
+        try:
+            orig_cols = list(df.columns)
+            new_cols = [re.sub(r"[\r\n]+", " ", str(c)) for c in orig_cols]
+            new_cols = [re.sub(r"\s+", " ", c).strip() for c in new_cols]
+            # Apply if any change
+            if orig_cols != new_cols:
+                log.write(f" - Colonnes sanitisees pour la feuille '{sheet_name}':\n")
+                for o, n in zip(orig_cols, new_cols):
+                    if o != n:
+                        log.write(f"    '{o}' -> '{n}'\n")
+            df.columns = new_cols
+        except Exception as e:
+            log.write(f" - WARNING: Impossible de sanitizer les colonnes: {e}\n")
 
         df.to_csv(out_path, index=False, encoding="utf-8")
 

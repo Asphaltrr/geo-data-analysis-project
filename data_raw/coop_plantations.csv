@@ -1,5 +1,4 @@
-N°Ordre,Cooperative/Groupe *,Code plantation *,Code Producteur *,Autres Codes Disponibles,Superficie Cacao (Ha) *,Rendement (kg/Ha) *,Estimation (Kg) *,Varieté Cacao,Gérant (Oui/Non/Inconnu),"Noms et Prénoms du Gérant 
-(Si , gerant existe )",Latitude *,Longitude *,"Données Polygonales (Si possible, sinon a partager)"
+N°Ordre,Cooperative/Groupe *,Code plantation *,Code Producteur *,Autres Codes Disponibles,Superficie Cacao (Ha) *,Rendement (kg/Ha) *,Estimation (Kg) *,Varieté Cacao,Gérant (Oui/Non/Inconnu),"Noms et Prénoms du Gérant (Si , gerant existe )",Latitude *,Longitude *,"Données Polygonales (Si possible, sinon a partager)"
 1,A,FT/084-A2195-P001,FT/084-A2195,Non Disponible,1.9,674.7368421052632,1282,Tout Venant,Non,Non Disponible,6.4063181,-5.1512082,
 2,A,FT/084-A2198-P001,FT/084-A2198,Non Disponible,2.3,674.7826086956522,1552,Tout Venant,Non,Non Disponible,6.4135644,-5.158274,
 3,A,FT/084-A2200-P001,FT/084-A2200,Non Disponible,3.4,675.0,2295,Tout Venant,Non,Non Disponible,6.4251993,-5.1523496,
