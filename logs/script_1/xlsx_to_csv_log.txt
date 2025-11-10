@@ -1,5 +1,5 @@
 === LOG DE CONVERSION EXCEL → CSV ===
-Date : 2025-11-10 01:03:35
+Date : 2025-11-10 02:25:00
 Fichier source : data_raw/cooperatives_data.xlsx
 
  - Colonnes sanitisees pour la feuille '(1) Registre Producteurs':

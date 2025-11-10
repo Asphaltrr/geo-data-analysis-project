@@ -1,21 +1,22 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-GeoDataAnalyst FastAPI server exposing display JSON assets and source data.
+GeoDataAnalyst FastAPI server exposing display JSON assets and orchestrating uploads/pipelines.
 """
 
 import json
 import os
+import subprocess
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List
 
 import pandas as pd
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, StreamingResponse
 
-app = FastAPI(title="GeoDataAnalyst API", version="1.0.0")
+app = FastAPI(title="GeoDataAnalyst API", version="2.0.0")
 
 app.add_middleware(
     CORSMiddleware,
@@ -31,6 +32,8 @@ BASE_PATHS: Dict[str, str] = {
     "outputs": "outputs",
     "raw": "data_raw",
 }
+
+PIPELINE_SCRIPT = Path("main_pipeline.py")
 
 DISPLAY_ASSETS: Dict[str, Dict[str, str]] = {
     "global_stats": {"folder": "display", "path": "global_stats.json"},
@@ -185,3 +188,60 @@ def get_data(folder: str, filename: str):
             return json.load(file_obj)
 
     raise HTTPException(status_code=415, detail="Format non supporte")
+
+
+@app.post("/upload")
+async def upload_files(
+    cooperatives_data: UploadFile = File(...),
+    parcelles_geojson: UploadFile = File(...),
+):
+    """Upload des fichiers bruts (Excel + GeoJSON) dans data_raw/."""
+    data_raw_dir = Path(BASE_PATHS["raw"])
+    data_raw_dir.mkdir(parents=True, exist_ok=True)
+    coop_path = data_raw_dir / "cooperatives_data.xlsx"
+    parc_path = data_raw_dir / "parcelles.geojson"
+
+    try:
+        with open(coop_path, "wb") as file_obj:
+            file_obj.write(await cooperatives_data.read())
+        with open(parc_path, "wb") as file_obj:
+            file_obj.write(await parcelles_geojson.read())
+    except Exception as exc:  # pragma: no cover
+        raise HTTPException(status_code=500, detail=f"Erreur upload: {exc}") from exc
+
+    return JSONResponse(
+        {
+            "status": "success",
+            "timestamp": datetime.now().isoformat(),
+            "message": "Fichiers importes avec succes",
+            "files": [str(coop_path), str(parc_path)],
+        }
+    )
+
+
+def _pipeline_stream():
+    if not PIPELINE_SCRIPT.exists():
+        yield "event: error\ndata: main_pipeline.py introuvable\n\n"
+        return
+
+    process = subprocess.Popen(
+        ["python", str(PIPELINE_SCRIPT)],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True,
+        bufsize=1,
+    )
+
+    assert process.stdout is not None
+    for line in process.stdout:
+        yield f"data: {line.rstrip()}\n\n"
+
+    process.wait()
+    status = "success" if process.returncode == 0 else f"exit={process.returncode}"
+    yield f"event: done\ndata: {status}\n\n"
+
+
+@app.post("/run-pipeline")
+def run_pipeline():
+    """Lance le pipeline complet et renvoie un flux de logs (Server-Sent Events)."""
+    return StreamingResponse(_pipeline_stream(), media_type="text/event-stream")

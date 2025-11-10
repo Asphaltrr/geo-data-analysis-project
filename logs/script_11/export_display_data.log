@@ -50,3 +50,11 @@
 2025-11-10 01:04:07,857 | INFO | Export JSON -> display-data/chevauchements_parcelles.json (37 lignes)
 2025-11-10 01:04:07,858 | INFO | Resume exporte -> display-data/resume_anomalies.json
 2025-11-10 01:04:07,858 | INFO | Export des donnees analytiques termine avec succes.
+2025-11-10 02:25:18,904 | WARNING | Fichier manquant: outputs/script_3/doublons_producteurs.csv
+2025-11-10 02:25:18,905 | WARNING | Fichier manquant: outputs/script_7/doublons_parcelles.csv
+2025-11-10 02:25:18,939 | INFO | Export JSON -> display-data/anomalies_surface.json (885 lignes)
+2025-11-10 02:25:18,939 | INFO | Export JSON -> display-data/doublons_producteurs.json (0 lignes)
+2025-11-10 02:25:18,939 | INFO | Export JSON -> display-data/doublons_parcelles.json (0 lignes)
+2025-11-10 02:25:18,940 | INFO | Export JSON -> display-data/chevauchements_parcelles.json (37 lignes)
+2025-11-10 02:25:18,940 | INFO | Resume exporte -> display-data/resume_anomalies.json
+2025-11-10 02:25:18,940 | INFO | Export des donnees analytiques termine avec succes.

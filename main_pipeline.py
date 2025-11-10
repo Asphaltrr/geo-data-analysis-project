@@ -16,13 +16,21 @@ from scripts.utils_export_display import export_global_stats, export_metadata
 
 
 def run_script(path: str) -> None:
-    """Execute a Python script and stream its stdout/stderr."""
+    """Execute a Python script and stream its stdout/stderr line by line."""
     print(f"[PIPELINE] Execution de {path} ...")
-    result = subprocess.run(["python", path], capture_output=True, text=True)
-    if result.stdout:
-        print(result.stdout)
-    if result.returncode != 0:
-        print(f"[ERREUR] {path} a echoue:\n{result.stderr}")
+    process = subprocess.Popen(
+        ["python", path],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True,
+        bufsize=1,
+    )
+    assert process.stdout is not None
+    for line in process.stdout:
+        print(line.rstrip())
+    process.wait()
+    if process.returncode != 0:
+        print(f"[ERREUR] {path} a echoue (code={process.returncode})")
 
 
 def main():
