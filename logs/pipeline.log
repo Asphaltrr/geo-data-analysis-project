@@ -1,0 +1,530 @@
+2025-11-10 02:32:49,349 | INFO | === DEMARRAGE PIPELINE 2025-11-10T02:32:49.349326 ===
+2025-11-10 02:32:49,349 | INFO | [PROGRESS] Step 1/14: scripts/script_1_xlsx_to_csv.py
+2025-11-10 02:32:49,349 | INFO | [PIPELINE] Execution de scripts/script_1_xlsx_to_csv.py ...
+2025-11-10 02:32:50,266 | INFO | scripts/script_1_xlsx_to_csv.py: ✅ OK - Feuille '(1) Registre Producteurs' convertie en 'coop_producteurs.csv'
+2025-11-10 02:32:50,267 | INFO | scripts/script_1_xlsx_to_csv.py: ✅ OK - Feuille '(2) Registre Plantations' convertie en 'coop_plantations.csv'
+2025-11-10 02:32:50,304 | INFO | [OK] scripts/script_1_xlsx_to_csv.py termine
+2025-11-10 02:32:50,304 | INFO | [PROGRESS] Step 2/14: scripts/script_2_normalize_columns.py
+2025-11-10 02:32:50,304 | INFO | [PIPELINE] Execution de scripts/script_2_normalize_columns.py ...
+2025-11-10 02:32:50,558 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,557 | INFO | Lecture du fichier : data_raw/coop_producteurs.csv
+2025-11-10 02:32:50,566 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,566 | INFO | Colonnes originales : ['Ordre', 'Cooperative *', 'Codes de certification', 'Code Producteur *', 'Autres Codes Disponibles', 'Année de Naissance *', "Date d'adhésion 4 (mois-année)", 'Genre (F ou H) *', "Superficie Totale de L'Exploitation (HA) *", 'Superficie Cacao Totale (Ha) *', 'Nombre de Plantations Cacao *', 'Estimation totale (Kg) *', 'Ville', 'Nom du Coach', 'Numéro de Matricule', 'Type de Matricule (National, CCC…)', 'Taille du Menage (Nombre de personnes dans le menage du producteur) *', 'Recolte Totale 24-25 (en KG) *', 'Volume livré à la Co-op 24-25 (en KG) *', 'Recolte Total 23-24 (en KG) *', 'Volume livré à la Co-op 23-24 (en KG) *']
+2025-11-10 02:32:50,566 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,566 | INFO | → 'Ordre' renommé en 'numero_ordre'
+2025-11-10 02:32:50,566 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,566 | INFO | → 'Cooperative *' renommé en 'cooperative'
+2025-11-10 02:32:50,566 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,566 | INFO | → 'Codes de certification' renommé en 'codes_certification'
+2025-11-10 02:32:50,566 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,566 | INFO | → 'Code Producteur *' renommé en 'code_producteur'
+2025-11-10 02:32:50,566 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,566 | INFO | → 'Autres Codes Disponibles' renommé en 'autres_codes'
+2025-11-10 02:32:50,566 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,566 | INFO | → 'Année de Naissance *' renommé en 'annee_naissance'
+2025-11-10 02:32:50,566 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,566 | INFO | → 'Date d'adhésion 4 (mois-année)' renommé en 'date_adhesion'
+2025-11-10 02:32:50,566 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,566 | INFO | → 'Genre (F ou H) *' renommé en 'genre'
+2025-11-10 02:32:50,566 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,566 | INFO | → 'Superficie Totale de L'Exploitation (HA) *' renommé en 'superficie_totale_exploitation_ha'
+2025-11-10 02:32:50,566 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,566 | INFO | → 'Superficie Cacao Totale (Ha) *' renommé en 'superficie_totale_cacao_ha'
+2025-11-10 02:32:50,566 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,566 | INFO | → 'Nombre de Plantations Cacao *' renommé en 'nb_plantations_cacao'
+2025-11-10 02:32:50,566 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,566 | INFO | → 'Estimation totale (Kg) *' renommé en 'estimation_totale_kg'
+2025-11-10 02:32:50,566 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,566 | INFO | → 'Ville' renommé en 'ville'
+2025-11-10 02:32:50,566 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,566 | INFO | → 'Nom du Coach' renommé en 'nom_coach'
+2025-11-10 02:32:50,566 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,566 | INFO | → 'Numéro de Matricule' renommé en 'numero_matricule'
+2025-11-10 02:32:50,566 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,566 | INFO | → 'Type de Matricule (National, CCC…)' renommé en 'type_matricule'
+2025-11-10 02:32:50,566 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,566 | INFO | → 'Taille du Menage (Nombre de personnes dans le menage du producteur) *' renommé en 'taille_menage'
+2025-11-10 02:32:50,566 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,566 | INFO | → 'Recolte Totale 24-25 (en KG) *' renommé en 'recolte_24_25_kg'
+2025-11-10 02:32:50,566 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,566 | INFO | → 'Volume livré à la Co-op 24-25 (en KG) *' renommé en 'volume_livre_coop_24_25_kg'
+2025-11-10 02:32:50,566 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,566 | INFO | → 'Recolte Total 23-24 (en KG) *' renommé en 'recolte_23_24_kg'
+2025-11-10 02:32:50,566 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,566 | INFO | → 'Volume livré à la Co-op 23-24 (en KG) *' renommé en 'volume_livre_coop_23_24_kg'
+2025-11-10 02:32:50,580 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,580 | INFO | ✅ Fichier sauvegardé → data_clean/coop_producteurs_cols_normalized.csv
+2025-11-10 02:32:50,580 | INFO | scripts/script_2_normalize_columns.py: 
+2025-11-10 02:32:50,580 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,580 | INFO | Lecture du fichier : data_raw/coop_plantations.csv
+2025-11-10 02:32:50,587 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,587 | INFO | Colonnes originales : ['N°Ordre', 'Cooperative/Groupe *', 'Code plantation *', 'Code Producteur *', 'Autres Codes Disponibles', 'Superficie Cacao (Ha) *', 'Rendement (kg/Ha) *', 'Estimation (Kg) *', 'Varieté Cacao', 'Gérant (Oui/Non/Inconnu)', 'Noms et Prénoms du Gérant (Si , gerant existe )', 'Latitude *', 'Longitude *', 'Données Polygonales (Si possible, sinon a partager)']
+2025-11-10 02:32:50,587 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,587 | INFO | → 'N°Ordre' renommé en 'numero_ordre'
+2025-11-10 02:32:50,587 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,587 | INFO | → 'Cooperative/Groupe *' renommé en 'cooperative'
+2025-11-10 02:32:50,587 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,587 | INFO | → 'Code plantation *' renommé en 'code_plantation'
+2025-11-10 02:32:50,587 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,587 | INFO | → 'Code Producteur *' renommé en 'code_producteur'
+2025-11-10 02:32:50,587 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,587 | INFO | → 'Autres Codes Disponibles' renommé en 'autres_codes'
+2025-11-10 02:32:50,587 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,587 | INFO | → 'Superficie Cacao (Ha) *' renommé en 'superficie_cacao_ha'
+2025-11-10 02:32:50,587 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,587 | INFO | → 'Rendement (kg/Ha) *' renommé en 'rendement_kg_ha'
+2025-11-10 02:32:50,587 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,587 | INFO | → 'Estimation (Kg) *' renommé en 'estimation_kg'
+2025-11-10 02:32:50,588 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,587 | INFO | → 'Varieté Cacao' renommé en 'variete_cacao'
+2025-11-10 02:32:50,588 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,587 | INFO | → 'Gérant (Oui/Non/Inconnu)' renommé en 'gerant'
+2025-11-10 02:32:50,588 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,587 | INFO | → 'Noms et Prénoms du Gérant (Si , gerant existe )' renommé en 'nom_gerant'
+2025-11-10 02:32:50,588 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,587 | INFO | → 'Latitude *' renommé en 'latitude'
+2025-11-10 02:32:50,588 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,587 | INFO | → 'Longitude *' renommé en 'longitude'
+2025-11-10 02:32:50,588 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,587 | INFO | → 'Données Polygonales (Si possible, sinon a partager)' renommé en 'donnees_polygonales'
+2025-11-10 02:32:50,597 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,596 | INFO | ✅ Fichier sauvegardé → data_clean/coop_plantations_cols_normalized.csv
+2025-11-10 02:32:50,597 | INFO | scripts/script_2_normalize_columns.py: 
+2025-11-10 02:32:50,597 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:32:50,597 | INFO | ✔️ Normalisation terminée avec succès.
+2025-11-10 02:32:50,640 | INFO | [OK] scripts/script_2_normalize_columns.py termine
+2025-11-10 02:32:50,641 | INFO | [PROGRESS] Step 3/14: scripts/script_3_clean_&_types.py
+2025-11-10 02:32:50,641 | INFO | [PIPELINE] Execution de scripts/script_3_clean_&_types.py ...
+2025-11-10 02:32:50,890 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:50,889 | INFO | Lecture : data_clean/coop_producteurs_cols_normalized.csv
+2025-11-10 02:32:50,899 | INFO | scripts/script_3_clean_&_types.py: /Users/MAC/Documents/PROJECTS/KOUAME_CHRISTIAN_GeoDataAnalyst/scripts/script_3_clean_&_types.py:145: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+2025-11-10 02:32:50,899 | INFO | scripts/script_3_clean_&_types.py:   df = df.applymap(std_na)
+2025-11-10 02:32:50,962 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:50,962 | INFO | → Normalisation des valeurs manquantes : OK
+2025-11-10 02:32:50,963 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:50,963 | INFO | → Trim texte : cooperative
+2025-11-10 02:32:50,963 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:50,963 | INFO | → Trim texte : code_producteur
+2025-11-10 02:32:50,964 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:50,964 | INFO | → Trim texte : ville
+2025-11-10 02:32:50,966 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:50,965 | INFO | → Trim texte : nom_coach
+2025-11-10 02:32:50,967 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:50,967 | INFO | → Trim texte : type_matricule
+2025-11-10 02:32:50,967 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:50,967 | INFO | → Trim texte : genre
+2025-11-10 02:32:50,971 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:50,971 | INFO | → Colonne réelle (float64) : superficie_totale_exploitation_ha
+2025-11-10 02:32:50,974 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:50,974 | INFO | → Colonne réelle (float64) : superficie_totale_cacao_ha
+2025-11-10 02:32:50,978 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:50,978 | INFO | → Colonne entière (Int64) : numero_ordre
+2025-11-10 02:32:50,983 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:50,982 | INFO | → Colonne entière (Int64) : annee_naissance
+2025-11-10 02:32:50,986 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:50,986 | INFO | → Colonne entière (Int64) : nb_plantations_cacao
+2025-11-10 02:32:50,988 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:50,988 | INFO | → Colonne entière (Int64) : taille_menage
+2025-11-10 02:32:50,992 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:50,992 | INFO | → Colonne entière (Int64) : estimation_totale_kg
+2025-11-10 02:32:50,997 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:50,997 | INFO | → Colonne entière (Int64) : recolte_24_25_kg
+2025-11-10 02:32:51,001 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,001 | INFO | → Colonne entière (Int64) : volume_livre_coop_24_25_kg
+2025-11-10 02:32:51,002 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,002 | INFO | → Colonne entière (Int64) : recolte_23_24_kg
+2025-11-10 02:32:51,004 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,004 | INFO | → Colonne entière (Int64) : volume_livre_coop_23_24_kg
+2025-11-10 02:32:51,004 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,004 | INFO | Type final - numero_ordre: Int64
+2025-11-10 02:32:51,004 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,004 | INFO | Type final - cooperative: object
+2025-11-10 02:32:51,004 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,004 | INFO | Type final - codes_certification: object
+2025-11-10 02:32:51,004 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,004 | INFO | Type final - code_producteur: object
+2025-11-10 02:32:51,004 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,004 | INFO | Type final - autres_codes: float64
+2025-11-10 02:32:51,004 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,004 | INFO | Type final - annee_naissance: Int64
+2025-11-10 02:32:51,004 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,004 | INFO | Type final - date_adhesion: float64
+2025-11-10 02:32:51,005 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,004 | INFO | Type final - genre: object
+2025-11-10 02:32:51,005 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,004 | INFO | Type final - superficie_totale_exploitation_ha: float64
+2025-11-10 02:32:51,005 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,005 | INFO | Type final - superficie_totale_cacao_ha: float64
+2025-11-10 02:32:51,005 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,005 | INFO | Type final - nb_plantations_cacao: Int64
+2025-11-10 02:32:51,005 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,005 | INFO | Type final - estimation_totale_kg: Int64
+2025-11-10 02:32:51,005 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,005 | INFO | Type final - ville: object
+2025-11-10 02:32:51,005 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,005 | INFO | Type final - nom_coach: object
+2025-11-10 02:32:51,005 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,005 | INFO | Type final - numero_matricule: float64
+2025-11-10 02:32:51,005 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,005 | INFO | Type final - type_matricule: object
+2025-11-10 02:32:51,005 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,005 | INFO | Type final - taille_menage: Int64
+2025-11-10 02:32:51,005 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,005 | INFO | Type final - recolte_24_25_kg: Int64
+2025-11-10 02:32:51,005 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,005 | INFO | Type final - volume_livre_coop_24_25_kg: Int64
+2025-11-10 02:32:51,005 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,005 | INFO | Type final - recolte_23_24_kg: Int64
+2025-11-10 02:32:51,005 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,005 | INFO | Type final - volume_livre_coop_23_24_kg: Int64
+2025-11-10 02:32:51,008 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,007 | INFO | 🧪 Diagnostic NA → outputs/script_3/na_coop_producteurs_clean.csv
+2025-11-10 02:32:51,009 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,009 | INFO | 🔄 Normalisation des valeurs manquantes : 21505 cellules NaN remplacées par vide
+2025-11-10 02:32:51,028 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,027 | INFO | Lecture : data_clean/coop_plantations_cols_normalized.csv
+2025-11-10 02:32:51,034 | INFO | scripts/script_3_clean_&_types.py: /Users/MAC/Documents/PROJECTS/KOUAME_CHRISTIAN_GeoDataAnalyst/scripts/script_3_clean_&_types.py:145: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+2025-11-10 02:32:51,035 | INFO | scripts/script_3_clean_&_types.py:   df = df.applymap(std_na)
+2025-11-10 02:32:51,074 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,074 | INFO | → Normalisation des valeurs manquantes : OK
+2025-11-10 02:32:51,075 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,075 | INFO | → Trim texte : cooperative
+2025-11-10 02:32:51,076 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,076 | INFO | → Trim texte : code_plantation
+2025-11-10 02:32:51,076 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,076 | INFO | → Trim texte : code_producteur
+2025-11-10 02:32:51,077 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,077 | INFO | → Trim texte : variete_cacao
+2025-11-10 02:32:51,077 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,077 | INFO | → Trim texte : gerant
+2025-11-10 02:32:51,079 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,079 | INFO | → Trim texte : donnees_polygonales
+2025-11-10 02:32:51,082 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,082 | INFO | → Colonne réelle (float64) : superficie_cacao_ha
+2025-11-10 02:32:51,086 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,086 | INFO | → Colonne réelle (float64) : rendement_kg_ha
+2025-11-10 02:32:51,090 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,090 | INFO | → Colonne réelle (float64) : latitude
+2025-11-10 02:32:51,094 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,094 | INFO | → Colonne réelle (float64) : longitude
+2025-11-10 02:32:51,099 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,099 | INFO | → Colonne entière (Int64) : numero_ordre
+2025-11-10 02:32:51,103 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,103 | INFO | → Colonne entière (Int64) : estimation_kg
+2025-11-10 02:32:51,103 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,103 | INFO | Type final - numero_ordre: Int64
+2025-11-10 02:32:51,103 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,103 | INFO | Type final - cooperative: object
+2025-11-10 02:32:51,103 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,103 | INFO | Type final - code_plantation: object
+2025-11-10 02:32:51,103 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,103 | INFO | Type final - code_producteur: object
+2025-11-10 02:32:51,104 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,103 | INFO | Type final - autres_codes: float64
+2025-11-10 02:32:51,104 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,103 | INFO | Type final - superficie_cacao_ha: float64
+2025-11-10 02:32:51,104 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,103 | INFO | Type final - rendement_kg_ha: float64
+2025-11-10 02:32:51,104 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,103 | INFO | Type final - estimation_kg: Int64
+2025-11-10 02:32:51,104 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,104 | INFO | Type final - variete_cacao: object
+2025-11-10 02:32:51,104 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,104 | INFO | Type final - gerant: object
+2025-11-10 02:32:51,104 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,104 | INFO | Type final - nom_gerant: float64
+2025-11-10 02:32:51,104 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,104 | INFO | Type final - latitude: float64
+2025-11-10 02:32:51,104 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,104 | INFO | Type final - longitude: float64
+2025-11-10 02:32:51,104 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,104 | INFO | Type final - donnees_polygonales: object
+2025-11-10 02:32:51,105 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,105 | INFO | 🧪 Diagnostic NA → outputs/script_3/na_coop_plantations_clean.csv
+2025-11-10 02:32:51,106 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,106 | INFO | 🔄 Normalisation des valeurs manquantes : 7080 cellules NaN remplacées par vide
+2025-11-10 02:32:51,124 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:32:51,124 | INFO | ✔️ Nettoyage et typage terminés sans suffixe .0 pour les entiers.
+2025-11-10 02:32:51,155 | INFO | [OK] scripts/script_3_clean_&_types.py termine
+2025-11-10 02:32:51,155 | INFO | [PROGRESS] Step 4/14: scripts/script_4_detect_anomalies.py
+2025-11-10 02:32:51,155 | INFO | [PIPELINE] Execution de scripts/script_4_detect_anomalies.py ...
+2025-11-10 02:32:51,414 | INFO | scripts/script_4_detect_anomalies.py: 2025-11-10 02:32:51,413 | INFO | === DÉBUT DU SCRIPT 4 — Détection des anomalies internes ===
+2025-11-10 02:32:51,414 | INFO | scripts/script_4_detect_anomalies.py: 
+2025-11-10 02:32:51,414 | INFO | scripts/script_4_detect_anomalies.py: 2025-11-10 02:32:51,413 | INFO | Analyse du fichier Producteurs → data_clean/coop_producteurs_clean.csv
+2025-11-10 02:32:51,419 | INFO | scripts/script_4_detect_anomalies.py: 2025-11-10 02:32:51,419 | INFO | ✅ Aucun doublon détecté dans Producteurs.
+2025-11-10 02:32:51,421 | INFO | scripts/script_4_detect_anomalies.py: 2025-11-10 02:32:51,421 | INFO | ✅ Rapport exporté : outputs/script_4/anomalies_producteurs.csv
+2025-11-10 02:32:51,421 | INFO | scripts/script_4_detect_anomalies.py: 2025-11-10 02:32:51,421 | INFO | 🔢 Total anomalies Producteurs : 0
+2025-11-10 02:32:51,421 | INFO | scripts/script_4_detect_anomalies.py: 
+2025-11-10 02:32:51,421 | INFO | scripts/script_4_detect_anomalies.py: 2025-11-10 02:32:51,421 | INFO | Analyse du fichier Plantations → data_clean/coop_plantations_clean.csv
+2025-11-10 02:32:51,427 | INFO | scripts/script_4_detect_anomalies.py: 2025-11-10 02:32:51,426 | INFO | ✅ Aucun doublon détecté dans Plantations.
+2025-11-10 02:32:51,429 | INFO | scripts/script_4_detect_anomalies.py: 2025-11-10 02:32:51,429 | INFO | ✅ Rapport exporté : outputs/script_4/anomalies_plantations.csv
+2025-11-10 02:32:51,429 | INFO | scripts/script_4_detect_anomalies.py: 2025-11-10 02:32:51,429 | INFO | 🔢 Total anomalies Plantations : 0
+2025-11-10 02:32:51,429 | INFO | scripts/script_4_detect_anomalies.py: 
+2025-11-10 02:32:51,429 | INFO | scripts/script_4_detect_anomalies.py: 2025-11-10 02:32:51,429 | INFO | ✔️ Détection des anomalies et doublons terminée.
+2025-11-10 02:32:51,429 | INFO | scripts/script_4_detect_anomalies.py: 2025-11-10 02:32:51,429 | INFO | 🕒 Fin d’exécution : 2025-11-10 02:32:51
+2025-11-10 02:32:51,465 | INFO | [OK] scripts/script_4_detect_anomalies.py termine
+2025-11-10 02:32:51,465 | INFO | [PROGRESS] Step 5/14: scripts/script_5_controle_coherence_tabulaire.py
+2025-11-10 02:32:51,465 | INFO | [PIPELINE] Execution de scripts/script_5_controle_coherence_tabulaire.py ...
+2025-11-10 02:32:51,740 | INFO | scripts/script_5_controle_coherence_tabulaire.py: 2025-11-10 02:32:51,740 | INFO | 📄 Producteurs : 3518 lignes, 21 colonnes
+2025-11-10 02:32:51,741 | INFO | scripts/script_5_controle_coherence_tabulaire.py: 2025-11-10 02:32:51,740 | INFO | 📄 Plantations : 3540 lignes, 14 colonnes
+2025-11-10 02:32:51,742 | INFO | scripts/script_5_controle_coherence_tabulaire.py: 2025-11-10 02:32:51,742 | INFO | ⚠️ 22 plantations sans producteur associé
+2025-11-10 02:32:51,742 | INFO | scripts/script_5_controle_coherence_tabulaire.py: 2025-11-10 02:32:51,742 | INFO | ⚠️ 0 producteurs sans plantation associée
+2025-11-10 02:32:51,747 | INFO | scripts/script_5_controle_coherence_tabulaire.py: 2025-11-10 02:32:51,747 | INFO | ⚠️ 0 anomalies d’écart de surface > 10 %
+2025-11-10 02:32:51,748 | INFO | scripts/script_5_controle_coherence_tabulaire.py: 2025-11-10 02:32:51,748 | INFO | ⚠️ 933 anomalies d’écart d’estimation > 10 %
+2025-11-10 02:32:51,749 | INFO | scripts/script_5_controle_coherence_tabulaire.py: 2025-11-10 02:32:51,749 | INFO | ⚠️ 0 incohérences de coopérative
+2025-11-10 02:32:51,754 | INFO | scripts/script_5_controle_coherence_tabulaire.py: 2025-11-10 02:32:51,754 | INFO | 🧾 Rapport exporté → outputs/script_5/anomalies_coherence_tabulaire.csv
+2025-11-10 02:32:51,754 | INFO | scripts/script_5_controle_coherence_tabulaire.py: 2025-11-10 02:32:51,754 | INFO | 🔢 Total anomalies détectées : 955
+2025-11-10 02:32:51,754 | INFO | scripts/script_5_controle_coherence_tabulaire.py: 2025-11-10 02:32:51,754 | INFO | ✔️ Contrôle de cohérence tabulaire terminé.
+2025-11-10 02:32:51,791 | INFO | [OK] scripts/script_5_controle_coherence_tabulaire.py termine
+2025-11-10 02:32:51,791 | INFO | [PROGRESS] Step 6/14: scripts/script_6_verif_geojson.py
+2025-11-10 02:32:51,791 | INFO | [PIPELINE] Execution de scripts/script_6_verif_geojson.py ...
+2025-11-10 02:32:52,176 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:32:52,176 | INFO | Lecture du GeoJSON : data_raw/parcelles.geojson
+2025-11-10 02:32:52,704 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:32:52,704 | INFO | Nombre d'entités : 3046
+2025-11-10 02:32:52,704 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:32:52,704 | INFO | Colonnes : ['Farms_ID', 'description', 'timestamp', 'begin', 'end', 'altitudeMode', 'tessellate', 'extrude', 'visibility', 'drawOrder', 'icon', 'Farmer_ID', 'Superficie', 'Latitude', 'Longitude', 'geometry']
+2025-11-10 02:32:52,704 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:32:52,704 | INFO | ✅ Colonnes requises présentes.
+2025-11-10 02:32:52,704 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:32:52,704 | INFO | ✅ CRS détecté : EPSG:4326
+2025-11-10 02:32:52,705 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:32:52,705 | INFO | ✅ Types géométriques conformes (Polygon/MultiPolygon).
+2025-11-10 02:32:52,732 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:32:52,732 | INFO | ✅ Aucune géométrie invalide.
+2025-11-10 02:32:52,733 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:32:52,732 | WARNING | ⚠️ Géométries vides : 10
+2025-11-10 02:32:52,756 | INFO | scripts/script_6_verif_geojson.py: /Users/MAC/Documents/PROJECTS/KOUAME_CHRISTIAN_GeoDataAnalyst/scripts/script_6_verif_geojson.py:136: UserWarning: Geometry is in a geographic CRS. Results from 'centroid' are likely incorrect. Use 'GeoSeries.to_crs()' to re-project geometries to a projected CRS before this operation.
+2025-11-10 02:32:52,756 | INFO | scripts/script_6_verif_geojson.py: 
+2025-11-10 02:32:52,756 | INFO | scripts/script_6_verif_geojson.py:   cent = gdf_ll.geometry.centroid
+2025-11-10 02:32:52,761 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:32:52,761 | WARNING | ⚠️ Entités hors emprise attendue (centroïde) : 10
+2025-11-10 02:32:52,761 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:32:52,761 | WARNING | ⚠️ Doublons d'attribut Farms_ID : 356
+2025-11-10 02:32:52,936 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:32:52,936 | WARNING | ⚠️ Doublons géométriques exacts : 24
+2025-11-10 02:32:52,969 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:32:52,968 | INFO | 🧾 Anomalies exportées → outputs/script_6/geojson_verif_anomalies.csv (lignes : 196)
+2025-11-10 02:32:52,969 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:32:52,969 | INFO | 📊 Résumé exporté → outputs/script_6/geojson_verif_resume.csv
+2025-11-10 02:32:52,969 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:32:52,969 | INFO | ✔️ Vérification GeoJSON terminée (aucune correction appliquée).
+2025-11-10 02:32:53,026 | INFO | [OK] scripts/script_6_verif_geojson.py termine
+2025-11-10 02:32:53,026 | INFO | [PROGRESS] Step 7/14: scripts/script_7_clean_geojson.py
+2025-11-10 02:32:53,026 | INFO | [PIPELINE] Execution de scripts/script_7_clean_geojson.py ...
+2025-11-10 02:32:53,364 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:32:53,364 | INFO | Lecture du GeoJSON brut : data_raw/parcelles.geojson
+2025-11-10 02:32:53,811 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:32:53,811 | INFO | 3046 entités chargées.
+2025-11-10 02:32:53,812 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:32:53,812 | WARNING | 🗑️ 10 géométries vides supprimées.
+2025-11-10 02:32:53,838 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:32:53,838 | INFO | ✅ Aucune géométrie invalide.
+2025-11-10 02:32:53,839 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:32:53,839 | WARNING | 🗑️ 356 doublons d'attribut supprimés (1 seul exemplaire conservé).
+2025-11-10 02:32:53,840 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:32:53,840 | INFO | 🔍 Détection des doublons géométriques exacts...
+2025-11-10 02:32:54,006 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:32:54,006 | WARNING | 🗑️ 2 doublons géométriques détectés.
+2025-11-10 02:32:54,007 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:32:54,007 | INFO | ✅ 2 doublons géométriques supprimés (premier conservé).
+2025-11-10 02:32:54,175 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:32:54,175 | INFO | 📐 Recalcul des superficies réelles (ha)...
+2025-11-10 02:32:54,213 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:32:54,212 | INFO | ✅ Superficies calculées et ajoutées sous 'surface_calculee_ha'.
+2025-11-10 02:32:54,213 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:32:54,213 | INFO | 💾 Export du GeoJSON nettoyé → data_clean/parcelles_clean.geojson
+2025-11-10 02:32:54,788 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:32:54,788 | INFO | Created 2,852 records
+2025-11-10 02:32:54,792 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:32:54,792 | INFO | 🧾 Journal des corrections → outputs/script_7/geojson_clean_log.csv
+2025-11-10 02:32:54,792 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:32:54,792 | INFO | ✔️ Nettoyage géométrique terminé avec succès.
+2025-11-10 02:32:54,843 | INFO | [OK] scripts/script_7_clean_geojson.py termine
+2025-11-10 02:32:54,843 | INFO | [PROGRESS] Step 8/14: scripts/script_8_compare_surfaces.py
+2025-11-10 02:32:54,843 | INFO | [PIPELINE] Execution de scripts/script_8_compare_surfaces.py ...
+2025-11-10 02:32:55,190 | INFO | scripts/script_8_compare_surfaces.py: 2025-11-10 02:32:55,190 | INFO | Lecture CSV plantations : data_clean/coop_plantations_clean.csv
+2025-11-10 02:32:55,197 | INFO | scripts/script_8_compare_surfaces.py: 2025-11-10 02:32:55,197 | INFO |   → 3540 lignes, 14 colonnes
+2025-11-10 02:32:55,197 | INFO | scripts/script_8_compare_surfaces.py: 2025-11-10 02:32:55,197 | INFO | Lecture GeoJSON propre : data_clean/parcelles_clean.geojson
+2025-11-10 02:32:55,614 | INFO | scripts/script_8_compare_surfaces.py: 2025-11-10 02:32:55,614 | INFO |   → 2852 entités, CRS=EPSG:4326
+2025-11-10 02:32:55,619 | INFO | scripts/script_8_compare_surfaces.py: 2025-11-10 02:32:55,619 | INFO | Jointure parcelle : CSV.code_plantation ↔ GEOJSON.Farms_ID (inner)
+2025-11-10 02:32:55,620 | INFO | scripts/script_8_compare_surfaces.py: 2025-11-10 02:32:55,620 | INFO | Jointure OK → 2378 lignes correspondantes
+2025-11-10 02:32:55,628 | INFO | scripts/script_8_compare_surfaces.py: 2025-11-10 02:32:55,628 | INFO | ✅ Export comparatif (toutes lignes) → outputs/script_8/surfaces_compare_parcelle.csv
+2025-11-10 02:32:55,632 | INFO | scripts/script_8_compare_surfaces.py: 2025-11-10 02:32:55,632 | INFO | ⚠️ Export anomalies (écart > ±10 %) → outputs/script_8/anomalies_surfaces_parcelle.csv (n=885)
+2025-11-10 02:32:55,632 | INFO | scripts/script_8_compare_surfaces.py: 2025-11-10 02:32:55,632 | INFO | Résumé : 885/2378 parcelles en anomalie (37.2 %)
+2025-11-10 02:32:55,632 | INFO | scripts/script_8_compare_surfaces.py: 2025-11-10 02:32:55,632 | INFO | ✔️ Comparaison surfaces par parcelle terminée.
+2025-11-10 02:32:55,683 | INFO | [OK] scripts/script_8_compare_surfaces.py termine
+2025-11-10 02:32:55,684 | INFO | [PROGRESS] Step 9/14: scripts/script_8b_join_coverage.py
+2025-11-10 02:32:55,684 | INFO | [PIPELINE] Execution de scripts/script_8b_join_coverage.py ...
+2025-11-10 02:32:56,461 | INFO | scripts/script_8b_join_coverage.py: 2025-11-10 02:32:56,461 | INFO | CSV only: 1162 | GEO only: 474 | matched: 2378
+2025-11-10 02:32:56,475 | INFO | scripts/script_8b_join_coverage.py: 2025-11-10 02:32:56,475 | INFO | Exports : csv_only_plantations_sans_geo.csv, geo_only_geo_sans_csv.csv, csv_only_par_coop.csv, csv_only_par_producteur.csv, csv_only_correspondances_base_id.csv
+2025-11-10 02:32:56,525 | INFO | [OK] scripts/script_8b_join_coverage.py termine
+2025-11-10 02:32:56,525 | INFO | [PROGRESS] Step 10/14: scripts/script_9_coherence_producteurs.py
+2025-11-10 02:32:56,525 | INFO | [PIPELINE] Execution de scripts/script_9_coherence_producteurs.py ...
+2025-11-10 02:32:56,881 | INFO | scripts/script_9_coherence_producteurs.py: 2025-11-10 02:32:56,881 | INFO | Lecture des fichiers sources...
+2025-11-10 02:32:57,322 | INFO | scripts/script_9_coherence_producteurs.py: 2025-11-10 02:32:57,322 | INFO | → Plantations CSV : 3540
+2025-11-10 02:32:57,323 | INFO | scripts/script_9_coherence_producteurs.py: 2025-11-10 02:32:57,322 | INFO | → Parcelles GeoJSON : 2852
+2025-11-10 02:32:57,323 | INFO | scripts/script_9_coherence_producteurs.py: 2025-11-10 02:32:57,322 | INFO | → Lignes jointes : 2378
+2025-11-10 02:32:57,323 | INFO | scripts/script_9_coherence_producteurs.py: 2025-11-10 02:32:57,322 | INFO | → Anomalies de surface : 885
+2025-11-10 02:32:57,470 | INFO | scripts/script_9_coherence_producteurs.py: /Users/MAC/Documents/PROJECTS/KOUAME_CHRISTIAN_GeoDataAnalyst/scripts/script_9_coherence_producteurs.py:109: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+2025-11-10 02:32:57,470 | INFO | scripts/script_9_coherence_producteurs.py:   return result.fillna(0).astype(float).round(2)
+2025-11-10 02:32:57,484 | INFO | scripts/script_9_coherence_producteurs.py: 2025-11-10 02:32:57,484 | INFO | ✅ Export producteurs → outputs/script_9/synthese_coherence_producteurs.csv
+2025-11-10 02:32:57,488 | INFO | scripts/script_9_coherence_producteurs.py: 2025-11-10 02:32:57,487 | INFO | ✅ Export coopératives → outputs/script_9/synthese_coherence_coop.csv
+2025-11-10 02:32:57,495 | INFO | scripts/script_9_coherence_producteurs.py: 2025-11-10 02:32:57,495 | INFO | 📊 Export JSON producteurs → display-data/synthese_coherence_producteurs.json
+2025-11-10 02:32:57,496 | INFO | scripts/script_9_coherence_producteurs.py: 2025-11-10 02:32:57,495 | INFO | 📊 Export JSON coopératives → display-data/synthese_coherence_coop.json
+2025-11-10 02:32:57,496 | INFO | scripts/script_9_coherence_producteurs.py: 2025-11-10 02:32:57,495 | INFO | 🧾 Métadonnées exportées → display-data/meta_script_9.json
+2025-11-10 02:32:57,496 | INFO | scripts/script_9_coherence_producteurs.py: 2025-11-10 02:32:57,496 | INFO | ✔️ Analyse de cohérence au niveau producteur terminée avec succès.
+2025-11-10 02:32:57,549 | INFO | [OK] scripts/script_9_coherence_producteurs.py termine
+2025-11-10 02:32:57,549 | INFO | [PROGRESS] Step 11/14: scripts/script_10_detect_chevauchements.py
+2025-11-10 02:32:57,549 | INFO | [PIPELINE] Execution de scripts/script_10_detect_chevauchements.py ...
+2025-11-10 02:32:57,897 | INFO | scripts/script_10_detect_chevauchements.py: 2025-11-10 02:32:57,897 | INFO | Lecture du GeoJSON propre : data_clean/parcelles_clean.geojson
+2025-11-10 02:32:58,345 | INFO | scripts/script_10_detect_chevauchements.py: 2025-11-10 02:32:58,345 | INFO | → 2852 entités chargées, CRS=EPSG:4326
+2025-11-10 02:32:58,345 | INFO | scripts/script_10_detect_chevauchements.py: 2025-11-10 02:32:58,345 | INFO | Détection des chevauchements (>15%) en cours...
+2025-11-10 02:33:07,989 | INFO | scripts/script_10_detect_chevauchements.py: 2025-11-10 02:33:07,989 | INFO | → 37 chevauchements détectés >15%
+2025-11-10 02:33:07,990 | INFO | scripts/script_10_detect_chevauchements.py: 2025-11-10 02:33:07,990 | INFO | 📊 Résumé exporté → outputs/script_10/resume_chevauchements.csv
+2025-11-10 02:33:08,017 | INFO | scripts/script_10_detect_chevauchements.py: 2025-11-10 02:33:08,017 | INFO | Created 37 records
+2025-11-10 02:33:08,018 | INFO | scripts/script_10_detect_chevauchements.py: 2025-11-10 02:33:08,018 | INFO | 🗺️ GeoJSON exporté → outputs/script_10/parcelles_chevauchements.geojson (37 entités)
+2025-11-10 02:33:08,068 | INFO | [OK] scripts/script_10_detect_chevauchements.py termine
+2025-11-10 02:33:08,068 | INFO | [PROGRESS] Step 12/14: scripts/script_11_export_display_data.py
+2025-11-10 02:33:08,068 | INFO | [PIPELINE] Execution de scripts/script_11_export_display_data.py ...
+2025-11-10 02:33:08,406 | INFO | scripts/script_11_export_display_data.py: 2025-11-10 02:33:08,405 | WARNING | Fichier manquant: outputs/script_3/doublons_producteurs.csv
+2025-11-10 02:33:08,406 | INFO | scripts/script_11_export_display_data.py: 2025-11-10 02:33:08,406 | WARNING | Fichier manquant: outputs/script_7/doublons_parcelles.csv
+2025-11-10 02:33:08,435 | INFO | scripts/script_11_export_display_data.py: 2025-11-10 02:33:08,435 | INFO | Export JSON -> display-data/anomalies_surface.json (885 lignes)
+2025-11-10 02:33:08,436 | INFO | scripts/script_11_export_display_data.py: 2025-11-10 02:33:08,436 | INFO | Export JSON -> display-data/doublons_producteurs.json (0 lignes)
+2025-11-10 02:33:08,436 | INFO | scripts/script_11_export_display_data.py: 2025-11-10 02:33:08,436 | INFO | Export JSON -> display-data/doublons_parcelles.json (0 lignes)
+2025-11-10 02:33:08,436 | INFO | scripts/script_11_export_display_data.py: 2025-11-10 02:33:08,436 | INFO | Export JSON -> display-data/chevauchements_parcelles.json (37 lignes)
+2025-11-10 02:33:08,437 | INFO | scripts/script_11_export_display_data.py: 2025-11-10 02:33:08,437 | INFO | Resume exporte -> display-data/resume_anomalies.json
+2025-11-10 02:33:08,437 | INFO | scripts/script_11_export_display_data.py: 2025-11-10 02:33:08,437 | INFO | Export des donnees analytiques termine avec succes.
+2025-11-10 02:33:08,477 | INFO | [OK] scripts/script_11_export_display_data.py termine
+2025-11-10 02:33:08,477 | INFO | [PROGRESS] Step 13/14: scripts/script_13_data_cleaning_audit.py
+2025-11-10 02:33:08,477 | INFO | [PIPELINE] Execution de scripts/script_13_data_cleaning_audit.py ...
+2025-11-10 02:33:08,831 | INFO | scripts/script_13_data_cleaning_audit.py: 2025-11-10 02:33:08,829 | INFO | Compare: coop_producteurs (3518 -> 3518 lignes)
+2025-11-10 02:33:08,841 | INFO | scripts/script_13_data_cleaning_audit.py: 2025-11-10 02:33:08,841 | INFO | Compare: coop_plantations (3540 -> 3540 lignes)
+2025-11-10 02:33:09,727 | INFO | scripts/script_13_data_cleaning_audit.py: 2025-11-10 02:33:09,726 | INFO | Compare: parcelles (3046 -> 2852 polygones)
+2025-11-10 02:33:09,730 | INFO | scripts/script_13_data_cleaning_audit.py: 2025-11-10 02:33:09,730 | INFO | Rapport d'audit exporte -> display-data/data_cleaning_audit.json
+2025-11-10 02:33:09,730 | INFO | scripts/script_13_data_cleaning_audit.py: 2025-11-10 02:33:09,730 | INFO | Script termine avec succes.
+2025-11-10 02:33:09,774 | INFO | [OK] scripts/script_13_data_cleaning_audit.py termine
+2025-11-10 02:33:09,775 | INFO | [PROGRESS] Step 14/14: exports globaux realises
+2025-11-10 02:33:09,775 | INFO | === PIPELINE TERMINE ===
+2025-11-10 02:37:25,034 | INFO | === DEMARRAGE PIPELINE 2025-11-10T02:37:25.034875 ===
+2025-11-10 02:37:25,035 | INFO | [PROGRESS] Step 1/14: scripts/script_1_xlsx_to_csv.py
+2025-11-10 02:37:25,035 | INFO | [PIPELINE] Execution de scripts/script_1_xlsx_to_csv.py ...
+2025-11-10 02:37:25,918 | INFO | scripts/script_1_xlsx_to_csv.py: ✅ OK - Feuille '(1) Registre Producteurs' convertie en 'coop_producteurs.csv'
+2025-11-10 02:37:25,918 | INFO | scripts/script_1_xlsx_to_csv.py: ✅ OK - Feuille '(2) Registre Plantations' convertie en 'coop_plantations.csv'
+2025-11-10 02:37:25,959 | INFO | [OK] scripts/script_1_xlsx_to_csv.py termine
+2025-11-10 02:37:25,959 | INFO | [PROGRESS] Step 2/14: scripts/script_2_normalize_columns.py
+2025-11-10 02:37:25,959 | INFO | [PIPELINE] Execution de scripts/script_2_normalize_columns.py ...
+2025-11-10 02:37:26,209 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,207 | INFO | Lecture du fichier : data_raw/coop_producteurs.csv
+2025-11-10 02:37:26,217 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,216 | INFO | Colonnes originales : ['Ordre', 'Cooperative *', 'Codes de certification', 'Code Producteur *', 'Autres Codes Disponibles', 'Année de Naissance *', "Date d'adhésion 4 (mois-année)", 'Genre (F ou H) *', "Superficie Totale de L'Exploitation (HA) *", 'Superficie Cacao Totale (Ha) *', 'Nombre de Plantations Cacao *', 'Estimation totale (Kg) *', 'Ville', 'Nom du Coach', 'Numéro de Matricule', 'Type de Matricule (National, CCC…)', 'Taille du Menage (Nombre de personnes dans le menage du producteur) *', 'Recolte Totale 24-25 (en KG) *', 'Volume livré à la Co-op 24-25 (en KG) *', 'Recolte Total 23-24 (en KG) *', 'Volume livré à la Co-op 23-24 (en KG) *']
+2025-11-10 02:37:26,217 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,216 | INFO | → 'Ordre' renommé en 'numero_ordre'
+2025-11-10 02:37:26,217 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,216 | INFO | → 'Cooperative *' renommé en 'cooperative'
+2025-11-10 02:37:26,217 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,216 | INFO | → 'Codes de certification' renommé en 'codes_certification'
+2025-11-10 02:37:26,217 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,216 | INFO | → 'Code Producteur *' renommé en 'code_producteur'
+2025-11-10 02:37:26,217 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,217 | INFO | → 'Autres Codes Disponibles' renommé en 'autres_codes'
+2025-11-10 02:37:26,217 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,217 | INFO | → 'Année de Naissance *' renommé en 'annee_naissance'
+2025-11-10 02:37:26,217 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,217 | INFO | → 'Date d'adhésion 4 (mois-année)' renommé en 'date_adhesion'
+2025-11-10 02:37:26,217 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,217 | INFO | → 'Genre (F ou H) *' renommé en 'genre'
+2025-11-10 02:37:26,217 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,217 | INFO | → 'Superficie Totale de L'Exploitation (HA) *' renommé en 'superficie_totale_exploitation_ha'
+2025-11-10 02:37:26,217 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,217 | INFO | → 'Superficie Cacao Totale (Ha) *' renommé en 'superficie_totale_cacao_ha'
+2025-11-10 02:37:26,217 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,217 | INFO | → 'Nombre de Plantations Cacao *' renommé en 'nb_plantations_cacao'
+2025-11-10 02:37:26,217 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,217 | INFO | → 'Estimation totale (Kg) *' renommé en 'estimation_totale_kg'
+2025-11-10 02:37:26,217 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,217 | INFO | → 'Ville' renommé en 'ville'
+2025-11-10 02:37:26,217 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,217 | INFO | → 'Nom du Coach' renommé en 'nom_coach'
+2025-11-10 02:37:26,217 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,217 | INFO | → 'Numéro de Matricule' renommé en 'numero_matricule'
+2025-11-10 02:37:26,217 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,217 | INFO | → 'Type de Matricule (National, CCC…)' renommé en 'type_matricule'
+2025-11-10 02:37:26,217 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,217 | INFO | → 'Taille du Menage (Nombre de personnes dans le menage du producteur) *' renommé en 'taille_menage'
+2025-11-10 02:37:26,217 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,217 | INFO | → 'Recolte Totale 24-25 (en KG) *' renommé en 'recolte_24_25_kg'
+2025-11-10 02:37:26,217 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,217 | INFO | → 'Volume livré à la Co-op 24-25 (en KG) *' renommé en 'volume_livre_coop_24_25_kg'
+2025-11-10 02:37:26,217 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,217 | INFO | → 'Recolte Total 23-24 (en KG) *' renommé en 'recolte_23_24_kg'
+2025-11-10 02:37:26,217 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,217 | INFO | → 'Volume livré à la Co-op 23-24 (en KG) *' renommé en 'volume_livre_coop_23_24_kg'
+2025-11-10 02:37:26,230 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,230 | INFO | ✅ Fichier sauvegardé → data_clean/coop_producteurs_cols_normalized.csv
+2025-11-10 02:37:26,230 | INFO | scripts/script_2_normalize_columns.py: 
+2025-11-10 02:37:26,230 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,230 | INFO | Lecture du fichier : data_raw/coop_plantations.csv
+2025-11-10 02:37:26,237 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,237 | INFO | Colonnes originales : ['N°Ordre', 'Cooperative/Groupe *', 'Code plantation *', 'Code Producteur *', 'Autres Codes Disponibles', 'Superficie Cacao (Ha) *', 'Rendement (kg/Ha) *', 'Estimation (Kg) *', 'Varieté Cacao', 'Gérant (Oui/Non/Inconnu)', 'Noms et Prénoms du Gérant (Si , gerant existe )', 'Latitude *', 'Longitude *', 'Données Polygonales (Si possible, sinon a partager)']
+2025-11-10 02:37:26,238 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,237 | INFO | → 'N°Ordre' renommé en 'numero_ordre'
+2025-11-10 02:37:26,238 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,237 | INFO | → 'Cooperative/Groupe *' renommé en 'cooperative'
+2025-11-10 02:37:26,238 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,237 | INFO | → 'Code plantation *' renommé en 'code_plantation'
+2025-11-10 02:37:26,238 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,237 | INFO | → 'Code Producteur *' renommé en 'code_producteur'
+2025-11-10 02:37:26,238 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,237 | INFO | → 'Autres Codes Disponibles' renommé en 'autres_codes'
+2025-11-10 02:37:26,238 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,237 | INFO | → 'Superficie Cacao (Ha) *' renommé en 'superficie_cacao_ha'
+2025-11-10 02:37:26,238 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,237 | INFO | → 'Rendement (kg/Ha) *' renommé en 'rendement_kg_ha'
+2025-11-10 02:37:26,238 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,238 | INFO | → 'Estimation (Kg) *' renommé en 'estimation_kg'
+2025-11-10 02:37:26,238 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,238 | INFO | → 'Varieté Cacao' renommé en 'variete_cacao'
+2025-11-10 02:37:26,238 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,238 | INFO | → 'Gérant (Oui/Non/Inconnu)' renommé en 'gerant'
+2025-11-10 02:37:26,238 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,238 | INFO | → 'Noms et Prénoms du Gérant (Si , gerant existe )' renommé en 'nom_gerant'
+2025-11-10 02:37:26,238 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,238 | INFO | → 'Latitude *' renommé en 'latitude'
+2025-11-10 02:37:26,238 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,238 | INFO | → 'Longitude *' renommé en 'longitude'
+2025-11-10 02:37:26,238 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,238 | INFO | → 'Données Polygonales (Si possible, sinon a partager)' renommé en 'donnees_polygonales'
+2025-11-10 02:37:26,246 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,246 | INFO | ✅ Fichier sauvegardé → data_clean/coop_plantations_cols_normalized.csv
+2025-11-10 02:37:26,246 | INFO | scripts/script_2_normalize_columns.py: 
+2025-11-10 02:37:26,247 | INFO | scripts/script_2_normalize_columns.py: 2025-11-10 02:37:26,247 | INFO | ✔️ Normalisation terminée avec succès.
+2025-11-10 02:37:26,281 | INFO | [OK] scripts/script_2_normalize_columns.py termine
+2025-11-10 02:37:26,282 | INFO | [PROGRESS] Step 3/14: scripts/script_3_clean_&_types.py
+2025-11-10 02:37:26,282 | INFO | [PIPELINE] Execution de scripts/script_3_clean_&_types.py ...
+2025-11-10 02:37:26,536 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,534 | INFO | Lecture : data_clean/coop_producteurs_cols_normalized.csv
+2025-11-10 02:37:26,544 | INFO | scripts/script_3_clean_&_types.py: /Users/MAC/Documents/PROJECTS/KOUAME_CHRISTIAN_GeoDataAnalyst/scripts/script_3_clean_&_types.py:145: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+2025-11-10 02:37:26,544 | INFO | scripts/script_3_clean_&_types.py:   df = df.applymap(std_na)
+2025-11-10 02:37:26,607 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,607 | INFO | → Normalisation des valeurs manquantes : OK
+2025-11-10 02:37:26,608 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,608 | INFO | → Trim texte : cooperative
+2025-11-10 02:37:26,608 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,608 | INFO | → Trim texte : code_producteur
+2025-11-10 02:37:26,609 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,609 | INFO | → Trim texte : ville
+2025-11-10 02:37:26,611 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,610 | INFO | → Trim texte : nom_coach
+2025-11-10 02:37:26,612 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,612 | INFO | → Trim texte : type_matricule
+2025-11-10 02:37:26,612 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,612 | INFO | → Trim texte : genre
+2025-11-10 02:37:26,616 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,616 | INFO | → Colonne réelle (float64) : superficie_totale_exploitation_ha
+2025-11-10 02:37:26,620 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,620 | INFO | → Colonne réelle (float64) : superficie_totale_cacao_ha
+2025-11-10 02:37:26,624 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,624 | INFO | → Colonne entière (Int64) : numero_ordre
+2025-11-10 02:37:26,628 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,628 | INFO | → Colonne entière (Int64) : annee_naissance
+2025-11-10 02:37:26,632 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,632 | INFO | → Colonne entière (Int64) : nb_plantations_cacao
+2025-11-10 02:37:26,633 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,633 | INFO | → Colonne entière (Int64) : taille_menage
+2025-11-10 02:37:26,637 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,637 | INFO | → Colonne entière (Int64) : estimation_totale_kg
+2025-11-10 02:37:26,641 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,641 | INFO | → Colonne entière (Int64) : recolte_24_25_kg
+2025-11-10 02:37:26,645 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,645 | INFO | → Colonne entière (Int64) : volume_livre_coop_24_25_kg
+2025-11-10 02:37:26,646 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,646 | INFO | → Colonne entière (Int64) : recolte_23_24_kg
+2025-11-10 02:37:26,647 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,647 | INFO | → Colonne entière (Int64) : volume_livre_coop_23_24_kg
+2025-11-10 02:37:26,647 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,647 | INFO | Type final - numero_ordre: Int64
+2025-11-10 02:37:26,647 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,647 | INFO | Type final - cooperative: object
+2025-11-10 02:37:26,647 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,647 | INFO | Type final - codes_certification: object
+2025-11-10 02:37:26,647 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,647 | INFO | Type final - code_producteur: object
+2025-11-10 02:37:26,648 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,647 | INFO | Type final - autres_codes: float64
+2025-11-10 02:37:26,648 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,647 | INFO | Type final - annee_naissance: Int64
+2025-11-10 02:37:26,648 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,647 | INFO | Type final - date_adhesion: float64
+2025-11-10 02:37:26,648 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,647 | INFO | Type final - genre: object
+2025-11-10 02:37:26,648 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,647 | INFO | Type final - superficie_totale_exploitation_ha: float64
+2025-11-10 02:37:26,648 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,648 | INFO | Type final - superficie_totale_cacao_ha: float64
+2025-11-10 02:37:26,648 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,648 | INFO | Type final - nb_plantations_cacao: Int64
+2025-11-10 02:37:26,648 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,648 | INFO | Type final - estimation_totale_kg: Int64
+2025-11-10 02:37:26,648 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,648 | INFO | Type final - ville: object
+2025-11-10 02:37:26,648 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,648 | INFO | Type final - nom_coach: object
+2025-11-10 02:37:26,648 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,648 | INFO | Type final - numero_matricule: float64
+2025-11-10 02:37:26,648 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,648 | INFO | Type final - type_matricule: object
+2025-11-10 02:37:26,648 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,648 | INFO | Type final - taille_menage: Int64
+2025-11-10 02:37:26,648 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,648 | INFO | Type final - recolte_24_25_kg: Int64
+2025-11-10 02:37:26,648 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,648 | INFO | Type final - volume_livre_coop_24_25_kg: Int64
+2025-11-10 02:37:26,648 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,648 | INFO | Type final - recolte_23_24_kg: Int64
+2025-11-10 02:37:26,648 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,648 | INFO | Type final - volume_livre_coop_23_24_kg: Int64
+2025-11-10 02:37:26,650 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,650 | INFO | 🧪 Diagnostic NA → outputs/script_3/na_coop_producteurs_clean.csv
+2025-11-10 02:37:26,651 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,651 | INFO | 🔄 Normalisation des valeurs manquantes : 21505 cellules NaN remplacées par vide
+2025-11-10 02:37:26,672 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,672 | INFO | Lecture : data_clean/coop_plantations_cols_normalized.csv
+2025-11-10 02:37:26,679 | INFO | scripts/script_3_clean_&_types.py: /Users/MAC/Documents/PROJECTS/KOUAME_CHRISTIAN_GeoDataAnalyst/scripts/script_3_clean_&_types.py:145: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+2025-11-10 02:37:26,679 | INFO | scripts/script_3_clean_&_types.py:   df = df.applymap(std_na)
+2025-11-10 02:37:26,718 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,718 | INFO | → Normalisation des valeurs manquantes : OK
+2025-11-10 02:37:26,719 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,719 | INFO | → Trim texte : cooperative
+2025-11-10 02:37:26,719 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,719 | INFO | → Trim texte : code_plantation
+2025-11-10 02:37:26,720 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,720 | INFO | → Trim texte : code_producteur
+2025-11-10 02:37:26,720 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,720 | INFO | → Trim texte : variete_cacao
+2025-11-10 02:37:26,721 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,721 | INFO | → Trim texte : gerant
+2025-11-10 02:37:26,722 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,722 | INFO | → Trim texte : donnees_polygonales
+2025-11-10 02:37:26,725 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,725 | INFO | → Colonne réelle (float64) : superficie_cacao_ha
+2025-11-10 02:37:26,729 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,729 | INFO | → Colonne réelle (float64) : rendement_kg_ha
+2025-11-10 02:37:26,733 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,733 | INFO | → Colonne réelle (float64) : latitude
+2025-11-10 02:37:26,736 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,736 | INFO | → Colonne réelle (float64) : longitude
+2025-11-10 02:37:26,740 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,740 | INFO | → Colonne entière (Int64) : numero_ordre
+2025-11-10 02:37:26,744 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,744 | INFO | → Colonne entière (Int64) : estimation_kg
+2025-11-10 02:37:26,745 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,744 | INFO | Type final - numero_ordre: Int64
+2025-11-10 02:37:26,745 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,744 | INFO | Type final - cooperative: object
+2025-11-10 02:37:26,745 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,744 | INFO | Type final - code_plantation: object
+2025-11-10 02:37:26,745 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,745 | INFO | Type final - code_producteur: object
+2025-11-10 02:37:26,745 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,745 | INFO | Type final - autres_codes: float64
+2025-11-10 02:37:26,745 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,745 | INFO | Type final - superficie_cacao_ha: float64
+2025-11-10 02:37:26,745 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,745 | INFO | Type final - rendement_kg_ha: float64
+2025-11-10 02:37:26,745 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,745 | INFO | Type final - estimation_kg: Int64
+2025-11-10 02:37:26,745 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,745 | INFO | Type final - variete_cacao: object
+2025-11-10 02:37:26,745 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,745 | INFO | Type final - gerant: object
+2025-11-10 02:37:26,745 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,745 | INFO | Type final - nom_gerant: float64
+2025-11-10 02:37:26,745 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,745 | INFO | Type final - latitude: float64
+2025-11-10 02:37:26,745 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,745 | INFO | Type final - longitude: float64
+2025-11-10 02:37:26,745 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,745 | INFO | Type final - donnees_polygonales: object
+2025-11-10 02:37:26,746 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,746 | INFO | 🧪 Diagnostic NA → outputs/script_3/na_coop_plantations_clean.csv
+2025-11-10 02:37:26,747 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,747 | INFO | 🔄 Normalisation des valeurs manquantes : 7080 cellules NaN remplacées par vide
+2025-11-10 02:37:26,765 | INFO | scripts/script_3_clean_&_types.py: 2025-11-10 02:37:26,765 | INFO | ✔️ Nettoyage et typage terminés sans suffixe .0 pour les entiers.
+2025-11-10 02:37:26,800 | INFO | [OK] scripts/script_3_clean_&_types.py termine
+2025-11-10 02:37:26,800 | INFO | [PROGRESS] Step 4/14: scripts/script_4_detect_anomalies.py
+2025-11-10 02:37:26,800 | INFO | [PIPELINE] Execution de scripts/script_4_detect_anomalies.py ...
+2025-11-10 02:37:27,057 | INFO | scripts/script_4_detect_anomalies.py: 2025-11-10 02:37:27,056 | INFO | === DÉBUT DU SCRIPT 4 — Détection des anomalies internes ===
+2025-11-10 02:37:27,057 | INFO | scripts/script_4_detect_anomalies.py: 
+2025-11-10 02:37:27,057 | INFO | scripts/script_4_detect_anomalies.py: 2025-11-10 02:37:27,057 | INFO | Analyse du fichier Producteurs → data_clean/coop_producteurs_clean.csv
+2025-11-10 02:37:27,063 | INFO | scripts/script_4_detect_anomalies.py: 2025-11-10 02:37:27,063 | INFO | ✅ Aucun doublon détecté dans Producteurs.
+2025-11-10 02:37:27,065 | INFO | scripts/script_4_detect_anomalies.py: 2025-11-10 02:37:27,065 | INFO | ✅ Rapport exporté : outputs/script_4/anomalies_producteurs.csv
+2025-11-10 02:37:27,065 | INFO | scripts/script_4_detect_anomalies.py: 2025-11-10 02:37:27,065 | INFO | 🔢 Total anomalies Producteurs : 0
+2025-11-10 02:37:27,065 | INFO | scripts/script_4_detect_anomalies.py: 
+2025-11-10 02:37:27,065 | INFO | scripts/script_4_detect_anomalies.py: 2025-11-10 02:37:27,065 | INFO | Analyse du fichier Plantations → data_clean/coop_plantations_clean.csv
+2025-11-10 02:37:27,070 | INFO | scripts/script_4_detect_anomalies.py: 2025-11-10 02:37:27,070 | INFO | ✅ Aucun doublon détecté dans Plantations.
+2025-11-10 02:37:27,071 | INFO | scripts/script_4_detect_anomalies.py: 2025-11-10 02:37:27,071 | INFO | ✅ Rapport exporté : outputs/script_4/anomalies_plantations.csv
+2025-11-10 02:37:27,071 | INFO | scripts/script_4_detect_anomalies.py: 2025-11-10 02:37:27,071 | INFO | 🔢 Total anomalies Plantations : 0
+2025-11-10 02:37:27,071 | INFO | scripts/script_4_detect_anomalies.py: 
+2025-11-10 02:37:27,071 | INFO | scripts/script_4_detect_anomalies.py: 2025-11-10 02:37:27,071 | INFO | ✔️ Détection des anomalies et doublons terminée.
+2025-11-10 02:37:27,071 | INFO | scripts/script_4_detect_anomalies.py: 2025-11-10 02:37:27,071 | INFO | 🕒 Fin d’exécution : 2025-11-10 02:37:27
+2025-11-10 02:37:27,105 | INFO | [OK] scripts/script_4_detect_anomalies.py termine
+2025-11-10 02:37:27,105 | INFO | [PROGRESS] Step 5/14: scripts/script_5_controle_coherence_tabulaire.py
+2025-11-10 02:37:27,105 | INFO | [PIPELINE] Execution de scripts/script_5_controle_coherence_tabulaire.py ...
+2025-11-10 02:37:27,357 | INFO | scripts/script_5_controle_coherence_tabulaire.py: 2025-11-10 02:37:27,355 | INFO | 📄 Producteurs : 3518 lignes, 21 colonnes
+2025-11-10 02:37:27,357 | INFO | scripts/script_5_controle_coherence_tabulaire.py: 2025-11-10 02:37:27,356 | INFO | 📄 Plantations : 3540 lignes, 14 colonnes
+2025-11-10 02:37:27,358 | INFO | scripts/script_5_controle_coherence_tabulaire.py: 2025-11-10 02:37:27,358 | INFO | ⚠️ 22 plantations sans producteur associé
+2025-11-10 02:37:27,359 | INFO | scripts/script_5_controle_coherence_tabulaire.py: 2025-11-10 02:37:27,359 | INFO | ⚠️ 0 producteurs sans plantation associée
+2025-11-10 02:37:27,364 | INFO | scripts/script_5_controle_coherence_tabulaire.py: 2025-11-10 02:37:27,364 | INFO | ⚠️ 0 anomalies d’écart de surface > 10 %
+2025-11-10 02:37:27,364 | INFO | scripts/script_5_controle_coherence_tabulaire.py: 2025-11-10 02:37:27,364 | INFO | ⚠️ 933 anomalies d’écart d’estimation > 10 %
+2025-11-10 02:37:27,365 | INFO | scripts/script_5_controle_coherence_tabulaire.py: 2025-11-10 02:37:27,365 | INFO | ⚠️ 0 incohérences de coopérative
+2025-11-10 02:37:27,370 | INFO | scripts/script_5_controle_coherence_tabulaire.py: 2025-11-10 02:37:27,370 | INFO | 🧾 Rapport exporté → outputs/script_5/anomalies_coherence_tabulaire.csv
+2025-11-10 02:37:27,370 | INFO | scripts/script_5_controle_coherence_tabulaire.py: 2025-11-10 02:37:27,370 | INFO | 🔢 Total anomalies détectées : 955
+2025-11-10 02:37:27,370 | INFO | scripts/script_5_controle_coherence_tabulaire.py: 2025-11-10 02:37:27,370 | INFO | ✔️ Contrôle de cohérence tabulaire terminé.
+2025-11-10 02:37:27,406 | INFO | [OK] scripts/script_5_controle_coherence_tabulaire.py termine
+2025-11-10 02:37:27,406 | INFO | [PROGRESS] Step 6/14: scripts/script_6_verif_geojson.py
+2025-11-10 02:37:27,406 | INFO | [PIPELINE] Execution de scripts/script_6_verif_geojson.py ...
+2025-11-10 02:37:27,789 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:37:27,789 | INFO | Lecture du GeoJSON : data_raw/parcelles.geojson
+2025-11-10 02:37:28,294 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:37:28,294 | INFO | Nombre d'entités : 3046
+2025-11-10 02:37:28,294 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:37:28,294 | INFO | Colonnes : ['Farms_ID', 'description', 'timestamp', 'begin', 'end', 'altitudeMode', 'tessellate', 'extrude', 'visibility', 'drawOrder', 'icon', 'Farmer_ID', 'Superficie', 'Latitude', 'Longitude', 'geometry']
+2025-11-10 02:37:28,294 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:37:28,294 | INFO | ✅ Colonnes requises présentes.
+2025-11-10 02:37:28,294 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:37:28,294 | INFO | ✅ CRS détecté : EPSG:4326
+2025-11-10 02:37:28,295 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:37:28,295 | INFO | ✅ Types géométriques conformes (Polygon/MultiPolygon).
+2025-11-10 02:37:28,323 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:37:28,323 | INFO | ✅ Aucune géométrie invalide.
+2025-11-10 02:37:28,323 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:37:28,323 | WARNING | ⚠️ Géométries vides : 10
+2025-11-10 02:37:28,356 | INFO | scripts/script_6_verif_geojson.py: /Users/MAC/Documents/PROJECTS/KOUAME_CHRISTIAN_GeoDataAnalyst/scripts/script_6_verif_geojson.py:136: UserWarning: Geometry is in a geographic CRS. Results from 'centroid' are likely incorrect. Use 'GeoSeries.to_crs()' to re-project geometries to a projected CRS before this operation.
+2025-11-10 02:37:28,356 | INFO | scripts/script_6_verif_geojson.py: 
+2025-11-10 02:37:28,356 | INFO | scripts/script_6_verif_geojson.py:   cent = gdf_ll.geometry.centroid
+2025-11-10 02:37:28,361 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:37:28,360 | WARNING | ⚠️ Entités hors emprise attendue (centroïde) : 10
+2025-11-10 02:37:28,361 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:37:28,361 | WARNING | ⚠️ Doublons d'attribut Farms_ID : 356
+2025-11-10 02:37:28,537 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:37:28,536 | WARNING | ⚠️ Doublons géométriques exacts : 24
+2025-11-10 02:37:28,570 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:37:28,570 | INFO | 🧾 Anomalies exportées → outputs/script_6/geojson_verif_anomalies.csv (lignes : 196)
+2025-11-10 02:37:28,571 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:37:28,571 | INFO | 📊 Résumé exporté → outputs/script_6/geojson_verif_resume.csv
+2025-11-10 02:37:28,571 | INFO | scripts/script_6_verif_geojson.py: 2025-11-10 02:37:28,571 | INFO | ✔️ Vérification GeoJSON terminée (aucune correction appliquée).
+2025-11-10 02:37:28,622 | INFO | [OK] scripts/script_6_verif_geojson.py termine
+2025-11-10 02:37:28,622 | INFO | [PROGRESS] Step 7/14: scripts/script_7_clean_geojson.py
+2025-11-10 02:37:28,622 | INFO | [PIPELINE] Execution de scripts/script_7_clean_geojson.py ...
+2025-11-10 02:37:28,955 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:37:28,954 | INFO | Lecture du GeoJSON brut : data_raw/parcelles.geojson
+2025-11-10 02:37:29,392 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:37:29,392 | INFO | 3046 entités chargées.
+2025-11-10 02:37:29,393 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:37:29,393 | WARNING | 🗑️ 10 géométries vides supprimées.
+2025-11-10 02:37:29,420 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:37:29,420 | INFO | ✅ Aucune géométrie invalide.
+2025-11-10 02:37:29,421 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:37:29,420 | WARNING | 🗑️ 356 doublons d'attribut supprimés (1 seul exemplaire conservé).
+2025-11-10 02:37:29,421 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:37:29,421 | INFO | 🔍 Détection des doublons géométriques exacts...
+2025-11-10 02:37:29,588 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:37:29,588 | WARNING | 🗑️ 2 doublons géométriques détectés.
+2025-11-10 02:37:29,589 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:37:29,589 | INFO | ✅ 2 doublons géométriques supprimés (premier conservé).
+2025-11-10 02:37:29,758 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:37:29,757 | INFO | 📐 Recalcul des superficies réelles (ha)...
+2025-11-10 02:37:29,796 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:37:29,796 | INFO | ✅ Superficies calculées et ajoutées sous 'surface_calculee_ha'.
+2025-11-10 02:37:29,796 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:37:29,796 | INFO | 💾 Export du GeoJSON nettoyé → data_clean/parcelles_clean.geojson
+2025-11-10 02:37:30,370 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:37:30,370 | INFO | Created 2,852 records
+2025-11-10 02:37:30,374 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:37:30,373 | INFO | 🧾 Journal des corrections → outputs/script_7/geojson_clean_log.csv
+2025-11-10 02:37:30,374 | INFO | scripts/script_7_clean_geojson.py: 2025-11-10 02:37:30,374 | INFO | ✔️ Nettoyage géométrique terminé avec succès.
+2025-11-10 02:37:30,423 | INFO | [OK] scripts/script_7_clean_geojson.py termine
+2025-11-10 02:37:30,423 | INFO | [PROGRESS] Step 8/14: scripts/script_8_compare_surfaces.py
+2025-11-10 02:37:30,423 | INFO | [PIPELINE] Execution de scripts/script_8_compare_surfaces.py ...
+2025-11-10 02:37:30,751 | INFO | scripts/script_8_compare_surfaces.py: 2025-11-10 02:37:30,750 | INFO | Lecture CSV plantations : data_clean/coop_plantations_clean.csv
+2025-11-10 02:37:30,758 | INFO | scripts/script_8_compare_surfaces.py: 2025-11-10 02:37:30,758 | INFO |   → 3540 lignes, 14 colonnes
+2025-11-10 02:37:30,758 | INFO | scripts/script_8_compare_surfaces.py: 2025-11-10 02:37:30,758 | INFO | Lecture GeoJSON propre : data_clean/parcelles_clean.geojson
+2025-11-10 02:37:31,161 | INFO | scripts/script_8_compare_surfaces.py: 2025-11-10 02:37:31,160 | INFO |   → 2852 entités, CRS=EPSG:4326
+2025-11-10 02:37:31,166 | INFO | scripts/script_8_compare_surfaces.py: 2025-11-10 02:37:31,166 | INFO | Jointure parcelle : CSV.code_plantation ↔ GEOJSON.Farms_ID (inner)
+2025-11-10 02:37:31,167 | INFO | scripts/script_8_compare_surfaces.py: 2025-11-10 02:37:31,167 | INFO | Jointure OK → 2378 lignes correspondantes
+2025-11-10 02:37:31,174 | INFO | scripts/script_8_compare_surfaces.py: 2025-11-10 02:37:31,174 | INFO | ✅ Export comparatif (toutes lignes) → outputs/script_8/surfaces_compare_parcelle.csv
+2025-11-10 02:37:31,177 | INFO | scripts/script_8_compare_surfaces.py: 2025-11-10 02:37:31,177 | INFO | ⚠️ Export anomalies (écart > ±10 %) → outputs/script_8/anomalies_surfaces_parcelle.csv (n=885)
+2025-11-10 02:37:31,177 | INFO | scripts/script_8_compare_surfaces.py: 2025-11-10 02:37:31,177 | INFO | Résumé : 885/2378 parcelles en anomalie (37.2 %)
+2025-11-10 02:37:31,177 | INFO | scripts/script_8_compare_surfaces.py: 2025-11-10 02:37:31,177 | INFO | ✔️ Comparaison surfaces par parcelle terminée.
+2025-11-10 02:37:31,225 | INFO | [OK] scripts/script_8_compare_surfaces.py termine
+2025-11-10 02:37:31,225 | INFO | [PROGRESS] Step 9/14: scripts/script_8b_join_coverage.py
+2025-11-10 02:37:31,225 | INFO | [PIPELINE] Execution de scripts/script_8b_join_coverage.py ...
+2025-11-10 02:37:31,986 | INFO | scripts/script_8b_join_coverage.py: 2025-11-10 02:37:31,985 | INFO | CSV only: 1162 | GEO only: 474 | matched: 2378
+2025-11-10 02:37:31,998 | INFO | scripts/script_8b_join_coverage.py: 2025-11-10 02:37:31,998 | INFO | Exports : csv_only_plantations_sans_geo.csv, geo_only_geo_sans_csv.csv, csv_only_par_coop.csv, csv_only_par_producteur.csv, csv_only_correspondances_base_id.csv
+2025-11-10 02:37:32,050 | INFO | [OK] scripts/script_8b_join_coverage.py termine
+2025-11-10 02:37:32,050 | INFO | [PROGRESS] Step 10/14: scripts/script_9_coherence_producteurs.py
+2025-11-10 02:37:32,050 | INFO | [PIPELINE] Execution de scripts/script_9_coherence_producteurs.py ...
+2025-11-10 02:37:32,385 | INFO | scripts/script_9_coherence_producteurs.py: 2025-11-10 02:37:32,383 | INFO | Lecture des fichiers sources...
+2025-11-10 02:37:32,803 | INFO | scripts/script_9_coherence_producteurs.py: 2025-11-10 02:37:32,802 | INFO | → Plantations CSV : 3540
+2025-11-10 02:37:32,803 | INFO | scripts/script_9_coherence_producteurs.py: 2025-11-10 02:37:32,802 | INFO | → Parcelles GeoJSON : 2852
+2025-11-10 02:37:32,803 | INFO | scripts/script_9_coherence_producteurs.py: 2025-11-10 02:37:32,803 | INFO | → Lignes jointes : 2378
+2025-11-10 02:37:32,803 | INFO | scripts/script_9_coherence_producteurs.py: 2025-11-10 02:37:32,803 | INFO | → Anomalies de surface : 885
+2025-11-10 02:37:32,946 | INFO | scripts/script_9_coherence_producteurs.py: /Users/MAC/Documents/PROJECTS/KOUAME_CHRISTIAN_GeoDataAnalyst/scripts/script_9_coherence_producteurs.py:109: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+2025-11-10 02:37:32,947 | INFO | scripts/script_9_coherence_producteurs.py:   return result.fillna(0).astype(float).round(2)
+2025-11-10 02:37:32,959 | INFO | scripts/script_9_coherence_producteurs.py: 2025-11-10 02:37:32,958 | INFO | ✅ Export producteurs → outputs/script_9/synthese_coherence_producteurs.csv
+2025-11-10 02:37:32,961 | INFO | scripts/script_9_coherence_producteurs.py: 2025-11-10 02:37:32,961 | INFO | ✅ Export coopératives → outputs/script_9/synthese_coherence_coop.csv
+2025-11-10 02:37:32,966 | INFO | scripts/script_9_coherence_producteurs.py: 2025-11-10 02:37:32,966 | INFO | 📊 Export JSON producteurs → display-data/synthese_coherence_producteurs.json
+2025-11-10 02:37:32,966 | INFO | scripts/script_9_coherence_producteurs.py: 2025-11-10 02:37:32,966 | INFO | 📊 Export JSON coopératives → display-data/synthese_coherence_coop.json
+2025-11-10 02:37:32,967 | INFO | scripts/script_9_coherence_producteurs.py: 2025-11-10 02:37:32,967 | INFO | 🧾 Métadonnées exportées → display-data/meta_script_9.json
+2025-11-10 02:37:32,967 | INFO | scripts/script_9_coherence_producteurs.py: 2025-11-10 02:37:32,967 | INFO | ✔️ Analyse de cohérence au niveau producteur terminée avec succès.
+2025-11-10 02:37:33,015 | INFO | [OK] scripts/script_9_coherence_producteurs.py termine
+2025-11-10 02:37:33,015 | INFO | [PROGRESS] Step 11/14: scripts/script_10_detect_chevauchements.py
+2025-11-10 02:37:33,015 | INFO | [PIPELINE] Execution de scripts/script_10_detect_chevauchements.py ...
+2025-11-10 02:37:33,359 | INFO | scripts/script_10_detect_chevauchements.py: 2025-11-10 02:37:33,359 | INFO | Lecture du GeoJSON propre : data_clean/parcelles_clean.geojson
+2025-11-10 02:37:33,774 | INFO | scripts/script_10_detect_chevauchements.py: 2025-11-10 02:37:33,774 | INFO | → 2852 entités chargées, CRS=EPSG:4326
+2025-11-10 02:37:33,774 | INFO | scripts/script_10_detect_chevauchements.py: 2025-11-10 02:37:33,774 | INFO | Détection des chevauchements (>15%) en cours...
+2025-11-10 02:37:43,195 | INFO | scripts/script_10_detect_chevauchements.py: 2025-11-10 02:37:43,194 | INFO | → 37 chevauchements détectés >15%
+2025-11-10 02:37:43,196 | INFO | scripts/script_10_detect_chevauchements.py: 2025-11-10 02:37:43,196 | INFO | 📊 Résumé exporté → outputs/script_10/resume_chevauchements.csv
+2025-11-10 02:37:43,225 | INFO | scripts/script_10_detect_chevauchements.py: 2025-11-10 02:37:43,225 | INFO | Created 37 records
+2025-11-10 02:37:43,226 | INFO | scripts/script_10_detect_chevauchements.py: 2025-11-10 02:37:43,226 | INFO | 🗺️ GeoJSON exporté → outputs/script_10/parcelles_chevauchements.geojson (37 entités)
+2025-11-10 02:37:43,283 | INFO | [OK] scripts/script_10_detect_chevauchements.py termine
+2025-11-10 02:37:43,283 | INFO | [PROGRESS] Step 12/14: scripts/script_11_export_display_data.py
+2025-11-10 02:37:43,283 | INFO | [PIPELINE] Execution de scripts/script_11_export_display_data.py ...
+2025-11-10 02:37:43,743 | INFO | scripts/script_11_export_display_data.py: 2025-11-10 02:37:43,743 | WARNING | Fichier manquant: outputs/script_3/doublons_producteurs.csv
+2025-11-10 02:37:43,744 | INFO | scripts/script_11_export_display_data.py: 2025-11-10 02:37:43,743 | WARNING | Fichier manquant: outputs/script_7/doublons_parcelles.csv
+2025-11-10 02:37:43,779 | INFO | scripts/script_11_export_display_data.py: 2025-11-10 02:37:43,779 | INFO | Export JSON -> display-data/anomalies_surface.json (885 lignes)
+2025-11-10 02:37:43,779 | INFO | scripts/script_11_export_display_data.py: 2025-11-10 02:37:43,779 | INFO | Export JSON -> display-data/doublons_producteurs.json (0 lignes)
+2025-11-10 02:37:43,780 | INFO | scripts/script_11_export_display_data.py: 2025-11-10 02:37:43,779 | INFO | Export JSON -> display-data/doublons_parcelles.json (0 lignes)
+2025-11-10 02:37:43,780 | INFO | scripts/script_11_export_display_data.py: 2025-11-10 02:37:43,780 | INFO | Export JSON -> display-data/chevauchements_parcelles.json (37 lignes)
+2025-11-10 02:37:43,780 | INFO | scripts/script_11_export_display_data.py: 2025-11-10 02:37:43,780 | INFO | Resume exporte -> display-data/resume_anomalies.json
+2025-11-10 02:37:43,780 | INFO | scripts/script_11_export_display_data.py: 2025-11-10 02:37:43,780 | INFO | Export des donnees analytiques termine avec succes.
+2025-11-10 02:37:43,827 | INFO | [OK] scripts/script_11_export_display_data.py termine
+2025-11-10 02:37:43,828 | INFO | [PROGRESS] Step 13/14: scripts/script_13_data_cleaning_audit.py
+2025-11-10 02:37:43,828 | INFO | [PIPELINE] Execution de scripts/script_13_data_cleaning_audit.py ...
+2025-11-10 02:37:44,186 | INFO | scripts/script_13_data_cleaning_audit.py: 2025-11-10 02:37:44,186 | INFO | Compare: coop_producteurs (3518 -> 3518 lignes)
+2025-11-10 02:37:44,200 | INFO | scripts/script_13_data_cleaning_audit.py: 2025-11-10 02:37:44,199 | INFO | Compare: coop_plantations (3540 -> 3540 lignes)
+2025-11-10 02:37:45,107 | INFO | scripts/script_13_data_cleaning_audit.py: 2025-11-10 02:37:45,107 | INFO | Compare: parcelles (3046 -> 2852 polygones)
+2025-11-10 02:37:45,110 | INFO | scripts/script_13_data_cleaning_audit.py: 2025-11-10 02:37:45,110 | INFO | Rapport d'audit exporte -> display-data/data_cleaning_audit.json
+2025-11-10 02:37:45,110 | INFO | scripts/script_13_data_cleaning_audit.py: 2025-11-10 02:37:45,110 | INFO | Script termine avec succes.
+2025-11-10 02:37:45,168 | INFO | [OK] scripts/script_13_data_cleaning_audit.py termine
+2025-11-10 02:37:45,168 | INFO | [PROGRESS] Step 14/14: exports globaux realises
+2025-11-10 02:37:45,168 | INFO | === PIPELINE TERMINE ===

@@ -138,3 +138,31 @@
 
 2025-11-10 02:25:02,371 | INFO | ✔️ Détection des anomalies et doublons terminée.
 2025-11-10 02:25:02,371 | INFO | 🕒 Fin d’exécution : 2025-11-10 02:25:02
+2025-11-10 02:32:51,413 | INFO | === DÉBUT DU SCRIPT 4 — Détection des anomalies internes ===
+
+2025-11-10 02:32:51,413 | INFO | Analyse du fichier Producteurs → data_clean/coop_producteurs_clean.csv
+2025-11-10 02:32:51,419 | INFO | ✅ Aucun doublon détecté dans Producteurs.
+2025-11-10 02:32:51,421 | INFO | ✅ Rapport exporté : outputs/script_4/anomalies_producteurs.csv
+2025-11-10 02:32:51,421 | INFO | 🔢 Total anomalies Producteurs : 0
+
+2025-11-10 02:32:51,421 | INFO | Analyse du fichier Plantations → data_clean/coop_plantations_clean.csv
+2025-11-10 02:32:51,426 | INFO | ✅ Aucun doublon détecté dans Plantations.
+2025-11-10 02:32:51,429 | INFO | ✅ Rapport exporté : outputs/script_4/anomalies_plantations.csv
+2025-11-10 02:32:51,429 | INFO | 🔢 Total anomalies Plantations : 0
+
+2025-11-10 02:32:51,429 | INFO | ✔️ Détection des anomalies et doublons terminée.
+2025-11-10 02:32:51,429 | INFO | 🕒 Fin d’exécution : 2025-11-10 02:32:51
+2025-11-10 02:37:27,056 | INFO | === DÉBUT DU SCRIPT 4 — Détection des anomalies internes ===
+
+2025-11-10 02:37:27,057 | INFO | Analyse du fichier Producteurs → data_clean/coop_producteurs_clean.csv
+2025-11-10 02:37:27,063 | INFO | ✅ Aucun doublon détecté dans Producteurs.
+2025-11-10 02:37:27,065 | INFO | ✅ Rapport exporté : outputs/script_4/anomalies_producteurs.csv
+2025-11-10 02:37:27,065 | INFO | 🔢 Total anomalies Producteurs : 0
+
+2025-11-10 02:37:27,065 | INFO | Analyse du fichier Plantations → data_clean/coop_plantations_clean.csv
+2025-11-10 02:37:27,070 | INFO | ✅ Aucun doublon détecté dans Plantations.
+2025-11-10 02:37:27,071 | INFO | ✅ Rapport exporté : outputs/script_4/anomalies_plantations.csv
+2025-11-10 02:37:27,071 | INFO | 🔢 Total anomalies Plantations : 0
+
+2025-11-10 02:37:27,071 | INFO | ✔️ Détection des anomalies et doublons terminée.
+2025-11-10 02:37:27,071 | INFO | 🕒 Fin d’exécution : 2025-11-10 02:37:27

@@ -8,16 +8,35 @@ Automatisation complete du flux:
   3. Generation des exports display-data/
 """
 
+import logging
 import os
 import subprocess
 from datetime import datetime
+from pathlib import Path
 
 from scripts.utils_export_display import export_global_stats, export_metadata
 
+LOG_DIR = Path("logs")
+LOG_DIR.mkdir(exist_ok=True)
+LOG_FILE = LOG_DIR / "pipeline.log"
 
-def run_script(path: str) -> None:
+logger = logging.getLogger("pipeline")
+logger.setLevel(logging.INFO)
+logger.handlers.clear()
+file_handler = logging.FileHandler(LOG_FILE, encoding="utf-8")
+file_handler.setFormatter(logging.Formatter("%(asctime)s | %(levelname)s | %(message)s"))
+logger.addHandler(file_handler)
+logger.propagate = False
+
+
+def log_line(message: str) -> None:
+    print(message, flush=True)
+    logger.info(message)
+
+
+def run_script(path: str) -> bool:
     """Execute a Python script and stream its stdout/stderr line by line."""
-    print(f"[PIPELINE] Execution de {path} ...")
+    log_line(f"[PIPELINE] Execution de {path} ...")
     process = subprocess.Popen(
         ["python", path],
         stdout=subprocess.PIPE,
@@ -27,16 +46,19 @@ def run_script(path: str) -> None:
     )
     assert process.stdout is not None
     for line in process.stdout:
-        print(line.rstrip())
+        log_line(f"{path}: {line.rstrip()}")
     process.wait()
     if process.returncode != 0:
-        print(f"[ERREUR] {path} a echoue (code={process.returncode})")
+        log_line(f"[ERREUR] {path} a echoue (code={process.returncode})")
+        return False
+    log_line(f"[OK] {path} termine")
+    return True
 
 
 def main():
     os.makedirs("display-data", exist_ok=True)
     start_time = datetime.now()
-    print(f"=== DEMARRAGE PIPELINE {start_time.isoformat()} ===\n")
+    log_line(f"=== DEMARRAGE PIPELINE {start_time.isoformat()} ===")
 
     scripts = [
         "scripts/script_1_xlsx_to_csv.py",
@@ -54,11 +76,16 @@ def main():
         "scripts/script_13_data_cleaning_audit.py",
     ]
 
+    total_steps = len(scripts) + 1  # scripts + final exports
+    completed_steps = 0
+
     for script_path in scripts:
         if os.path.exists(script_path):
+            log_line(f"[PROGRESS] Step {completed_steps+1}/{total_steps}: {script_path}")
             run_script(script_path)
+            completed_steps += 1
         else:
-            print(f"[ATTENTION] Script manquant: {script_path}")
+            log_line(f"[ATTENTION] Script manquant: {script_path}")
 
     stats = {
         "total_producteurs": 3518,
@@ -69,8 +96,10 @@ def main():
     }
     export_global_stats(stats)
     export_metadata()
+    completed_steps += 1
+    log_line(f"[PROGRESS] Step {completed_steps}/{total_steps}: exports globaux realises")
 
-    print("\n=== PIPELINE TERMINE ===")
+    log_line("=== PIPELINE TERMINE ===")
 
 
 if __name__ == "__main__":

@@ -438,3 +438,91 @@
 2025-11-10 02:25:01,566 | INFO | ✅ Fichier sauvegardé → data_clean/coop_plantations_cols_normalized.csv
 
 2025-11-10 02:25:01,566 | INFO | ✔️ Normalisation terminée avec succès.
+2025-11-10 02:32:50,557 | INFO | Lecture du fichier : data_raw/coop_producteurs.csv
+2025-11-10 02:32:50,566 | INFO | Colonnes originales : ['Ordre', 'Cooperative *', 'Codes de certification', 'Code Producteur *', 'Autres Codes Disponibles', 'Année de Naissance *', "Date d'adhésion 4 (mois-année)", 'Genre (F ou H) *', "Superficie Totale de L'Exploitation (HA) *", 'Superficie Cacao Totale (Ha) *', 'Nombre de Plantations Cacao *', 'Estimation totale (Kg) *', 'Ville', 'Nom du Coach', 'Numéro de Matricule', 'Type de Matricule (National, CCC…)', 'Taille du Menage (Nombre de personnes dans le menage du producteur) *', 'Recolte Totale 24-25 (en KG) *', 'Volume livré à la Co-op 24-25 (en KG) *', 'Recolte Total 23-24 (en KG) *', 'Volume livré à la Co-op 23-24 (en KG) *']
+2025-11-10 02:32:50,566 | INFO | → 'Ordre' renommé en 'numero_ordre'
+2025-11-10 02:32:50,566 | INFO | → 'Cooperative *' renommé en 'cooperative'
+2025-11-10 02:32:50,566 | INFO | → 'Codes de certification' renommé en 'codes_certification'
+2025-11-10 02:32:50,566 | INFO | → 'Code Producteur *' renommé en 'code_producteur'
+2025-11-10 02:32:50,566 | INFO | → 'Autres Codes Disponibles' renommé en 'autres_codes'
+2025-11-10 02:32:50,566 | INFO | → 'Année de Naissance *' renommé en 'annee_naissance'
+2025-11-10 02:32:50,566 | INFO | → 'Date d'adhésion 4 (mois-année)' renommé en 'date_adhesion'
+2025-11-10 02:32:50,566 | INFO | → 'Genre (F ou H) *' renommé en 'genre'
+2025-11-10 02:32:50,566 | INFO | → 'Superficie Totale de L'Exploitation (HA) *' renommé en 'superficie_totale_exploitation_ha'
+2025-11-10 02:32:50,566 | INFO | → 'Superficie Cacao Totale (Ha) *' renommé en 'superficie_totale_cacao_ha'
+2025-11-10 02:32:50,566 | INFO | → 'Nombre de Plantations Cacao *' renommé en 'nb_plantations_cacao'
+2025-11-10 02:32:50,566 | INFO | → 'Estimation totale (Kg) *' renommé en 'estimation_totale_kg'
+2025-11-10 02:32:50,566 | INFO | → 'Ville' renommé en 'ville'
+2025-11-10 02:32:50,566 | INFO | → 'Nom du Coach' renommé en 'nom_coach'
+2025-11-10 02:32:50,566 | INFO | → 'Numéro de Matricule' renommé en 'numero_matricule'
+2025-11-10 02:32:50,566 | INFO | → 'Type de Matricule (National, CCC…)' renommé en 'type_matricule'
+2025-11-10 02:32:50,566 | INFO | → 'Taille du Menage (Nombre de personnes dans le menage du producteur) *' renommé en 'taille_menage'
+2025-11-10 02:32:50,566 | INFO | → 'Recolte Totale 24-25 (en KG) *' renommé en 'recolte_24_25_kg'
+2025-11-10 02:32:50,566 | INFO | → 'Volume livré à la Co-op 24-25 (en KG) *' renommé en 'volume_livre_coop_24_25_kg'
+2025-11-10 02:32:50,566 | INFO | → 'Recolte Total 23-24 (en KG) *' renommé en 'recolte_23_24_kg'
+2025-11-10 02:32:50,566 | INFO | → 'Volume livré à la Co-op 23-24 (en KG) *' renommé en 'volume_livre_coop_23_24_kg'
+2025-11-10 02:32:50,580 | INFO | ✅ Fichier sauvegardé → data_clean/coop_producteurs_cols_normalized.csv
+
+2025-11-10 02:32:50,580 | INFO | Lecture du fichier : data_raw/coop_plantations.csv
+2025-11-10 02:32:50,587 | INFO | Colonnes originales : ['N°Ordre', 'Cooperative/Groupe *', 'Code plantation *', 'Code Producteur *', 'Autres Codes Disponibles', 'Superficie Cacao (Ha) *', 'Rendement (kg/Ha) *', 'Estimation (Kg) *', 'Varieté Cacao', 'Gérant (Oui/Non/Inconnu)', 'Noms et Prénoms du Gérant (Si , gerant existe )', 'Latitude *', 'Longitude *', 'Données Polygonales (Si possible, sinon a partager)']
+2025-11-10 02:32:50,587 | INFO | → 'N°Ordre' renommé en 'numero_ordre'
+2025-11-10 02:32:50,587 | INFO | → 'Cooperative/Groupe *' renommé en 'cooperative'
+2025-11-10 02:32:50,587 | INFO | → 'Code plantation *' renommé en 'code_plantation'
+2025-11-10 02:32:50,587 | INFO | → 'Code Producteur *' renommé en 'code_producteur'
+2025-11-10 02:32:50,587 | INFO | → 'Autres Codes Disponibles' renommé en 'autres_codes'
+2025-11-10 02:32:50,587 | INFO | → 'Superficie Cacao (Ha) *' renommé en 'superficie_cacao_ha'
+2025-11-10 02:32:50,587 | INFO | → 'Rendement (kg/Ha) *' renommé en 'rendement_kg_ha'
+2025-11-10 02:32:50,587 | INFO | → 'Estimation (Kg) *' renommé en 'estimation_kg'
+2025-11-10 02:32:50,587 | INFO | → 'Varieté Cacao' renommé en 'variete_cacao'
+2025-11-10 02:32:50,587 | INFO | → 'Gérant (Oui/Non/Inconnu)' renommé en 'gerant'
+2025-11-10 02:32:50,587 | INFO | → 'Noms et Prénoms du Gérant (Si , gerant existe )' renommé en 'nom_gerant'
+2025-11-10 02:32:50,587 | INFO | → 'Latitude *' renommé en 'latitude'
+2025-11-10 02:32:50,587 | INFO | → 'Longitude *' renommé en 'longitude'
+2025-11-10 02:32:50,587 | INFO | → 'Données Polygonales (Si possible, sinon a partager)' renommé en 'donnees_polygonales'
+2025-11-10 02:32:50,596 | INFO | ✅ Fichier sauvegardé → data_clean/coop_plantations_cols_normalized.csv
+
+2025-11-10 02:32:50,597 | INFO | ✔️ Normalisation terminée avec succès.
+2025-11-10 02:37:26,207 | INFO | Lecture du fichier : data_raw/coop_producteurs.csv
+2025-11-10 02:37:26,216 | INFO | Colonnes originales : ['Ordre', 'Cooperative *', 'Codes de certification', 'Code Producteur *', 'Autres Codes Disponibles', 'Année de Naissance *', "Date d'adhésion 4 (mois-année)", 'Genre (F ou H) *', "Superficie Totale de L'Exploitation (HA) *", 'Superficie Cacao Totale (Ha) *', 'Nombre de Plantations Cacao *', 'Estimation totale (Kg) *', 'Ville', 'Nom du Coach', 'Numéro de Matricule', 'Type de Matricule (National, CCC…)', 'Taille du Menage (Nombre de personnes dans le menage du producteur) *', 'Recolte Totale 24-25 (en KG) *', 'Volume livré à la Co-op 24-25 (en KG) *', 'Recolte Total 23-24 (en KG) *', 'Volume livré à la Co-op 23-24 (en KG) *']
+2025-11-10 02:37:26,216 | INFO | → 'Ordre' renommé en 'numero_ordre'
+2025-11-10 02:37:26,216 | INFO | → 'Cooperative *' renommé en 'cooperative'
+2025-11-10 02:37:26,216 | INFO | → 'Codes de certification' renommé en 'codes_certification'
+2025-11-10 02:37:26,216 | INFO | → 'Code Producteur *' renommé en 'code_producteur'
+2025-11-10 02:37:26,217 | INFO | → 'Autres Codes Disponibles' renommé en 'autres_codes'
+2025-11-10 02:37:26,217 | INFO | → 'Année de Naissance *' renommé en 'annee_naissance'
+2025-11-10 02:37:26,217 | INFO | → 'Date d'adhésion 4 (mois-année)' renommé en 'date_adhesion'
+2025-11-10 02:37:26,217 | INFO | → 'Genre (F ou H) *' renommé en 'genre'
+2025-11-10 02:37:26,217 | INFO | → 'Superficie Totale de L'Exploitation (HA) *' renommé en 'superficie_totale_exploitation_ha'
+2025-11-10 02:37:26,217 | INFO | → 'Superficie Cacao Totale (Ha) *' renommé en 'superficie_totale_cacao_ha'
+2025-11-10 02:37:26,217 | INFO | → 'Nombre de Plantations Cacao *' renommé en 'nb_plantations_cacao'
+2025-11-10 02:37:26,217 | INFO | → 'Estimation totale (Kg) *' renommé en 'estimation_totale_kg'
+2025-11-10 02:37:26,217 | INFO | → 'Ville' renommé en 'ville'
+2025-11-10 02:37:26,217 | INFO | → 'Nom du Coach' renommé en 'nom_coach'
+2025-11-10 02:37:26,217 | INFO | → 'Numéro de Matricule' renommé en 'numero_matricule'
+2025-11-10 02:37:26,217 | INFO | → 'Type de Matricule (National, CCC…)' renommé en 'type_matricule'
+2025-11-10 02:37:26,217 | INFO | → 'Taille du Menage (Nombre de personnes dans le menage du producteur) *' renommé en 'taille_menage'
+2025-11-10 02:37:26,217 | INFO | → 'Recolte Totale 24-25 (en KG) *' renommé en 'recolte_24_25_kg'
+2025-11-10 02:37:26,217 | INFO | → 'Volume livré à la Co-op 24-25 (en KG) *' renommé en 'volume_livre_coop_24_25_kg'
+2025-11-10 02:37:26,217 | INFO | → 'Recolte Total 23-24 (en KG) *' renommé en 'recolte_23_24_kg'
+2025-11-10 02:37:26,217 | INFO | → 'Volume livré à la Co-op 23-24 (en KG) *' renommé en 'volume_livre_coop_23_24_kg'
+2025-11-10 02:37:26,230 | INFO | ✅ Fichier sauvegardé → data_clean/coop_producteurs_cols_normalized.csv
+
+2025-11-10 02:37:26,230 | INFO | Lecture du fichier : data_raw/coop_plantations.csv
+2025-11-10 02:37:26,237 | INFO | Colonnes originales : ['N°Ordre', 'Cooperative/Groupe *', 'Code plantation *', 'Code Producteur *', 'Autres Codes Disponibles', 'Superficie Cacao (Ha) *', 'Rendement (kg/Ha) *', 'Estimation (Kg) *', 'Varieté Cacao', 'Gérant (Oui/Non/Inconnu)', 'Noms et Prénoms du Gérant (Si , gerant existe )', 'Latitude *', 'Longitude *', 'Données Polygonales (Si possible, sinon a partager)']
+2025-11-10 02:37:26,237 | INFO | → 'N°Ordre' renommé en 'numero_ordre'
+2025-11-10 02:37:26,237 | INFO | → 'Cooperative/Groupe *' renommé en 'cooperative'
+2025-11-10 02:37:26,237 | INFO | → 'Code plantation *' renommé en 'code_plantation'
+2025-11-10 02:37:26,237 | INFO | → 'Code Producteur *' renommé en 'code_producteur'
+2025-11-10 02:37:26,237 | INFO | → 'Autres Codes Disponibles' renommé en 'autres_codes'
+2025-11-10 02:37:26,237 | INFO | → 'Superficie Cacao (Ha) *' renommé en 'superficie_cacao_ha'
+2025-11-10 02:37:26,237 | INFO | → 'Rendement (kg/Ha) *' renommé en 'rendement_kg_ha'
+2025-11-10 02:37:26,238 | INFO | → 'Estimation (Kg) *' renommé en 'estimation_kg'
+2025-11-10 02:37:26,238 | INFO | → 'Varieté Cacao' renommé en 'variete_cacao'
+2025-11-10 02:37:26,238 | INFO | → 'Gérant (Oui/Non/Inconnu)' renommé en 'gerant'
+2025-11-10 02:37:26,238 | INFO | → 'Noms et Prénoms du Gérant (Si , gerant existe )' renommé en 'nom_gerant'
+2025-11-10 02:37:26,238 | INFO | → 'Latitude *' renommé en 'latitude'
+2025-11-10 02:37:26,238 | INFO | → 'Longitude *' renommé en 'longitude'
+2025-11-10 02:37:26,238 | INFO | → 'Données Polygonales (Si possible, sinon a partager)' renommé en 'donnees_polygonales'
+2025-11-10 02:37:26,246 | INFO | ✅ Fichier sauvegardé → data_clean/coop_plantations_cols_normalized.csv
+
+2025-11-10 02:37:26,247 | INFO | ✔️ Normalisation terminée avec succès.

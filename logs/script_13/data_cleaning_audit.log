@@ -23,3 +23,13 @@
 2025-11-10 02:25:20,269 | INFO | Compare: parcelles (3046 -> 2852 polygones)
 2025-11-10 02:25:20,272 | INFO | Rapport d'audit exporte -> display-data/data_cleaning_audit.json
 2025-11-10 02:25:20,272 | INFO | Script termine avec succes.
+2025-11-10 02:33:08,829 | INFO | Compare: coop_producteurs (3518 -> 3518 lignes)
+2025-11-10 02:33:08,841 | INFO | Compare: coop_plantations (3540 -> 3540 lignes)
+2025-11-10 02:33:09,726 | INFO | Compare: parcelles (3046 -> 2852 polygones)
+2025-11-10 02:33:09,730 | INFO | Rapport d'audit exporte -> display-data/data_cleaning_audit.json
+2025-11-10 02:33:09,730 | INFO | Script termine avec succes.
+2025-11-10 02:37:44,186 | INFO | Compare: coop_producteurs (3518 -> 3518 lignes)
+2025-11-10 02:37:44,199 | INFO | Compare: coop_plantations (3540 -> 3540 lignes)
+2025-11-10 02:37:45,107 | INFO | Compare: parcelles (3046 -> 2852 polygones)
+2025-11-10 02:37:45,110 | INFO | Rapport d'audit exporte -> display-data/data_cleaning_audit.json
+2025-11-10 02:37:45,110 | INFO | Script termine avec succes.
