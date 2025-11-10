@@ -32,18 +32,27 @@ BASE_PATHS: Dict[str, str] = {
     "raw": "data_raw",
 }
 
-DISPLAY_FILES: Dict[str, str] = {
-    "global_stats": "global_stats.json",
-    "anomalies_surface": "anomalies_surface.json",
-    "doublons_producteurs": "doublons_producteurs.json",
-    "doublons_parcelles": "doublons_parcelles.json",
-    "chevauchements_parcelles": "chevauchements_parcelles.json",
-    "resume_anomalies": "resume_anomalies.json",
-    "meta_script_9": "meta_script_9.json",
-    "report_metadata": "report_metadata.json",
-    "synthese_coherence_coop": "synthese_coherence_coop.json",
-    "synthese_coherence_producteurs": "synthese_coherence_producteurs.json",
-    "data_cleaning_audit": "data_cleaning_audit.json",
+DISPLAY_ASSETS: Dict[str, Dict[str, str]] = {
+    "global_stats": {"folder": "display", "path": "global_stats.json"},
+    "anomalies_surface": {"folder": "display", "path": "anomalies_surface.json"},
+    "doublons_producteurs": {"folder": "display", "path": "doublons_producteurs.json"},
+    "doublons_parcelles": {"folder": "display", "path": "doublons_parcelles.json"},
+    "chevauchements_parcelles": {
+        "folder": "outputs",
+        "path": "script_10/parcelles_chevauchements.geojson",
+    },
+    "resume_anomalies": {"folder": "display", "path": "resume_anomalies.json"},
+    "meta_script_9": {"folder": "display", "path": "meta_script_9.json"},
+    "report_metadata": {"folder": "display", "path": "report_metadata.json"},
+    "synthese_coherence_coop": {
+        "folder": "display",
+        "path": "synthese_coherence_coop.json",
+    },
+    "synthese_coherence_producteurs": {
+        "folder": "display",
+        "path": "synthese_coherence_producteurs.json",
+    },
+    "data_cleaning_audit": {"folder": "display", "path": "data_cleaning_audit.json"},
 }
 
 os.makedirs(BASE_PATHS["display"], exist_ok=True)
@@ -62,8 +71,16 @@ def _load_display_json(filename: str) -> JSONResponse:
     return JSONResponse(content=data)
 
 
-def _file_metadata(path: Path, key: str | None = None) -> Dict[str, object]:
-    info: Dict[str, object] = {"filename": path.name, "key": key, "exists": path.exists()}
+def _file_metadata(path: Path, key: str | None = None, *, folder: str | None = None, relative_path: str | None = None) -> Dict[str, object]:
+    info: Dict[str, object] = {
+        "filename": path.name,
+        "key": key,
+        "exists": path.exists(),
+    }
+    if folder:
+        info["folder"] = folder
+    if relative_path:
+        info["relative_path"] = relative_path
     if path.exists():
         stats = path.stat()
         info.update(
@@ -75,13 +92,22 @@ def _file_metadata(path: Path, key: str | None = None) -> Dict[str, object]:
     return info
 
 
+def _asset_entry(key: str, entry: Dict[str, str]) -> Dict[str, object]:
+    folder = entry.get("folder", "display")
+    base_dir = BASE_PATHS.get(folder)
+    if not base_dir:
+        raise HTTPException(status_code=500, detail=f"Dossier inconnu pour {key}")
+    path = Path(base_dir) / entry["path"]
+    return _file_metadata(path, key, folder=folder, relative_path=entry["path"])
+
+
 def _list_display_manifest() -> List[Dict[str, object]]:
     manifest: List[Dict[str, object]] = []
     known_files: set[str] = set()
-    for key, filename in DISPLAY_FILES.items():
-        path = _display_path(filename)
-        manifest.append(_file_metadata(path, key))
-        known_files.add(filename)
+    for key, entry in DISPLAY_ASSETS.items():
+        manifest.append(_asset_entry(key, entry))
+        if entry.get("folder", "display") == "display":
+            known_files.add(entry["path"])
 
     # include any extra JSON drops that may not be mapped yet
     display_dir = _display_path("").parent
@@ -117,10 +143,19 @@ def list_display_files():
 @app.get("/display/by-key/{key}")
 def get_display_by_key(key: str):
     """Serve a JSON asset based on its logical key name."""
-    filename = DISPLAY_FILES.get(key)
-    if not filename:
+    entry = DISPLAY_ASSETS.get(key)
+    if not entry:
         raise HTTPException(status_code=404, detail="Cle inconnue")
-    return _load_display_json(filename)
+    folder = entry.get("folder", "display")
+    base_dir = BASE_PATHS.get(folder)
+    if not base_dir:
+        raise HTTPException(status_code=500, detail="Dossier non configure")
+    path = Path(base_dir) / entry["path"]
+    if not path.exists():
+        raise HTTPException(status_code=404, detail="Fichier introuvable")
+    with path.open(encoding="utf-8") as file_obj:
+        data = json.load(file_obj)
+    return JSONResponse(content=data)
 
 
 @app.get("/display/{filename}")
