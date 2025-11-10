@@ -23,6 +23,7 @@ import logging
 import os
 from datetime import datetime
 
+import geopandas as gpd
 import pandas as pd
 
 SCRIPT_ID = "script_11"
@@ -44,11 +45,29 @@ logging.basicConfig(
 logger = logging.getLogger("export_display")
 
 
-def safe_load_csv(path: str) -> pd.DataFrame:
-    """Charge un CSV s'il existe, sinon renvoie un DataFrame vide."""
-    if os.path.exists(path):
+def safe_load_table(path: str) -> pd.DataFrame:
+    """Charge un CSV/GeoJSON s'il existe, sinon renvoie un DataFrame vide."""
+    if not os.path.exists(path):
+        logger.warning("Fichier manquant: %s", path)
+        return pd.DataFrame()
+
+    if path.endswith(".csv"):
         return pd.read_csv(path)
-    logger.warning("Fichier manquant: %s", path)
+
+    if path.endswith(".geojson"):
+        gdf = gpd.read_file(path)
+        dataframe = gdf.copy()
+        if "geometry" in dataframe.columns:
+            dataframe["geometry_wkt"] = dataframe["geometry"].apply(
+                lambda geom: geom.wkt if geom is not None else None
+            )
+            dataframe = dataframe.drop(columns="geometry")
+        return pd.DataFrame(dataframe)
+
+    if path.endswith(".json"):
+        return pd.read_json(path)
+
+    logger.warning("Format non supporte: %s", path)
     return pd.DataFrame()
 
 
@@ -56,10 +75,10 @@ paths = {
     "anomalies_surface": "outputs/script_8/anomalies_surfaces_parcelle.csv",
     "doublons_producteurs": "outputs/script_3/doublons_producteurs.csv",
     "doublons_parcelles": "outputs/script_7/doublons_parcelles.csv",
-    "chevauchements_parcelles": "outputs/script_10/chevauchements_parcelles.csv",
+    "chevauchements_parcelles": "outputs/script_10/parcelles_chevauchements.geojson",
 }
 
-dfs = {name: safe_load_csv(path) for name, path in paths.items()}
+dfs = {name: safe_load_table(path) for name, path in paths.items()}
 
 for name, dataframe in dfs.items():
     out_path = os.path.join(DISPLAY_DIR, f"{name}.json")

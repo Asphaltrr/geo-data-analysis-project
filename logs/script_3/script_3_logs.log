@@ -582,3 +582,76 @@
 2025-11-10 00:31:15,434 | INFO | 🧪 Diagnostic NA → outputs/script_3/na_coop_plantations_clean.csv
 2025-11-10 00:31:15,435 | INFO | 🔄 Normalisation des valeurs manquantes : 7080 cellules NaN remplacées par vide
 2025-11-10 00:31:15,450 | INFO | ✔️ Nettoyage et typage terminés sans suffixe .0 pour les entiers.
+2025-11-10 01:03:37,268 | INFO | Lecture : data_clean/coop_producteurs_cols_normalized.csv
+2025-11-10 01:03:37,339 | INFO | → Normalisation des valeurs manquantes : OK
+2025-11-10 01:03:37,343 | INFO | → Trim texte : cooperative
+2025-11-10 01:03:37,343 | INFO | → Trim texte : code_producteur
+2025-11-10 01:03:37,344 | INFO | → Trim texte : ville
+2025-11-10 01:03:37,345 | INFO | → Trim texte : nom_coach
+2025-11-10 01:03:37,347 | INFO | → Trim texte : type_matricule
+2025-11-10 01:03:37,347 | INFO | → Trim texte : genre
+2025-11-10 01:03:37,351 | INFO | → Colonne réelle (float64) : superficie_totale_exploitation_ha
+2025-11-10 01:03:37,354 | INFO | → Colonne réelle (float64) : superficie_totale_cacao_ha
+2025-11-10 01:03:37,358 | INFO | → Colonne entière (Int64) : numero_ordre
+2025-11-10 01:03:37,363 | INFO | → Colonne entière (Int64) : annee_naissance
+2025-11-10 01:03:37,367 | INFO | → Colonne entière (Int64) : nb_plantations_cacao
+2025-11-10 01:03:37,368 | INFO | → Colonne entière (Int64) : taille_menage
+2025-11-10 01:03:37,372 | INFO | → Colonne entière (Int64) : estimation_totale_kg
+2025-11-10 01:03:37,377 | INFO | → Colonne entière (Int64) : recolte_24_25_kg
+2025-11-10 01:03:37,381 | INFO | → Colonne entière (Int64) : volume_livre_coop_24_25_kg
+2025-11-10 01:03:37,382 | INFO | → Colonne entière (Int64) : recolte_23_24_kg
+2025-11-10 01:03:37,384 | INFO | → Colonne entière (Int64) : volume_livre_coop_23_24_kg
+2025-11-10 01:03:37,384 | INFO | Type final - numero_ordre: Int64
+2025-11-10 01:03:37,384 | INFO | Type final - cooperative: object
+2025-11-10 01:03:37,384 | INFO | Type final - codes_certification: object
+2025-11-10 01:03:37,384 | INFO | Type final - code_producteur: object
+2025-11-10 01:03:37,384 | INFO | Type final - autres_codes: float64
+2025-11-10 01:03:37,384 | INFO | Type final - annee_naissance: Int64
+2025-11-10 01:03:37,384 | INFO | Type final - date_adhesion: float64
+2025-11-10 01:03:37,384 | INFO | Type final - genre: object
+2025-11-10 01:03:37,384 | INFO | Type final - superficie_totale_exploitation_ha: float64
+2025-11-10 01:03:37,384 | INFO | Type final - superficie_totale_cacao_ha: float64
+2025-11-10 01:03:37,384 | INFO | Type final - nb_plantations_cacao: Int64
+2025-11-10 01:03:37,384 | INFO | Type final - estimation_totale_kg: Int64
+2025-11-10 01:03:37,384 | INFO | Type final - ville: object
+2025-11-10 01:03:37,384 | INFO | Type final - nom_coach: object
+2025-11-10 01:03:37,384 | INFO | Type final - numero_matricule: float64
+2025-11-10 01:03:37,384 | INFO | Type final - type_matricule: object
+2025-11-10 01:03:37,384 | INFO | Type final - taille_menage: Int64
+2025-11-10 01:03:37,384 | INFO | Type final - recolte_24_25_kg: Int64
+2025-11-10 01:03:37,384 | INFO | Type final - volume_livre_coop_24_25_kg: Int64
+2025-11-10 01:03:37,384 | INFO | Type final - recolte_23_24_kg: Int64
+2025-11-10 01:03:37,384 | INFO | Type final - volume_livre_coop_23_24_kg: Int64
+2025-11-10 01:03:37,390 | INFO | 🧪 Diagnostic NA → outputs/script_3/na_coop_producteurs_clean.csv
+2025-11-10 01:03:37,391 | INFO | 🔄 Normalisation des valeurs manquantes : 21505 cellules NaN remplacées par vide
+2025-11-10 01:03:37,409 | INFO | Lecture : data_clean/coop_plantations_cols_normalized.csv
+2025-11-10 01:03:37,454 | INFO | → Normalisation des valeurs manquantes : OK
+2025-11-10 01:03:37,455 | INFO | → Trim texte : cooperative
+2025-11-10 01:03:37,455 | INFO | → Trim texte : code_plantation
+2025-11-10 01:03:37,456 | INFO | → Trim texte : code_producteur
+2025-11-10 01:03:37,456 | INFO | → Trim texte : variete_cacao
+2025-11-10 01:03:37,456 | INFO | → Trim texte : gerant
+2025-11-10 01:03:37,458 | INFO | → Trim texte : donnees_polygonales
+2025-11-10 01:03:37,461 | INFO | → Colonne réelle (float64) : superficie_cacao_ha
+2025-11-10 01:03:37,465 | INFO | → Colonne réelle (float64) : rendement_kg_ha
+2025-11-10 01:03:37,468 | INFO | → Colonne réelle (float64) : latitude
+2025-11-10 01:03:37,472 | INFO | → Colonne réelle (float64) : longitude
+2025-11-10 01:03:37,476 | INFO | → Colonne entière (Int64) : numero_ordre
+2025-11-10 01:03:37,480 | INFO | → Colonne entière (Int64) : estimation_kg
+2025-11-10 01:03:37,480 | INFO | Type final - numero_ordre: Int64
+2025-11-10 01:03:37,480 | INFO | Type final - cooperative: object
+2025-11-10 01:03:37,480 | INFO | Type final - code_plantation: object
+2025-11-10 01:03:37,480 | INFO | Type final - code_producteur: object
+2025-11-10 01:03:37,480 | INFO | Type final - autres_codes: float64
+2025-11-10 01:03:37,480 | INFO | Type final - superficie_cacao_ha: float64
+2025-11-10 01:03:37,480 | INFO | Type final - rendement_kg_ha: float64
+2025-11-10 01:03:37,480 | INFO | Type final - estimation_kg: Int64
+2025-11-10 01:03:37,480 | INFO | Type final - variete_cacao: object
+2025-11-10 01:03:37,480 | INFO | Type final - gerant: object
+2025-11-10 01:03:37,480 | INFO | Type final - nom_gerant: float64
+2025-11-10 01:03:37,480 | INFO | Type final - latitude: float64
+2025-11-10 01:03:37,480 | INFO | Type final - longitude: float64
+2025-11-10 01:03:37,480 | INFO | Type final - donnees_polygonales: object
+2025-11-10 01:03:37,482 | INFO | 🧪 Diagnostic NA → outputs/script_3/na_coop_plantations_clean.csv
+2025-11-10 01:03:37,482 | INFO | 🔄 Normalisation des valeurs manquantes : 7080 cellules NaN remplacées par vide
+2025-11-10 01:03:37,499 | INFO | ✔️ Nettoyage et typage terminés sans suffixe .0 pour les entiers.

@@ -1,9 +1,9 @@
 [
   {
-    "timestamp":"2025-11-10T00:31:46.006160",
+    "timestamp":"2025-11-10T01:04:07.857641",
     "nb_anomalies_surface":885,
     "nb_doublons_producteurs":0,
     "nb_doublons_parcelles":0,
-    "nb_chevauchements":0
+    "nb_chevauchements":37
   }
 ]

@@ -61,3 +61,10 @@
 2025-11-10 00:31:45,300 | INFO | 📊 Résumé exporté → outputs/script_10/resume_chevauchements.csv
 2025-11-10 00:31:45,327 | INFO | Created 37 records
 2025-11-10 00:31:45,328 | INFO | 🗺️ GeoJSON exporté → outputs/script_10/parcelles_chevauchements.geojson (37 entités)
+2025-11-10 01:03:46,302 | INFO | Lecture du GeoJSON propre : data_clean/parcelles_clean.geojson
+2025-11-10 01:03:46,722 | INFO | → 2852 entités chargées, CRS=EPSG:4326
+2025-11-10 01:03:46,722 | INFO | Détection des chevauchements (>15%) en cours...
+2025-11-10 01:04:06,979 | INFO | → 37 chevauchements détectés >15%
+2025-11-10 01:04:06,986 | INFO | 📊 Résumé exporté → outputs/script_10/resume_chevauchements.csv
+2025-11-10 01:04:07,014 | INFO | Created 37 records
+2025-11-10 01:04:07,014 | INFO | 🗺️ GeoJSON exporté → outputs/script_10/parcelles_chevauchements.geojson (37 entités)

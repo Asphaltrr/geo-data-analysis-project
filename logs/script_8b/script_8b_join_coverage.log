@@ -14,3 +14,5 @@
 2025-11-09 23:56:21,957 | INFO | Exports : csv_only_plantations_sans_geo.csv, geo_only_geo_sans_csv.csv, csv_only_par_coop.csv, csv_only_par_producteur.csv, csv_only_correspondances_base_id.csv
 2025-11-10 00:31:22,400 | INFO | CSV only: 1162 | GEO only: 474 | matched: 2378
 2025-11-10 00:31:22,412 | INFO | Exports : csv_only_plantations_sans_geo.csv, geo_only_geo_sans_csv.csv, csv_only_par_coop.csv, csv_only_par_producteur.csv, csv_only_correspondances_base_id.csv
+2025-11-10 01:03:44,431 | INFO | CSV only: 1162 | GEO only: 474 | matched: 2378
+2025-11-10 01:03:44,445 | INFO | Exports : csv_only_plantations_sans_geo.csv, geo_only_geo_sans_csv.csv, csv_only_par_coop.csv, csv_only_par_producteur.csv, csv_only_correspondances_base_id.csv
