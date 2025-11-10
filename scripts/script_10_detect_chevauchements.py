@@ -76,20 +76,31 @@ if overlaps:
     df_over.to_csv(OUTPUT_SUMMARY, index=False, encoding="utf-8")
     logger.info(f"📊 Résumé exporté → {OUTPUT_SUMMARY}")
 
-    # création d’un GeoDataFrame pour visualisation
-    gdf_over = gpd.GeoDataFrame(
-        df_over,
-        geometry=[
-            gdf_m[gdf_m["Farms_ID"] == row["id_1"]].geometry.values[0].intersection(
-                gdf_m[gdf_m["Farms_ID"] == row["id_2"]].geometry.values[0]
-            )
-            for _, row in df_over.iterrows()
-        ],
-        crs=gdf_m.crs
-    )
-    gdf_over.to_crs(4326).to_file(OUTPUT_OVERLAP, driver="GeoJSON")
-    logger.info(f"🗺️ GeoJSON exporté → {OUTPUT_OVERLAP}")
+    geometries = []
+    for _, row in df_over.iterrows():
+        g1 = gdf_m.loc[gdf_m["Farms_ID"] == row["id_1"], "geometry"]
+        g2 = gdf_m.loc[gdf_m["Farms_ID"] == row["id_2"], "geometry"]
+
+        if g1.empty or g2.empty:
+            geometries.append(None)
+            continue
+
+        inter = g1.values[0].intersection(g2.values[0])
+
+        # Nettoyage : ignorer géométries vides ou invalides
+        if inter.is_empty or not inter.is_valid:
+            geometries.append(None)
+        else:
+            geometries.append(inter)
+
+    # Construction du GeoDataFrame
+    gdf_over = gpd.GeoDataFrame(df_over, geometry=geometries, crs=gdf_m.crs)
+    gdf_over = gdf_over[gdf_over.geometry.notna() & (~gdf_over.geometry.is_empty)]
+
+    if len(gdf_over) > 0:
+        gdf_over.to_crs(4326).to_file(OUTPUT_OVERLAP, driver="GeoJSON")
+        logger.info(f"🗺️ GeoJSON exporté → {OUTPUT_OVERLAP} ({len(gdf_over)} entités)")
+    else:
+        logger.warning("⚠️ Aucun chevauchement valide exporté dans le GeoJSON.")
 else:
     logger.info("✅ Aucun chevauchement significatif détecté.")
-
-logger.info("✔️ Détection des chevauchements terminée.")

@@ -82,3 +82,31 @@
 2025-11-09 19:52:18,098 | INFO | Created 2,852 records
 2025-11-09 19:52:18,102 | INFO | 🧾 Journal des corrections → outputs/script_7/geojson_clean_log.csv
 2025-11-09 19:52:18,102 | INFO | ✔️ Nettoyage géométrique terminé avec succès.
+2025-11-09 23:56:18,159 | INFO | Lecture du GeoJSON brut : data_raw/parcelles.geojson
+2025-11-09 23:56:18,603 | INFO | 3046 entités chargées.
+2025-11-09 23:56:18,604 | WARNING | 🗑️ 10 géométries vides supprimées.
+2025-11-09 23:56:18,631 | INFO | ✅ Aucune géométrie invalide.
+2025-11-09 23:56:18,631 | WARNING | 🗑️ 356 doublons d'attribut supprimés (1 seul exemplaire conservé).
+2025-11-09 23:56:18,632 | INFO | 🔍 Détection des doublons géométriques exacts...
+2025-11-09 23:56:18,800 | WARNING | 🗑️ 2 doublons géométriques détectés.
+2025-11-09 23:56:18,801 | INFO | ✅ 2 doublons géométriques supprimés (premier conservé).
+2025-11-09 23:56:18,970 | INFO | 📐 Recalcul des superficies réelles (ha)...
+2025-11-09 23:56:19,006 | INFO | ✅ Superficies calculées et ajoutées sous 'surface_calculee_ha'.
+2025-11-09 23:56:19,007 | INFO | 💾 Export du GeoJSON nettoyé → data_clean/parcelles_clean.geojson
+2025-11-09 23:56:19,590 | INFO | Created 2,852 records
+2025-11-09 23:56:19,598 | INFO | 🧾 Journal des corrections → outputs/script_7/geojson_clean_log.csv
+2025-11-09 23:56:19,598 | INFO | ✔️ Nettoyage géométrique terminé avec succès.
+2025-11-10 00:31:18,635 | INFO | Lecture du GeoJSON brut : data_raw/parcelles.geojson
+2025-11-10 00:31:19,074 | INFO | 3046 entités chargées.
+2025-11-10 00:31:19,075 | WARNING | 🗑️ 10 géométries vides supprimées.
+2025-11-10 00:31:19,103 | INFO | ✅ Aucune géométrie invalide.
+2025-11-10 00:31:19,103 | WARNING | 🗑️ 356 doublons d'attribut supprimés (1 seul exemplaire conservé).
+2025-11-10 00:31:19,104 | INFO | 🔍 Détection des doublons géométriques exacts...
+2025-11-10 00:31:19,274 | WARNING | 🗑️ 2 doublons géométriques détectés.
+2025-11-10 00:31:19,275 | INFO | ✅ 2 doublons géométriques supprimés (premier conservé).
+2025-11-10 00:31:19,448 | INFO | 📐 Recalcul des superficies réelles (ha)...
+2025-11-10 00:31:19,485 | INFO | ✅ Superficies calculées et ajoutées sous 'surface_calculee_ha'.
+2025-11-10 00:31:19,485 | INFO | 💾 Export du GeoJSON nettoyé → data_clean/parcelles_clean.geojson
+2025-11-10 00:31:20,156 | INFO | Created 2,852 records
+2025-11-10 00:31:20,163 | INFO | 🧾 Journal des corrections → outputs/script_7/geojson_clean_log.csv
+2025-11-10 00:31:20,163 | INFO | ✔️ Nettoyage géométrique terminé avec succès.

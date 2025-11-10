@@ -49,14 +49,20 @@ def compare_csv(raw_path: str, clean_path: str, name: str) -> dict:
     df_raw = pd.read_csv(raw_path)
     df_clean = pd.read_csv(clean_path)
 
+    rows_raw = len(df_raw)
+    rows_clean = len(df_clean)
+    rows_removed = max(rows_raw - rows_clean, 0)
+    rows_removed_pct = (
+        round((rows_raw - rows_clean) / rows_raw * 100, 2) if rows_raw > 0 else 0
+    )
+
     summary = {
         "dataset": name,
-        "rows_raw": len(df_raw),
-        "rows_clean": len(df_clean),
-        "rows_removed": max(len(df_raw) - len(df_clean), 0),
-        "percent_retained": round((len(df_clean) / len(df_raw)) * 100, 2)
-        if len(df_raw) > 0
-        else None,
+        "rows_raw": rows_raw,
+        "rows_clean": rows_clean,
+        "rows_removed": rows_removed,
+        "rows_removed_pct": rows_removed_pct,
+        "percent_retained": round((rows_clean / rows_raw) * 100, 2) if rows_raw > 0 else None,
         "columns_raw": list(df_raw.columns),
         "columns_clean": list(df_clean.columns),
     }
@@ -76,7 +82,14 @@ def compare_csv(raw_path: str, clean_path: str, name: str) -> dict:
     na_clean = int(df_clean.isna().sum().sum())
     summary["missing_values_raw"] = na_raw
     summary["missing_values_clean"] = na_clean
-    summary["missing_reduction"] = na_raw - na_clean
+    summary["missing_values_reduction"] = na_raw - na_clean
+
+    max_possible = rows_raw * len(df_raw.columns) if rows_raw > 0 else 0
+    if max_possible and abs(summary["missing_values_reduction"]) > max_possible:
+        summary["sanity_check"] = False
+        logger.warning("[WARN] Valeur incoherente detectee pour %s", name)
+    else:
+        summary["sanity_check"] = True
 
     if "code_producteur" in df_raw.columns:
         dupli_raw = int(df_raw.duplicated(subset="code_producteur").sum())
@@ -92,14 +105,20 @@ def compare_geojson(raw_path: str, clean_path: str, name: str) -> dict:
     gdf_raw = gpd.read_file(raw_path)
     gdf_clean = gpd.read_file(clean_path)
 
+    rows_raw = len(gdf_raw)
+    rows_clean = len(gdf_clean)
+    rows_removed = max(rows_raw - rows_clean, 0)
+    rows_removed_pct = (
+        round((rows_raw - rows_clean) / rows_raw * 100, 2) if rows_raw > 0 else 0
+    )
+
     summary = {
         "dataset": name,
-        "rows_raw": len(gdf_raw),
-        "rows_clean": len(gdf_clean),
-        "rows_removed": max(len(gdf_raw) - len(gdf_clean), 0),
-        "percent_retained": round((len(gdf_clean) / len(gdf_raw)) * 100, 2)
-        if len(gdf_raw) > 0
-        else None,
+        "rows_raw": rows_raw,
+        "rows_clean": rows_clean,
+        "rows_removed": rows_removed,
+        "rows_removed_pct": rows_removed_pct,
+        "percent_retained": round((rows_clean / rows_raw) * 100, 2) if rows_raw > 0 else None,
         "columns_raw": list(gdf_raw.columns),
         "columns_clean": list(gdf_clean.columns),
         "crs_raw": str(gdf_raw.crs),
@@ -113,9 +132,20 @@ def compare_geojson(raw_path: str, clean_path: str, name: str) -> dict:
     summary["columns_added"] = [col for col in gdf_clean.columns if col not in gdf_raw.columns]
     summary["columns_removed"] = [col for col in gdf_raw.columns if col not in gdf_clean.columns]
 
-    na_raw = int(gdf_raw.drop(columns="geometry").isna().sum().sum())
-    na_clean = int(gdf_clean.drop(columns="geometry").isna().sum().sum())
-    summary["missing_reduction"] = na_raw - na_clean
+    attrs_raw = gdf_raw.drop(columns="geometry")
+    attrs_clean = gdf_clean.drop(columns="geometry")
+    na_raw = int(attrs_raw.isna().sum().sum())
+    na_clean = int(attrs_clean.isna().sum().sum())
+    summary["missing_values_raw"] = na_raw
+    summary["missing_values_clean"] = na_clean
+    summary["missing_values_reduction"] = na_raw - na_clean
+
+    max_possible = rows_raw * len(attrs_raw.columns) if rows_raw > 0 else 0
+    if max_possible and abs(summary["missing_values_reduction"]) > max_possible:
+        summary["sanity_check"] = False
+        logger.warning("[WARN] Valeur incoherente detectee pour %s", name)
+    else:
+        summary["sanity_check"] = True
 
     logger.info("Compare: %s (%s -> %s polygones)", name, summary["rows_raw"], summary["rows_clean"])
     return summary

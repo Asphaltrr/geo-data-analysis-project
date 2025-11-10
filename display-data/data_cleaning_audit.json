@@ -1,11 +1,12 @@
 {
-  "timestamp": "2025-11-09T19:52:31.592877",
+  "timestamp": "2025-11-10T00:31:46.688734",
   "datasets": [
     {
       "dataset": "coop_producteurs",
       "rows_raw": 3518,
       "rows_clean": 3518,
       "rows_removed": 0,
+      "rows_removed_pct": 0.0,
       "percent_retained": 100.0,
       "columns_raw": [
         "Ordre",
@@ -102,13 +103,15 @@
       "type_changes": {},
       "missing_values_raw": 1191,
       "missing_values_clean": 28938,
-      "missing_reduction": -27747
+      "missing_values_reduction": -27747,
+      "sanity_check": true
     },
     {
       "dataset": "coop_plantations",
       "rows_raw": 3540,
       "rows_clean": 3540,
       "rows_removed": 0,
+      "rows_removed_pct": 0.0,
       "percent_retained": 100.0,
       "columns_raw": [
         "N°Ordre",
@@ -177,13 +180,15 @@
       "type_changes": {},
       "missing_values_raw": 3540,
       "missing_values_clean": 10620,
-      "missing_reduction": -7080
+      "missing_values_reduction": -7080,
+      "sanity_check": true
     },
     {
       "dataset": "parcelles",
       "rows_raw": 3046,
       "rows_clean": 2852,
       "rows_removed": 194,
+      "rows_removed_pct": 6.37,
       "percent_retained": 93.63,
       "columns_raw": [
         "Farms_ID",
@@ -229,7 +234,10 @@
         "surface_calculee_ha"
       ],
       "columns_removed": [],
-      "missing_reduction": 0
+      "missing_values_raw": 0,
+      "missing_values_clean": 0,
+      "missing_values_reduction": 0,
+      "sanity_check": true
     }
   ]
 }

@@ -16,3 +16,21 @@
 2025-11-09 19:52:31,240 | INFO | Export JSON -> display-data/chevauchements_parcelles.json (0 lignes)
 2025-11-09 19:52:31,240 | INFO | Resume exporte -> display-data/resume_anomalies.json
 2025-11-09 19:52:31,240 | INFO | Export des donnees analytiques termine avec succes.
+2025-11-09 23:56:45,213 | WARNING | Fichier manquant: outputs/script_3/doublons_producteurs.csv
+2025-11-09 23:56:45,213 | WARNING | Fichier manquant: outputs/script_7/doublons_parcelles.csv
+2025-11-09 23:56:45,214 | WARNING | Fichier manquant: outputs/script_10/chevauchements_parcelles.csv
+2025-11-09 23:56:45,215 | INFO | Export JSON -> display-data/anomalies_surface.json (885 lignes)
+2025-11-09 23:56:45,216 | INFO | Export JSON -> display-data/doublons_producteurs.json (0 lignes)
+2025-11-09 23:56:45,216 | INFO | Export JSON -> display-data/doublons_parcelles.json (0 lignes)
+2025-11-09 23:56:45,216 | INFO | Export JSON -> display-data/chevauchements_parcelles.json (0 lignes)
+2025-11-09 23:56:45,216 | INFO | Resume exporte -> display-data/resume_anomalies.json
+2025-11-09 23:56:45,217 | INFO | Export des donnees analytiques termine avec succes.
+2025-11-10 00:31:46,003 | WARNING | Fichier manquant: outputs/script_3/doublons_producteurs.csv
+2025-11-10 00:31:46,003 | WARNING | Fichier manquant: outputs/script_7/doublons_parcelles.csv
+2025-11-10 00:31:46,004 | WARNING | Fichier manquant: outputs/script_10/chevauchements_parcelles.csv
+2025-11-10 00:31:46,005 | INFO | Export JSON -> display-data/anomalies_surface.json (885 lignes)
+2025-11-10 00:31:46,005 | INFO | Export JSON -> display-data/doublons_producteurs.json (0 lignes)
+2025-11-10 00:31:46,005 | INFO | Export JSON -> display-data/doublons_parcelles.json (0 lignes)
+2025-11-10 00:31:46,006 | INFO | Export JSON -> display-data/chevauchements_parcelles.json (0 lignes)
+2025-11-10 00:31:46,006 | INFO | Resume exporte -> display-data/resume_anomalies.json
+2025-11-10 00:31:46,006 | INFO | Export des donnees analytiques termine avec succes.

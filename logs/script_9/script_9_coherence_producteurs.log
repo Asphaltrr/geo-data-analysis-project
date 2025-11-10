@@ -47,3 +47,25 @@
 2025-11-09 19:52:20,788 | INFO | 📊 Export JSON coopératives → display-data/synthese_coherence_coop.json
 2025-11-09 19:52:20,789 | INFO | 🧾 Métadonnées exportées → display-data/meta_script_9.json
 2025-11-09 19:52:20,789 | INFO | ✔️ Analyse de cohérence au niveau producteur terminée avec succès.
+2025-11-09 23:56:22,624 | INFO | Lecture des fichiers sources...
+2025-11-09 23:56:23,083 | INFO | → Plantations CSV : 3540
+2025-11-09 23:56:23,083 | INFO | → Parcelles GeoJSON : 2852
+2025-11-09 23:56:23,083 | INFO | → Lignes jointes : 2378
+2025-11-09 23:56:23,083 | INFO | → Anomalies de surface : 885
+2025-11-09 23:56:23,247 | INFO | ✅ Export producteurs → outputs/script_9/synthese_coherence_producteurs.csv
+2025-11-09 23:56:23,251 | INFO | ✅ Export coopératives → outputs/script_9/synthese_coherence_coop.csv
+2025-11-09 23:56:23,257 | INFO | 📊 Export JSON producteurs → display-data/synthese_coherence_producteurs.json
+2025-11-09 23:56:23,257 | INFO | 📊 Export JSON coopératives → display-data/synthese_coherence_coop.json
+2025-11-09 23:56:23,258 | INFO | 🧾 Métadonnées exportées → display-data/meta_script_9.json
+2025-11-09 23:56:23,258 | INFO | ✔️ Analyse de cohérence au niveau producteur terminée avec succès.
+2025-11-10 00:31:23,036 | INFO | Lecture des fichiers sources...
+2025-11-10 00:31:23,474 | INFO | → Plantations CSV : 3540
+2025-11-10 00:31:23,474 | INFO | → Parcelles GeoJSON : 2852
+2025-11-10 00:31:23,474 | INFO | → Lignes jointes : 2378
+2025-11-10 00:31:23,474 | INFO | → Anomalies de surface : 885
+2025-11-10 00:31:23,634 | INFO | ✅ Export producteurs → outputs/script_9/synthese_coherence_producteurs.csv
+2025-11-10 00:31:23,638 | INFO | ✅ Export coopératives → outputs/script_9/synthese_coherence_coop.csv
+2025-11-10 00:31:23,644 | INFO | 📊 Export JSON producteurs → display-data/synthese_coherence_producteurs.json
+2025-11-10 00:31:23,644 | INFO | 📊 Export JSON coopératives → display-data/synthese_coherence_coop.json
+2025-11-10 00:31:23,644 | INFO | 🧾 Métadonnées exportées → display-data/meta_script_9.json
+2025-11-10 00:31:23,644 | INFO | ✔️ Analyse de cohérence au niveau producteur terminée avec succès.

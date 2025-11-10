@@ -58,3 +58,23 @@
 2025-11-09 19:52:18,988 | INFO | ⚠️ Export anomalies (écart > ±10 %) → outputs/script_8/anomalies_surfaces_parcelle.csv (n=885)
 2025-11-09 19:52:18,988 | INFO | Résumé : 885/2378 parcelles en anomalie (37.2 %)
 2025-11-09 19:52:18,988 | INFO | ✔️ Comparaison surfaces par parcelle terminée.
+2025-11-09 23:56:20,245 | INFO | Lecture CSV plantations : data_clean/coop_plantations_clean.csv
+2025-11-09 23:56:20,256 | INFO |   → 3540 lignes, 14 colonnes
+2025-11-09 23:56:20,257 | INFO | Lecture GeoJSON propre : data_clean/parcelles_clean.geojson
+2025-11-09 23:56:20,879 | INFO |   → 2852 entités, CRS=EPSG:4326
+2025-11-09 23:56:20,885 | INFO | Jointure parcelle : CSV.code_plantation ↔ GEOJSON.Farms_ID (inner)
+2025-11-09 23:56:20,888 | INFO | Jointure OK → 2378 lignes correspondantes
+2025-11-09 23:56:20,898 | INFO | ✅ Export comparatif (toutes lignes) → outputs/script_8/surfaces_compare_parcelle.csv
+2025-11-09 23:56:20,901 | INFO | ⚠️ Export anomalies (écart > ±10 %) → outputs/script_8/anomalies_surfaces_parcelle.csv (n=885)
+2025-11-09 23:56:20,902 | INFO | Résumé : 885/2378 parcelles en anomalie (37.2 %)
+2025-11-09 23:56:20,902 | INFO | ✔️ Comparaison surfaces par parcelle terminée.
+2025-11-10 00:31:20,848 | INFO | Lecture CSV plantations : data_clean/coop_plantations_clean.csv
+2025-11-10 00:31:20,860 | INFO |   → 3540 lignes, 14 colonnes
+2025-11-10 00:31:20,860 | INFO | Lecture GeoJSON propre : data_clean/parcelles_clean.geojson
+2025-11-10 00:31:21,281 | INFO |   → 2852 entités, CRS=EPSG:4326
+2025-11-10 00:31:21,287 | INFO | Jointure parcelle : CSV.code_plantation ↔ GEOJSON.Farms_ID (inner)
+2025-11-10 00:31:21,290 | INFO | Jointure OK → 2378 lignes correspondantes
+2025-11-10 00:31:21,297 | INFO | ✅ Export comparatif (toutes lignes) → outputs/script_8/surfaces_compare_parcelle.csv
+2025-11-10 00:31:21,300 | INFO | ⚠️ Export anomalies (écart > ±10 %) → outputs/script_8/anomalies_surfaces_parcelle.csv (n=885)
+2025-11-10 00:31:21,300 | INFO | Résumé : 885/2378 parcelles en anomalie (37.2 %)
+2025-11-10 00:31:21,300 | INFO | ✔️ Comparaison surfaces par parcelle terminée.
