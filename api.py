@@ -245,3 +245,41 @@ def _pipeline_stream():
 def run_pipeline():
     """Lance le pipeline complet et renvoie un flux de logs (Server-Sent Events)."""
     return StreamingResponse(_pipeline_stream(), media_type="text/event-stream")
+
+
+def _delete_directory_contents(path: Path):
+    if not path.exists():
+        yield f"data: {path} inexistant\n\n"
+        return
+    for entry in path.iterdir():
+        try:
+            if entry.is_dir():
+                for nested in _delete_directory_contents(entry):
+                    yield nested
+                entry.rmdir()
+                yield f"data: dossier supprime -> {entry}\n\n"
+            else:
+                entry.unlink()
+                yield f"data: fichier supprime -> {entry}\n\n"
+        except Exception as exc:
+            yield f"data: erreur suppression {entry}: {exc}\n\n"
+
+
+def _purge_stream():
+    targets = [
+        ("outputs", OUTPUTS_DIR),
+        ("data_raw", DATA_RAW_DIR),
+        ("data_clean", DATA_CLEAN_DIR),
+        ("display-data", DISPLAY_DIR),
+    ]
+    for label, directory in targets:
+        yield f"data: Nettoyage de {label} ({directory})\n\n"
+        for msg in _delete_directory_contents(directory):
+            yield msg
+    yield "event: done\ndata: purge terminee\n\n"
+
+
+@app.post("/purge-data")
+def purge_data():
+    """Supprime les contenus des repertoires principaux avec un flux de logs SSE."""
+    return StreamingResponse(_purge_stream(), media_type="text/event-stream")

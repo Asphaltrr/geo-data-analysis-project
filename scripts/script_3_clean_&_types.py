@@ -23,7 +23,6 @@ import csv
 
 # ------------------- Configuration -------------------
 
-# ⚠️ "Non" retiré
 VALS_NA = {
     "", " ", "na", "n/a", "nan", "none", "null",
     "Non Disponible", "NON DISPONIBLE", "Non disponible", "NULL", "NA", "N/A"

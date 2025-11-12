@@ -63,6 +63,35 @@ logs = []
 def log_change(identifiant, action, details):
     logs.append({"identifiant": identifiant, "action": action, "details": details})
 
+
+# Détermine une projection UTM adaptée (EPSG) à partir des centroïdes des géométries
+def determine_utm_epsg(gdf):
+    """
+    Retourne un code EPSG UTM (ex: 32630) calculé à partir de la longitude/latitude moyenne
+    des centroïdes. Si erreur ou gdf vide, retourne 3857 (WebMercator) en fallback.
+    Hypothèse: gdf est déjà en EPSG:4326 (longitude/latitude).
+    """
+    try:
+        if gdf.empty:
+            return 3857
+
+        # On suppose que le GeoDataFrame est en EPSG:4326 (voir vérification plus haut)
+        centroids = gdf.geometry.centroid
+        mean_lon = centroids.x.mean()
+        mean_lat = centroids.y.mean()
+
+        # calcul de la zone UTM
+        zone = int((mean_lon + 180) / 6) + 1
+        if zone < 1:
+            zone = 1
+
+        # EPSG 326## -> hémisphère nord, 327## -> hémisphère sud
+        epsg_base = 32600 if mean_lat >= 0 else 32700
+        epsg_code = epsg_base + zone
+        return epsg_code
+    except Exception:
+        return 3857
+
 # ---------------- 1. Suppression géométries vides ----------------
 
 n_empty = gdf.geometry.is_empty.sum()
@@ -131,10 +160,22 @@ else:
 # ---------------- 5. Recalcul des superficies ----------------
 
 logger.info("📐 Recalcul des superficies réelles (ha)...")
-gdf_area = gdf.to_crs(epsg=3857)  # projection métrique
-gdf["surface_calculee_ha"] = gdf_area.geometry.area / 10_000
 
-logger.info("✅ Superficies calculées et ajoutées sous 'surface_calculee_ha'.")
+# Déterminer une projection UTM locale si possible (plus précise pour mesures métriques en local)
+utm_epsg = determine_utm_epsg(gdf)
+logger.info(f"♻️ Tentative de reprojection métrique → EPSG:{utm_epsg} pour calcul de surface (UTM local si possible)")
+try:
+    gdf_area = gdf.to_crs(epsg=utm_epsg)
+    gdf["surface_calculee_ha"] = gdf_area.geometry.area / 10_000
+    log_change("all", "projection_surface", f"EPSG:{utm_epsg}")
+    logger.info("✅ Superficies calculées et ajoutées sous 'surface_calculee_ha'.")
+except Exception as e:
+    logger.warning(f"⚠️ Échec reprojection EPSG:{utm_epsg} ({e}) — repli sur EPSG:3857 pour calcul de surface.")
+    # fallback raisonnable
+    gdf_area = gdf.to_crs(epsg=3857)
+    gdf["surface_calculee_ha"] = gdf_area.geometry.area / 10_000
+    log_change("all", "projection_surface", "fallback:EPSG:3857")
+    logger.info("✅ Superficies calculées et ajoutées sous 'surface_calculee_ha' (fallback 3857).")
 
 # ---------------- 6. EXPORT ----------------
 
